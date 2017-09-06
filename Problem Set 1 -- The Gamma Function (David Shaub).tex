@@ -232,10 +232,20 @@ $$
 Hint: again, this looks kind of like a gamma function, but not quite. Make a substitution to turn it into a gamma function, and then evaluate. There is nothing particularly tricky about this problem, but you must be careful about every step. Make sure you pay attention to the differential element and the limits of integration.
 
 \subsection*{Problem Solution}
+\begin{align*}
+u = \frac{\beta}{t} \quad&\Rightarrow\quad t = \frac{\beta}{u}\\
+du = -\frac{\beta}{t^2} dt \quad&\Rightarrow\quad dt = -\frac{t^2}{\beta}du\\\\
+\int_0^\infty t^{-\alpha- 1} e^{-\beta/t} \cdot dt &= \int_0^\infty \biggr(\frac{\beta}{u}\biggr)^{-\alpha - 1}e^{-u} \biggr(-\frac{t^2}{\beta}\biggr) \cdot du\\
+&= - \int_0^\infty \biggr(\frac{u}{\beta}\biggr)^{\alpha + 1} e^{-u} \biggr(\frac{t^2}{\beta}\biggr) \cdot du\\
+& = -\biggr(\frac{1}{\beta}\biggr)^{\alpha + 2} \int_0^\infty u^{\alpha + 1} e^{-u} t^2 \cdot du\\
+& = -\biggr(\frac{1}{\beta}\biggr)^{\alpha + 2} \int_0^\infty u^{\alpha + 1} e^{-u} \frac{\beta^2}{u^2} \cdot du\\
+& = -\biggr(\frac{1}{\beta}\biggr)^{\alpha} \int_0^\infty u^{\alpha - 1} e^{-u} \cdot du\\
+& = -\beta^{-\alpha}\Gamma(\alpha)
+\end{align*}
+
 
 \newpage
 \subsection*{Problem 7 (continued)}
-
 
 
 \newpage
