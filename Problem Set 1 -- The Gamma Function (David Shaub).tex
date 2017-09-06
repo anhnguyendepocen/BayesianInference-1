@@ -208,6 +208,13 @@ $$
 $$
 
 \subsection*{Problem Solution}
+\begin{align*}
+u = \beta t \quad&\Rightarrow\quad t = \frac{u}{\beta}\\
+du = \beta dt \quad&\Rightarrow\quad dt = \frac{du}{\beta}\\\\
+\int_0^\infty t^k e^{-\beta t} \cdot dt &= \int_0^\infty \biggr(\frac{u}{\beta}\biggr)^k e^{-u} \frac{1}{\beta}\cdot du\\
+&= \frac{1}{\beta^{k + 1}}\int_0^\infty u^k e^{-u}\cdot du\\
+&= \frac{1}{\beta^{k + 1}} \Gamma(k + 1)\\
+\end{align*}
 
 
 
