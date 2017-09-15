@@ -49,7 +49,7 @@ P(PURPLE) = 1.0P(PURPLE)\\
 \end{align*}
 \newpage
 \noindent
-{\bf Problem 1, continued}
+{\bf Problem 1, continued}\\
 Now we can normalize and find $P(PURPLE)$ and then the other probabilities:
 \begin{align*}
 P(PURPLE) &= \frac{1}{3.6 + 1.8 + 1.2 + 1.0} = \frac{1}{7.6} \approxeq 0.13158\\
@@ -74,6 +74,7 @@ The random variable $X$ follows a binomial distribution with unknown parameters 
 
 \noindent
 {\bf Part (a)}\ Calculate $\Pr(X = 7)$.
+
 
 \bigskip
 \noindent
@@ -105,11 +106,19 @@ P(X = 7) &= {10 \choose 7}0.6^7(1-0.6)^{10-7} \approxeq 0.21499\\
 \newpage
 \noindent
 {\bf Part (b)}\ Calculate $S(7)$.
-
+\begin{align*}
+S(7) &= P(X > 7) = P(X = 8) +  P(X = 9) + P(X = 10)\\
+&= 0.1209324 + 0.04031078 + 0.006046618\\
+& = 0.1672898\\
+\end{align*}
 
 \vspace{4.5in}
 {\bf Part (c)}\ Calculate $F(6)$.
-
+\begin{align*}
+F(6) &= 1 - S(6) = 1 - (P(X = 7) + S(7))\\
+&= 1 - (0.2149908+ 0.1672898)\\
+&= 0.6177194\\
+\end{align*}
 
 
 
@@ -174,7 +183,13 @@ Obie is planning on buying a new computer on January 1, 2018, and is concerned a
 
 
 \subsection*{Problem Solution}
-
+\begin{align*}
+x^9 = 0.5 \quad\Rightarrow\quad x \approxeq 0.9258747
+\end{align*}
+Thus the probability to survive 5 years is
+\begin{align*}
+p^5 = 0.9258747^5 \approxeq 0.680395
+\end{align*}
 
 \newpage
 \section*{Problem 5}
@@ -192,6 +207,7 @@ An ancient classical greek urn contains a collection of numbered balls, starting
 \bigskip
 \noindent
 {\bf Part (b)}\ What is $\hbox{E}[Y]?$
+
 
 \bigskip
 \noindent
@@ -216,14 +232,25 @@ An ancient classical greek urn contains a collection of numbered balls, starting
 
 \noindent
 {\bf Part (a)}\ First, define a discrete uniform random $X$ with a suitably chosen parameter $n$, and then define another random variable $Y$ which models the numbers on the balls that Tyrone can draw from the urn.
-
+\begin{align*}
+n &= 30\\
+Y &= \frac{X}{10} - 3\\
+\end{align*}
 \vspace{3in}
 \noindent
 {\bf Part (b)}\ What is $\hbox{E}[Y]?$
+\begin{align*}
+E[Y] = \frac{40 + 330}{2} = 185
+\end{align*}
 
 \newpage
 \noindent
 {\bf Part (c)}\ What is $\hbox{Var}[Y]$?
+\begin{align*}
+Var[Y] &= \frac{(b - a + 1)^2 - 1}{12}\\
+&= \frac{(330 - 40 + 1)^2}{12}\\
+&= 7056.667\\
+\end{align*}
 
 
 \vspace{4in}
@@ -250,8 +277,10 @@ The key to solving this problem is to be systematic. We don't need to see every 
 
 
 \subsection*{Problem Solution}
-
-
+Carlson wins if \textbf{1)} He wins one game and Karjakin wins none \textit{or} \textbf{2)} He wins two games and Karjakin wins no more than one \textit{or} \textbf{3)} He wins 3 or more games. The later two cases have multiple possible game outcomes (e.g. win three tie one, win three lose one, win four) but will be presented as a single combined probability.
+\begin{align*}
+P(Win_{Carlsen}) = \\
+\end{align*}
 
 
 
