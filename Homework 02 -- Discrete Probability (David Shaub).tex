@@ -1,0 +1,293 @@
+\documentclass[12pt]{article}
+
+\title{Problem Set 2: Discrete Probability}
+\author{MATH E-158: Introduction to Bayesian Inference}
+\author{David Shaub}
+\date{Due September 18, 2017}
+
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\begin{document}
+
+\maketitle
+
+
+
+
+
+\section*{Problem 1}
+
+This problem tests your understanding of categorical distributions and normalizing constants.
+
+\subsection*{Problem Statement}
+
+An ecologist is studying a rare species of hedgehogs, which occur in four colors: red, green, blue, and purple.
+\begin{itemize}
+	\item Red hedgehogs occur twice as often as green hedgehogs.
+	\item Green hedgehogs occur 1.5 times as often as blue hedgehogs.
+	\item Blue hedgehogs occur 1.2 times as often as purple hedgehogs.
+\end{itemize}
+What is the probability of observing either a purple hedgehog or a green hedgehog?
+
+\subsection*{Problem Solution}
+First we need to express the probabilities in relation to the least-frequent event (purple):
+\begin{align*}
+P(RED) = 2P(GREEN)=2 \cdot 1.5P(BLUE) = 2 \cdot 1.5 \cdot 1.2P(PURPLE) = 3.6P(PURPLE)\\
+P(GREEN) = 1.5P(BLUE) = 1.5 \cdot 1.2P(PURPLE) = 1.8P(PURPLE)\\
+P(BLUE) = 1.2P(PURPLE)\\
+P(PURPLE) = 1.0P(PURPLE)\\
+\end{align*}
+\newpage
+\noindent
+{\bf Problem 1, continued}
+Now we can normalize and find $P(PURPLE)$ and then the other probabilities:
+\begin{align*}
+P(PURPLE) &= \frac{1}{3.6 + 1.8 + 1.2 + 1.0} = \frac{1}{7.6} \approxeq 0.13158\\
+P(BLUE) &= 1.2 \cdot P(PURPLE) = \frac{1.2}{7.6} \approxeq 0.15789\\
+P(GREEN) &= 1.8 \cdot P(PURPLE) = \frac{1.8}{7.6} \approxeq 0.23684\\
+P(RED) &= 3.6 \cdot P(PURPLE) = \frac{3.6}{7.6} \approxeq 0.47368\\
+\end{align*}
+
+\newpage
+\section*{Problem 2}
+
+This problem tests your understanding of the binomial distribution.
+
+\subsection*{Problem Statement}
+
+The random variable $X$ follows a binomial distribution with unknown parameters $n$ and $p$. We do however know two facts about the distribution of $X$:
+\begin{eqnarray*}
+\hbox{E}[X] & = & 6\\
+\\
+\hbox{Var}[X] & = & 2.4
+\end{eqnarray*}
+
+\noindent
+{\bf Part (a)}\ Calculate $\Pr(X = 7)$.
+
+\bigskip
+\noindent
+{\bf Part (b)}\ Calculate $S(7)$.
+
+\bigskip
+\noindent
+{\bf Part (c)}\ Calculate $F(6)$.
+
+
+
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)}\ Calculate $\Pr(X = 7)$.
+\begin{align*}
+E[X] &= n\cdot p = 6 \quad\Rightarrow\quad p =  \frac{6}{n}\\
+Var[X] &= np(1-p) = 2.4\\
+\end{align*}
+Substituting $p$ into the equation for $Var[X]$ we have
+\begin{align*}
+\frac{6n}{n}(1 - \frac{6}{n}) &= 2.4\\
+6 - 2.4 &= \frac{36}{n}\\
+3.6n &= 36\\
+n &= 10 \quad\Rightarrow\quad p = .6\\
+P(X = 7) &= {10 \choose 7}0.6^7(1-0.6)^{10-7} \approxeq 0.21499\\
+\end{align*}
+
+\newpage
+\noindent
+{\bf Part (b)}\ Calculate $S(7)$.
+
+
+\vspace{4.5in}
+{\bf Part (c)}\ Calculate $F(6)$.
+
+
+
+
+
+\newpage
+\section*{Problem 3}
+
+This problem tests your understanding of the Poisson distribution.
+
+\subsection*{Problem Statement}
+
+Tom Gravy, star quarterback of the New England Clam Chowder, throws an average of 2.7 touchdown passes per game.
+
+\bigskip
+\noindent
+{\bf Part (a)}\ What is the probability that in the next game Tom Gravy throws exactly 3 touchdown passes?
+
+\bigskip
+\noindent
+{\bf Part (b)}\ What is the probability that in the next game Tom Gravy throws at most 3 touchdown passes?
+
+\bigskip
+\noindent
+{\bf Part (c)}\ What is the probability that in the next game Tom Gravy throws at least 3 touchdown passes?
+
+
+\subsection*{Problem Solution}
+
+\bigskip
+\noindent
+{\bf Part (a)}\ What is the probability that in the next game Tom Gravy throws exactly 3 touchdown passes?
+\begin{align*}
+P(X = 3) = \frac{2.7^3 \cdot e^{-2.7}}{3!} \approxeq 0.22047
+\end{align*}
+
+\newpage
+\noindent
+{\bf Part (b)}\ What is the probability that in the next game Tom Gravy throws at most 3 touchdown passes?
+\begin{align*}
+P(X <= 3) &= P(X = 0) + P(X = 1) + P(X = 2) + P(X = 3)\\
+&= 0.06720551 + 0.1814549 + 0.2449641 + 0.2204677\\
+&= 0.7140922\\
+\end{align*}
+
+\vspace{4.5in}
+\noindent
+{\bf Part (c)}\ What is the probability that in the next game Tom Gravy throws at least 3 touchdown passes?
+\begin{align*}
+P(X >= 3) = 1 - P(X < 3) &= 1 - (P(X = 0) + P(X = 1) + P(X + 2))\\
+&= 1 - (0.06720551 + 0.1814549 + 0.2449641)\\
+& = 0.5063755\\
+\end{align*}
+
+\newpage
+\section*{Problem 4}
+
+This problem tests your understanding of the geometric distribution.
+
+\subsection*{Problem Statement}
+
+Obie is planning on buying a new computer on January 1, 2018, and is concerned about the life of the hard drive. He assumes that if the hard drive is working at the beginning of the year, then with probability $p$ it will be working at the end of the year, and this is true for every year that the hard drive is working i.e.\ the hard drive never gets ``old'', and the probability of surviving a year is independent of past survival. Obie isn't sure what this value of $p$ is, but he did read that the expected lifetime of the drive is 9 years. What is the probability that the drive will still be working on January 1, 2023?
+
+
+\subsection*{Problem Solution}
+
+
+\newpage
+\section*{Problem 5}
+
+This problem tests your understanding of the discrete uniform distribution.
+
+\subsection*{Problem Statement}
+
+An ancient classical greek urn contains a collection of numbered balls, starting at 40 and increasing by increments of 10 to 330: 40, 50, \ldots, 320, 330. Tyrone plans an experiment where he randomly draws a ball from the urn, observes the number, and then squares this value to obtain the experiment outcome. What is the expected value of the outcome for Tyrone's experiment?
+
+\bigskip
+\noindent
+{\bf Part (a)}\ First, define a discrete uniform random $X$ with a suitably chosen parameter $n$, and then define another random variable $Y$ which models the numbers on the balls that Tyrone can draw from the urn.
+
+\bigskip
+\noindent
+{\bf Part (b)}\ What is $\hbox{E}[Y]?$
+
+\bigskip
+\noindent
+{\bf Part (c)}\ What is $\hbox{Var}[Y]$?
+
+
+\bigskip
+\noindent
+{\bf Part (d)}\ What is $\hbox{E}\left[ Y^2 \right ]$?
+
+
+\bigskip
+\noindent
+{\bf Note:}\ You are welcome to check your work by constructing a large table and then doing a brute-force calculation with the values of $Y$, but we don't want to see that for the homework. Instead, use the properties of the discrete uniform distribution and ideas about the expectation and variance.
+
+\bigskip
+\noindent
+(Note: the problem solution starts on the next page.)
+
+\newpage
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)}\ First, define a discrete uniform random $X$ with a suitably chosen parameter $n$, and then define another random variable $Y$ which models the numbers on the balls that Tyrone can draw from the urn.
+
+\vspace{3in}
+\noindent
+{\bf Part (b)}\ What is $\hbox{E}[Y]?$
+
+\newpage
+\noindent
+{\bf Part (c)}\ What is $\hbox{Var}[Y]$?
+
+
+\vspace{4in}
+\noindent
+{\bf Part (d)}\ What is $\hbox{E}\left[ Y^2 \right ]$?
+
+
+
+\newpage
+\section*{Problem 6}
+
+This problem will test your understanding of the concept of calculating a probability for a random variable by calculating the probabality of the associated event.
+
+\subsection*{Problem Statement}
+
+At the 2016 World Chess Championship between Magnus Carlsen and Sergey Karjakin, the score was tied at 6-6 after 12 games, so the match was decided by a 4-game tiebreaker with a shorter time control. Chess games are scored as 1 point for a win, 1/2 a point for a draw, and 0 points for a loss. Assume that each game is independent of every other game. Suppose that the probability that Carlsen wins a game is $40\%$, the probability of a draw is $35\%$, and the probability that Karjakin wins a game is $25\%$. What is the probability that Carlsen will win the tiebreaker?
+
+\bigskip
+\noindent
+{\bf Hint:}\ \ You'll have to break this down into a lot of special cases, and then do a bunch of calculations. Here's an example: consider the case where Carlsen wins the match with a score of 3.5. In terms of sequences of wins, draws, and losses, what is the event that is associated with this winning score? If you can calculate the probability of this event, then you have calculated the probability that Carlsen wins with 3.5 points. Now do this for every winning score.
+
+\bigskip
+The key to solving this problem is to be systematic. We don't need to see every last little bit of arithmetic, but you should make your reasoning clear to us.
+
+
+\subsection*{Problem Solution}
+
+
+
+
+
+\newpage
+\section*{Problem 7 (Graduate)}
+
+This problem tests your understanding of conditional probability and conditional expectation.
+
+\subsection*{Problem Statement}
+
+What is the expected value of Carlsen's score, conditional on his winning the tiebreaker? Again, be systematic.
+
+\subsection*{Problem Solution}
+
+
+
+
+
+\newpage
+\section*{Problem 8 (Graduate)}
+
+This problem asks you to do a short proof involving notions of set complements, partitions, and the probability axioms.
+
+\subsection*{Problem Statement}
+
+Show that for every random variable $X$ and every specific value $x$, we must have:
+$$
+F(x) = 1 - S(x)
+$$
+
+\bigskip
+\noindent
+{\bf Hint:}\ \ This isn't particularly hard. Think about the idea of a set and its complements, and how that relates to partitions. Then think about how we can work with partitions using the probability axioms.
+
+
+
+\subsection*{Problem Solution}
+
+\end{document}
