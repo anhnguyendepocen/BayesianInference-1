@@ -234,22 +234,26 @@ An ancient classical greek urn contains a collection of numbered balls, starting
 {\bf Part (a)}\ First, define a discrete uniform random $X$ with a suitably chosen parameter $n$, and then define another random variable $Y$ which models the numbers on the balls that Tyrone can draw from the urn.
 \begin{align*}
 n &= 30\\
-Y &= \frac{X}{10} - 3\\
+Y &= 10X + 30\\
 \end{align*}
-\vspace{3in}
+
 \noindent
 {\bf Part (b)}\ What is $\hbox{E}[Y]?$
 \begin{align*}
-E[Y] = \frac{40 + 330}{2} = 185
+E[X] &= \frac{30+1}{2}= 15.5\\\\
+E[Y] &= E[10X + 30]\\
+&= 10 E[X] + 30\\
+&= 155 + 30 = 185\\
 \end{align*}
 
 \newpage
 \noindent
 {\bf Part (c)}\ What is $\hbox{Var}[Y]$?
 \begin{align*}
-Var[Y] &= \frac{(b - a + 1)^2 - 1}{12}\\
-&= \frac{(330 - 40 + 1)^2}{12}\\
-&= 7056.667\\
+Var[X] &= \frac{n^2 - 1}{12}\\
+&= \frac{899}{12}\\\\
+Var[Y] &= Var(10X + 30)\\
+&=100E(X) \approxeq 7491.67\\
 \end{align*}
 
 
