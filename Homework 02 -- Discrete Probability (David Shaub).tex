@@ -286,9 +286,10 @@ The key to solving this problem is to be systematic. We don't need to see every 
 
 
 \subsection*{Problem Solution}
-Carlson wins if \textbf{1)} He wins one game and Karjakin wins none \textit{or} \textbf{2)} He wins two games and Karjakin wins no more than one \textit{or} \textbf{3)} He wins 3 or more games. The later two cases have multiple possible game outcomes (e.g. win three tie one, win three lose one, win four) but will be presented as a single combined probability.
+Carlson wins if \textbf{1)} He wins one game and Karjakin wins none \textit{or} \textbf{2)} He wins two games and Karjakin wins no more than one \textit{or} \textbf{3)} He wins 3 or more games. The later two cases include multiple game outcomes (e.g. win three tie one, win three lose one, win four) but are shown as a combined probability.
 \begin{align*}
-P(Win_{Carlsen}) = \\
+P(win_{Carl}) &= P(Carl = 1 ; Karj = 0) + P(Carl = 2 ; Karj \leq 1) + P(Carl \geq 3)\\
+&= 0.1458 + 0.25515 + 0.1729 = 0.57385\\
 \end{align*}
 
 
@@ -303,9 +304,22 @@ This problem tests your understanding of conditional probability and conditional
 What is the expected value of Carlsen's score, conditional on his winning the tiebreaker? Again, be systematic.
 
 \subsection*{Problem Solution}
-
-
-
+\begin{align*}
+E[win_{Carl}] = \frac{1}{P(win_{Carl})}(x\cdot P(Carl = 4) &+ x\cdot P(Carl = 3; Karj = 1)\\
+&+ x\cdot P(Carl = 3; Karj = 0) \\
+&+ x\cdot P(Carl = 2; Karj = 1) \\
+&+ x\cdot P(Carl = 2; Karj = 0) \\
+&+ x\cdot P(Carl = 1; Karj = 0))
+\end{align*}
+\begin{align*}
+E[win_{Carl}] &= \frac{1}{0.57385}(4 \cdot  0.0256 \\
+&+ 3.0 \cdot  (0.1536 \cdot  0.4166667) \\
+&+ 3.5\cdot (0.1536 \cdot  0.5833333)\\
+&+ 2.5\cdot (0.3456\cdot 0.4861111) \\
+&+ 3.0\cdot (0.3456\cdot 0.1736111)\\
+&+ 2.5\cdot (0.3456\cdot 0.1984954))\\
+&= 2.403938
+\end{align*}
 
 
 \newpage
