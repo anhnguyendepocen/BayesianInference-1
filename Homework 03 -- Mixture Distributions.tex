@@ -60,7 +60,7 @@ Ashley draws 5 balls from the selected urn with replacement. The experimental ou
 
 \subsection*{Problem Solution}
 \noindent
-{\bf Part (a)}\ What is the unconditional probability that Ashley observes 3 red balls?
+{\bf Part (a)}\ What is the unconditional probability that Ashley observes 3 red balls?\\
 For a single draw we calculuate $P(R)$:
 \begin{align*}
 P(R) &= P(R|U_1)\cdot P(U_1) + P(R|U_2)\cdot P(U_2) + P(R|U_2)\cdot P(U_2)\\
@@ -68,7 +68,7 @@ P(R) &= P(R|U_1)\cdot P(U_1) + P(R|U_2)\cdot P(U_2) + P(R|U_2)\cdot P(U_2)\\
 &= \frac{8}{15}\\
 \end{align*}
 
-Now using the binomial distribution with this $P(R)$ we have
+Now using the binomial distribution with $n=5$ and $k=3$ for this $P(R)$ we have
 \begin{align*}
 \binom{5}{3}\left(\frac{8}{15}\right)^3 \left(1-\frac{8}{15}\right)^{5-3} \approxeq 0.330377\\
 \end{align*}
@@ -76,7 +76,11 @@ Now using the binomial distribution with this $P(R)$ we have
 \newpage
 \noindent
 {\bf Part (b)}\ What is the unconditional expected number of red balls observed?
-
+\begin{align*}
+E(R) &= E(R|U_1) \cdot P(U_1) +  E(R|U_2) \cdot P(U_2) +  E(R|U_3) \cdot P(U_3)\\
+&= 5\cdot P(R) = 5\cdot\frac{8}{3}\\
+&= \frac{8}{3}\\
+\end{align*}
 
 
 \newpage
