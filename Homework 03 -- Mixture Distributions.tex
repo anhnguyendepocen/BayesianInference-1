@@ -1,0 +1,417 @@
+\documentclass[12pt]{article}
+
+\title{Problem Set 3: Mixture Distributions}
+\author{MATH E-158: Introduction to Bayesian Inference}
+\author{David Shaub}
+\date{Due September 25, 2017}
+
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\renewcommand\qedsymbol{$\blacksquare$}
+	
+\begin{document}
+	
+	\maketitle
+
+
+
+
+
+\section*{Problem 1}
+
+This problem tests your understanding of mixtures of binomial distributions.
+
+\subsection*{Problem Statement}
+
+There are three ancient classical Greek urns:
+\begin{itemize}
+	\item Urn 1 contains 2 red balls, and 6 white balls.
+	\item Urn 2 contains 9 red balls, and 11 white balls.
+	\item Urn 3 contains 12 red balls, and 4 white balls.
+\end{itemize}
+Ashley rolls a die. If it comes up a 1 or a 2, then she samples from Urn 1. If the die is a 3, then she samples from Urn 2. If the die is a 4, 5, or a 6, then she samples from Urn 3.
+$$
+\begin{tabular}{ccccc}
+& Die & & Urn \\
+\hline
+& 1 or 2 & & Urn 1\\
+& 3 & & Urn 2\\
+& 4, 5, or 6 & & Urn 3\\
+\hline
+\end{tabular}
+$$
+Ashley draws 5 balls from the selected urn with replacement. The experimental outcome is the number of red balls observed.
+
+\bigskip
+\noindent
+{\bf Part (a)}\ What is the unconditional probability that Ashley observes 3 red balls?
+
+\bigskip
+\noindent
+{\bf Part (b)}\ What is the unconditional expected number of red balls observed?
+
+\subsection*{Problem Solution}
+\noindent
+{\bf Part (a)}\ What is the unconditional probability that Ashley observes 3 red balls?
+
+\newpage
+\noindent
+{\bf Part (b)}\ What is the unconditional expected number of red balls observed?
+
+
+
+\newpage
+\section*{Problem 2}
+
+This problem tests your understanding of the Poisson distribution.
+
+\subsection*{Problem Statement}
+
+The number of touchdown passes in a game by Tom Gravy, star quarterback for the New England Clam Chowder, follows a Poisson distribution, and is denoted by $X$. The Poisson distribution parameter $\mu$ depends on the weather:
+\begin{itemize}
+	\item If it's sunny, the Poisson distribution has parameter $\mu = 4.1$.
+	\item If it's cloudy, the Poisson distribution has parameter $\mu = 2.7$.
+	\item If it's rainy, the Poisson distribution has paramter $\mu = 1.3$.
+\end{itemize}
+The weather is sunny for 50\% of games, cloudy for 35\% of games, and rainy for 15\% of games.
+
+\bigskip
+\noindent
+{\bf Part (a)}\ Calculate the unconditional probability of Tom Gravy throwing exactly 2 touchdown passes in a game i.e.\ $\Pr(X = 2)$.
+
+\bigskip
+\noindent
+{\bf Part (b)}\ Calculate the unconditional expected number of touchdown passes in a game i.e.\  $\hbox{E}[ X ]$.
+
+
+
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)}\ Calculate the unconditional probability of Tom Gravy throwing exactly 2 touchdown passes in a game i.e.\ $\Pr(X = 2)$.
+
+
+\newpage
+\subsubsection*{Problem 2, continued}
+
+\vspace{2in}
+\noindent
+{\bf Part (b)}\ Calculate the unconditional expected number of touchdown passes in a game i.e.\  $\hbox{E}[ X ]$.
+
+
+
+
+
+
+
+\newpage
+\section*{Problem 3}
+
+This problem tests your understanding of categorical distributions and using the Law of Total Probability to calculate a cumulative distribution function.
+
+\subsection*{Problem Statement}
+
+Elvis is investigating a rare species of hedgehog, in which 30\% of the population have wings, and the other 70\% have antlers. Hedgehogs with wings have this distribution of colors and weights:
+$$
+\begin{tabular}{ccccccccc}
+& Type & & Color & & Weight & & Probability\\
+\hline
+& Wings & & Red & & 2.7 & & 0.23\\
+& Wings & & Blue & & 3.1 & & 0.14\\
+& Wings & & Pink & & 3.5 & & 0.29\\
+& Wings & & Sparkly & & 2.4 & & 0.17\\
+& Wings & & Plaid & & 3.2 & & 0.17\\
+\hline
+\end{tabular}
+$$
+Hedgehogs with antlers have a different distribution of colors and weights:
+$$
+\begin{tabular}{ccccccccc}
+& Type & & Color & & Weight & & Probability\\
+\hline
+& Wings & & Purple & & 2.4 & & 0.25\\
+& Wings & & Green & & 1.8 & & 0.31\\
+& Wings & & Glitter & & 3.7 & & 0.16\\
+& Wings & & Blue & & 2.2 & & 0.18\\
+& Wings & & Tie-Dye & & 2.4 & & 0.10\\
+\hline
+\end{tabular}
+$$
+Calculate the unconditional cumulative probability $F(3.1)$.
+
+\subsection*{Problem Solution}
+
+
+\newpage
+\subsection*{Problem 3, continued}
+
+
+
+
+
+\newpage
+\section*{Problem 4}
+
+This problem tests your understanding of mixtures of discrete uniform distributions.
+
+\subsection*{Problem Statement}
+
+Tyrone is sampling numbered balls from 3 ancient classical Greek urns. The first urn contains balls numbered from 1 to 20 in increments of 1. The second urn contains balls numbered 5 to 15 in increments of 1. The third urn contains balls numbered from 8 to 22 in increments of 2. Tyrone rolls a fair die, and if it comes up 1, 2, or 3, he draws one ball at random from the first urn, if it comes us a 4 he draws one ball at random from the second urn, and it comes up a 5 or a 6 he draws one ball at random from the third urn.
+
+\bigskip
+\noindent
+{\bf Part (a)}\ What is the unconditional probability that Tyrone observes a ball with the number 18?
+
+\bigskip
+\noindent
+{\bf Part (b)}\ What is unconditional expected value of the observed ball?
+
+\bigskip
+\noindent
+{\bf Hint:}\ Make sure you properly count the number of balls in each urn.
+
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)}\ What is the unconditional probability that Tyrone observes a ball with the number 18?
+
+
+
+
+
+\newpage
+\subsection*{Problem 4, continued}
+
+\vspace{2in}
+\noindent
+{\bf Part (b)}\ What is unconditional expected value of the observed ball?
+
+
+
+
+
+\newpage
+\section*{Problem 5}
+
+This problem tests your understanding of the geometric distribution and using the Law of Total Probability to calculate a survival probability.
+
+\subsection*{Problem Statement}
+
+Obie is planning on buying a new Banana computer, but he's concerned about the lifetime of the hard drive. Obie decides to model the lifetime of a hard drive using a geometric distribution. He has compiled a table of the three drive manufacturers used in Banana computers, along with their expected lifetimes (which is the expected number of complete years that the hard drive works):
+$$
+\begin{tabular}{ccccc}
+& Manufacturer & & Expected Lifetime\\
+\hline
+& MaxxxDrive & & 7.8\\
+& UltraMem & & 8.3\\
+& SuperDisk & & 6.9\\
+\hline
+\end{tabular}
+$$
+35\% of Banana computers use a MaxxxDrive drive, 25\% use an UltraMem drive, and 40\% use a SuperDisk drive.
+
+\bigskip
+If Obie buys his new computer on January 1, 2018, what is the unconditional probability that the computer will still be working on January 1, 2024?
+
+
+\subsection*{Problem Solution}
+
+\newpage
+\subsection*{Problem 5, continued}
+333
+
+
+\newpage
+\section*{Problem 6}
+
+This is a detailed calculation using the Law of Total Probability.
+
+\subsection*{Problem Statement}
+
+The daily number of sales at an antique store, denoted $N$, follows a binomial distribution with parameters $n = 3$ and $p = 0.4$. All sales amounts are independent of one another, and all have the same distribution:
+$$
+\begin{tabular}{ccccc}
+& Sales Amount & & Probability\\
+\hline
+& 1,500 & & 0.25\\
+& 1,000 & & 0.55\\
+& 500 & & 0.20\\
+\hline
+\end{tabular}
+$$
+Let $X$ denote the total daily sales.
+
+\bigskip
+\noindent
+{\bf Part (a)}\ If there are 3 sales during the day, what is the probability of the total sales being $1,500$? That is, what is $\Pr(X = 1,500\ |\ N = 3)$?
+
+\bigskip
+\noindent
+{\bf Part (b)}\ If there are 2 sales during the day, what is the probability of the total sales being $1,500$? That is, what is $\Pr(X = 1,500\ |\ N = 2)$? Hint: think about how many possible sequences of sales there could be that could generate 1,500.
+
+\bigskip
+\noindent
+{\bf Part (c)}\ If there is 1 sale during the day, what is the probability of the total sales being $1,500$? That is, what is $\Pr(X = 1,500\ |\ N = 1)$?
+
+\bigskip
+\noindent
+{\bf Part (d)}\ What is the unconditional probability that the total daily sales are equal to 1,500? That is, what is $\Pr(X = 1,500)$.
+
+
+\newpage
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)}\ If there are 3 sales during the day, what is the probability of the total sales being $1,500$? That is, what is $\Pr(X = 1,500\ |\ N = 3)$?
+
+
+
+\vspace{3in}
+\noindent
+{\bf Part (b)}\ If there are 2 sales during the day, what is the probability of the total sales being $1,500$? That is, what is $\Pr(X = 1,500\ |\ N = 2)$? Hint: think about how many possible sequences of sales there could be that could generate 1,500.
+
+\newpage
+\noindent
+{\bf Part (c)}\ If there is 1 sale during the day, what is the probability of the total sales being $1,500$? That is, what is $\Pr(X = 1,500\ |\ N = 1)$?
+
+\vspace{3in}
+\noindent
+{\bf Part (d)}\ What is the unconditional probability that the total daily sales are equal to 1,500? That is, what is $\Pr(X = 1,500)$.
+
+
+\newpage
+\section*{Problem 7 (Graduate)}
+
+In this problem, you will use the alternative form of the Law of Total Expectation.
+
+\subsection*{Problem Statement}
+
+The annual number of claims for an insurance company, denoted $N$, follows a Poisson distribution with parameter $\mu = 50$. Let $\{X_1, X_2, \ldots, X_N\}$ be a collection of random variables, where $X_i$ denotes the amount of claim $i$. Each claim is independent of all the others, and the cost distribution for each claim is the same:
+$$
+\begin{tabular}{ccccc}
+& Cost & & Probability\\
+\hline
+& 4,500 & & 0.15\\
+& 3,200 & & 0.20\\
+& 2,000 & & 0.40\\
+& 1,200 & & 0.25\\
+\hline
+\end{tabular}
+$$
+If there are $N$ claims, then the total aggregate amount of claims, denoted by $Y$, is
+$$
+Y = X_1 + X_2 + \ldots + X_N = \sum_{i=1}^N X_i
+$$
+Thus, $Y$ is a sum of random variables, where the number of random variables is itself random.
+
+\bigskip
+\noindent
+{\bf Part (a)}\ For each of the random variables $X_i$, what is $\hbox{E}[X_i]$, the expected cost for each individual claim?
+
+\bigskip
+\noindent
+{\bf Part (b)}\ Assume that $N$ is not random, but fixed. What is the value of $\hbox{E}[Y\ |\ N]$? That is, calculate the value of 
+\begin{eqnarray*}
+\hbox{E}[ Y\ |\ N] & = & \hbox{E} \left [\ \sum_{i=1}^N X_i\ |\ N\ \right ]\\
+\\
+& = & \hbox{E}[\ X_1 + X_2 + \ldots + X_n\ |\ N\ ]
+\end{eqnarray*}
+Note that your answer will be an algebraic expression with $N$ in it. Hint: use the linearity of the expectation operator.
+
+\bigskip
+\noindent
+{\bf Part (c)}\ Now use the alternative Law of Total Expectation to determine the expected annual total aggregate costs i.e.\ the unconditional expectation of $Y$:
+$$
+\hbox{E}[ Y ] = \hbox{E}_N[\ \hbox{E}[ Y\ |\ N]\ ]
+$$
+
+\subsection*{Problem Solution}
+
+\bigskip
+\noindent
+{\bf Part (a)}\ For each of the random variables $X_i$, what is $\hbox{E}[X_i]$, the expected cost for each individual claim?
+
+
+\newpage
+\noindent
+{\bf Part (b)}\ Assume that $N$ is not random, but fixed. What is the value of $\hbox{E}[Y\ |\ N]$? That is, calculate the value of 
+\begin{eqnarray*}
+	\hbox{E}[ Y\ |\ N] & = & \hbox{E} \left [\ \sum_{i=1}^N X_i\ |\ N\ \right ]\\
+	\\
+	& = & \hbox{E}[\ X_1 + X_2 + \ldots + X_n\ ]
+\end{eqnarray*}
+Note that your answer will be an algebraic expression with $N$ in it. Hint: use the linearity of the expectation operator.
+
+\vspace{3in}
+\noindent
+{\bf Part (c)}\ Now use the alternative Law of Total Expectation to determine the expected annual total aggregate costs i.e.\ the unconditional expectation of $Y$:
+$$
+\hbox{E}[ Y ] = \hbox{E}_N[\ \hbox{E}[ Y\ |\ N]\ ]
+$$
+
+\newpage
+\section*{Problem 8 (Graduate)}
+
+This problem will demonstrate that mixture distributions do not preserve the distributional form of their components. In this case, we will see that a mixture of binomial distributions is not a binomial distribution.
+
+\subsection*{Problem Statement}
+
+We will work with two ancient classical Greek urns, one containing 3 red balls and 7 white balls, and the other containing 8 red balls and 2 white balls. We flip a fair coin, and select the first urn if the coin is Heads, and the second urn if the coin is Tails. We then draw two balls with replacement, and the outcome of the experiment is the number of red balls observed.
+
+\bigskip
+\noindent
+{\bf Part (a)}\ First, use the Law of Total Probability to calculate the probability of observing exactly one red ball from the two draws.
+
+\bigskip
+\noindent
+{\bf Part (b)}\ Next, use the Law of Total Probability to calculate the probability of observing exactly two red balls from the two draws.
+
+\bigskip
+\noindent
+{\bf Part (c)}\ If the mixture distribution is binomial, then it must have parameter $n = 2$, because the component distributions are only non-zero for 0, 1, and 2. Assuming that the  mixture distribution is binomial with parameter $n = 2$, use the probability of observing two red balls (which you calculated in the previous step) to determine the value of the parameter $p$.
+
+\bigskip
+\noindent
+{\bf Part (d)}\ Using $n = 2$ and the value of $p$ that you have just calculated, calculate the value of observing exactly one ball, again assuming that the mixture distribution is binomial. How does this compare with the value that you calculated in the first step?
+
+\bigskip
+\noindent
+{\bf Part (e)}\ What can you can conclude about the assumption that the mixture distribution is a binomial distribution?
+
+
+
+\bigskip
+\noindent
+The problem solution starts on the next page.
+
+\newpage
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)}\ First, use the Law of Total Probability to calculate the probability of observing exactly one red ball from the two draws.
+
+\vspace{3.5in}
+\noindent
+{\bf Part (b)}\ Next, use the Law of Total Probability to calculate the probability of observing exactly two red balls from the two draws.
+
+\newpage
+\noindent
+{\bf Part (c)}\ If the mixture distribution is binomial, then it must have parameter $n = 2$, because the component distributions are only non-zero for 0, 1, and 2. Assuming that the  mixture distribution is binomial with parameter $n = 2$, use the probability of observing two red balls (which you calculated in the previous step) to determine the value of the parameter $p$.
+
+\vspace{3in}
+\noindent
+{\bf Part (d)}\ Using $n = 2$ and the value of $p$ that you have just calculated, calculate the value of observing exactly one ball, again assuming that the mixture distribution is binomial. How does this compare with the value that you calculated in the first step?
+
+\newpage
+\noindent
+{\bf Part (e)}\ What can you can conclude about the assumption that the mixture distribution is a binomial distribution?
+
+\end{document}
