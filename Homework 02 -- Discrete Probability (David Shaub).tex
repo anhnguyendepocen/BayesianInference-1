@@ -184,11 +184,11 @@ Obie is planning on buying a new computer on January 1, 2018, and is concerned a
 
 \subsection*{Problem Solution}
 \begin{align*}
-x^9 = 0.5 \quad\Rightarrow\quad x \approxeq 0.9258747
+E[X] = 9 = \frac{p}{1-p} \quad\Rightarrow\quad p = 0.9
 \end{align*}
-Thus the probability to survive 5 years is
+Thus the probability the drive will continue working after 5 years is
 \begin{align*}
-p^5 = 0.9258747^5 \approxeq 0.680395
+S(5) = p^5 = 0.9^{5+1} \approxeq  0.5314
 \end{align*}
 
 \newpage
@@ -252,19 +252,18 @@ E[Y] &= E[10X + 30]\\
 \begin{align*}
 Var[X] &= \frac{n^2 - 1}{12}\\
 &= \frac{899}{12}\\\\
-Var[Y] &= Var(10X + 30)\\
-&=100E(X) \approxeq 7491.67\\
+Var[Y] &= Var[10X + 30)]\\
+&=100Var[X] \approxeq 7491.67\\
 \end{align*}
 
 
 \noindent
 {\bf Part (d)}\ What is $\hbox{E}\left[ Y^2 \right ]$?
 \begin{align*}
-E[X^2] &= \frac{(n+2)(2n+1)}{6}\\
-&= \frac{32\cdot61}{6}\\
-&= \frac{1962}{6}\\\\
-E[Y^2] &= E[10E[X^2] + 30]\\
-&= 10E[X^2] + 30 \approxeq 3283.33\\
+Var[Y] &= E[Y^2] - (E[Y])^2\\
+E[Y^2] &= (E[Y])^2 + Var[Y]\\
+E[Y^2] &\approxeq 185^2 + 7491.67\\
+E[Y^2] &\approxeq 41716.67\\
 \end{align*}
 
 
