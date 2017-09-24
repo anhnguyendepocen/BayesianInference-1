@@ -211,7 +211,11 @@ Tyrone is sampling numbered balls from 3 ancient classical Greek urns. The first
 
 \noindent
 {\bf Part (a)}\ What is the unconditional probability that Tyrone observes a ball with the number 18?
-
+\begin{align*}
+P(18) &= P(18|U_1)\cdot P(U_1) + P(18|U_2)\cdot P(U_2) + P(18|U_3)\cdot P(U_3)\\
+&= \frac{1}{20}\cdot \frac{1}{2} + 0\cdot \frac{1}{6} + \frac{1}{8}\cdot \frac{1}{3}\\
+&= \frac{1}{15}\\
+\end{align*}
 
 
 
@@ -222,7 +226,11 @@ Tyrone is sampling numbered balls from 3 ancient classical Greek urns. The first
 \vspace{2in}
 \noindent
 {\bf Part (b)}\ What is unconditional expected value of the observed ball?
-
+\begin{align*}
+E[X] & = E[X|U_1]\cdot P(U_1) + E[X|U_1]\cdot P(U_1) + E[X|U_1]\cdot P(U_1)\\
+&= 10.5\cdot \frac{1}{2} + 10\cdot \frac{1}{6} + 15\cdot \frac{1}{3}\\
+&\approxeq 11.9167
+\end{align*}
 
 
 
@@ -255,7 +263,7 @@ If Obie buys his new computer on January 1, 2018, what is the unconditional prob
 
 \newpage
 \subsection*{Problem 5, continued}
-333
+
 
 
 \newpage
@@ -426,21 +434,42 @@ The problem solution starts on the next page.
 
 \noindent
 {\bf Part (a)}\ First, use the Law of Total Probability to calculate the probability of observing exactly one red ball from the two draws.
+\begin{align*}
+P &= \frac{7}{10}\cdot\frac{3}{10}\cdot \frac{1}{2} + \frac{8}{10}\cdot\frac{2}{10}\cdot \frac{1}{2}\\
+&= 0.185
+\end{align*}
 
 \vspace{3.5in}
 \noindent
 {\bf Part (b)}\ Next, use the Law of Total Probability to calculate the probability of observing exactly two red balls from the two draws.
+\begin{align*}
+P &= \frac{8}{10} \cdot \frac{8}{10}\cdot \frac{1}{2} + \frac{8}{10} \cdot \frac{8}{10}\cdot \frac{1}{2}\\
+&= 0.365
+\end{align*}
+
 
 \newpage
 \noindent
 {\bf Part (c)}\ If the mixture distribution is binomial, then it must have parameter $n = 2$, because the component distributions are only non-zero for 0, 1, and 2. Assuming that the  mixture distribution is binomial with parameter $n = 2$, use the probability of observing two red balls (which you calculated in the previous step) to determine the value of the parameter $p$.
+\begin{align*}
+0.365 &= \binom{2}{2} p^2(1 - p) ^{2-2}\\
+&= \frac{2!}{2!(2-2)!}p^2 = p^2\\
+p&= 0.6041523
+\end{align*}
 
 \vspace{3in}
 \noindent
 {\bf Part (d)}\ Using $n = 2$ and the value of $p$ that you have just calculated, calculate the value of observing exactly one ball, again assuming that the mixture distribution is binomial. How does this compare with the value that you calculated in the first step?
+\begin{align*}
+\binom{2}{1}0.6041523^1(1-0.6041523)^{2-1} &= 2 \cdot 0.6041523 \cdot 0.3958477\\
+&= 0.4783046\\
+&\neq 0.185\\
+\end{align*}
 
 \newpage
 \noindent
-{\bf Part (e)}\ What can you can conclude about the assumption that the mixture distribution is a binomial distribution?
+{\bf Part (e)}\ What can you can conclude about the assumption that the mixture distribution is a binomial distribution?\\
+
+Suppose a mixture distribution of two binomial distributions is itself a binomial distributions. In \textbf{Part (b)} we found the two probabilities for drawing one or two red balls and used this to find what value $p$ would take in a binomial distribution. But in \textbf{Part (c)} we saw the probability for drawing exactly one red from \textbf{Part (a)} does not match the value we expected from a binomial distribution using this $p$. We have a contradiction. Therefore a mixture distribution of two binomial distributions is itself \textit{not} a binomial distribution.
 
 \end{document}
