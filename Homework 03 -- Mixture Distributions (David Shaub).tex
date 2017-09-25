@@ -276,7 +276,7 @@ S_{Maxx}(6) &\approxeq 0.8863636^{6 + 1} \approxeq 0.4298168\\
 S_{Ultra}(6) &\approxeq 0.8924731^{6 + 1} \approxeq 0.450989\\
 S_{Super}(6) &\approxeq 0.8734177^{6 + 1} \approxeq 0.3877519\\
 \end{align*}
-Then we calculate the final undoncitioned probability for the whole computer:
+Then we calculate the final unconditioned probability for the whole computer:
 \begin{align*}
 P &= P_{Maxx}\cdot 0.35 + P_{Ultra}\cdot 0.25 + P_{Super}\cdot 0.40\\
 P &\approxeq 0.4298168 \cdot 0.35 + 0.450989 \cdot 0.25 + 0.3877519 \cdot 0.40\\
@@ -324,22 +324,35 @@ Let $X$ denote the total daily sales.
 \subsection*{Problem Solution}
 
 \noindent
-{\bf Part (a)}\ If there are 3 sales during the day, what is the probability of the total sales being $1,500$? That is, what is $\Pr(X = 1,500\ |\ N = 3)$?
+{\bf Part (a)}\ If there are 3 sales during the day, what is the probability of the total sales being $1,500$? That is, what is $\Pr(X = 1,500\ |\ N = 3)$?\\
 
+1500 in total sales resulting from 3 individual sales can only occur if each sale is 500. There probability of a sale of 500 is 0.20, so the probability for three of these sales is $0.20^3 = 0.008$
 
 
 \vspace{3in}
 \noindent
-{\bf Part (b)}\ If there are 2 sales during the day, what is the probability of the total sales being $1,500$? That is, what is $\Pr(X = 1,500\ |\ N = 2)$? Hint: think about how many possible sequences of sales there could be that could generate 1,500.
+{\bf Part (b)}\ If there are 2 sales during the day, what is the probability of the total sales being $1,500$? That is, what is $\Pr(X = 1,500\ |\ N = 2)$? Hint: think about how many possible sequences of sales there could be that could generate 1,500.\\
+
+1500 in total sales from two sales can only occur if one sales is 500 and the other is 1000. This combination could happens in two ways, so we have $2\cdot P(500)\cdot P(1000) = 2\cdot 0.2 \cdot 0.55 = 0.22$.
 
 \newpage
 \noindent
-{\bf Part (c)}\ If there is 1 sale during the day, what is the probability of the total sales being $1,500$? That is, what is $\Pr(X = 1,500\ |\ N = 1)$?
+{\bf Part (c)}\ If there is 1 sale during the day, what is the probability of the total sales being $1,500$? That is, what is $\Pr(X = 1,500\ |\ N = 1)$?\\
+
+This can only happen if the single sale is for 1500, therefore $P = 0.25$.
+
 
 \vspace{3in}
 \noindent
-{\bf Part (d)}\ What is the unconditional probability that the total daily sales are equal to 1,500? That is, what is $\Pr(X = 1,500)$.
+{\bf Part (d)}\ What is the unconditional probability that the total daily sales are equal to 1,500? That is, what is $\Pr(X = 1,500)$.\\
 
+We use the binomial formula to calculate the weights for one, two, or three sales in the day and multiple these by the probabilities we calculated above. Therefore
+\begin{align*}
+P(1500) &= P(1500|sales_1)\cdot P(sales_1) + P(1500|sales_2)\cdot P(sales_2)\\
+&+ P(1500|sales_3)\cdot P(sales_3)\\
+&= 0.432 \cdot 0.008 + 0.288 \cdot 0.22 + 0.064 \cdot 0.25\\
+&= 0.082816
+\end{align*}
 
 \newpage
 \section*{Problem 7 (Graduate)}
