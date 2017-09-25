@@ -261,9 +261,9 @@ If Obie buys his new computer on January 1, 2018, what is the unconditional prob
 
 \subsection*{Problem Solution}
 \begin{align*}
-E[X_{Maxx}] = 7.8 = \frac{p_{Maxx}}{1 - p_{Maxx}} \quad\Rightarrow\quad p_{Maxx} \approxeq 0.8863636\\
-E[X_{Ultra}] = 8.3 = \frac{p_{Ultra}}{1 - p_{Ultra}} \quad\Rightarrow\quad p_{Ultra} \approxeq 0.8924731 \\
-E[X_{Super}] = 6.9 = \frac{p_{Super}}{1 - p_{Super}} \quad\Rightarrow\quad p_{Super} \approxeq 0.8734177\\
+E[X_{Maxx}] = 7.8 = \frac{p_{Maxx}}{1 - p_{Maxx}} \quad&\Rightarrow\quad p_{Maxx} \approxeq 0.8863636\\
+E[X_{Ultra}] = 8.3 = \frac{p_{Ultra}}{1 - p_{Ultra}} \quad&\Rightarrow\quad p_{Ultra} \approxeq 0.8924731 \\
+E[X_{Super}] = 6.9 = \frac{p_{Super}}{1 - p_{Super}} \quad&\Rightarrow\quad p_{Super} \approxeq 0.8734177\\
 \end{align*}
 
 \newpage
@@ -405,7 +405,10 @@ $$
 \bigskip
 \noindent
 {\bf Part (a)}\ For each of the random variables $X_i$, what is $\hbox{E}[X_i]$, the expected cost for each individual claim?
-
+\begin{align*}
+E[X] &= 4500 \cdot 0.15 + 3200 \cdot 0.2 + 2000 \cdot 0.4 + 1200 \cdot 0.25\\
+&= 2415
+\end{align*}
 
 \newpage
 \noindent
@@ -416,13 +419,21 @@ $$
 	& = & \hbox{E}[\ X_1 + X_2 + \ldots + X_n\ ]
 \end{eqnarray*}
 Note that your answer will be an algebraic expression with $N$ in it. Hint: use the linearity of the expectation operator.
+\begin{align*}
+E[Y|N] &= [\ X_1 + X_2 + \ldots + X_n |N]\\
+&= E[X_1|N] + E[X_2|N] +\ldots + E[X_n|N]\\
+&= 2415 + 2\cdot 2415 +\ldots + N\cdot 2415\\
+&= 2415\cdot N(N-1)
+\end{align*}
 
-\vspace{3in}
 \noindent
 {\bf Part (c)}\ Now use the alternative Law of Total Expectation to determine the expected annual total aggregate costs i.e.\ the unconditional expectation of $Y$:
-$$
-\hbox{E}[ Y ] = \hbox{E}_N[\ \hbox{E}[ Y\ |\ N]\ ]
-$$
+\begin{align*}
+E[Y] &= E_N[E[Y|N]]\\
+&= E_N[2415\cdot N(N-1)]\\
+&= 2415\cdot 50\cdot 49\\
+&= 5916750
+\end{align*}
 
 \newpage
 \section*{Problem 8 (Graduate)}
