@@ -422,17 +422,17 @@ Note that your answer will be an algebraic expression with $N$ in it. Hint: use 
 \begin{align*}
 E[Y|N] &= [\ X_1 + X_2 + \ldots + X_n |N]\\
 &= E[X_1|N] + E[X_2|N] +\ldots + E[X_n|N]\\
-&= 2415 + 2\cdot 2415 +\ldots + N\cdot 2415\\
-&= 2415\cdot N(N-1)
+&= 2415 + 2415 +\ldots + 2415\\
+&= 2415\cdot N
 \end{align*}
 
 \noindent
 {\bf Part (c)}\ Now use the alternative Law of Total Expectation to determine the expected annual total aggregate costs i.e.\ the unconditional expectation of $Y$:
 \begin{align*}
 E[Y] &= E_N[E[Y|N]]\\
-&= E_N[2415\cdot N(N-1)]\\
-&= 2415\cdot 50\cdot 49\\
-&= 5916750
+&= E_N[2415\cdot N]\\
+&= 2415\cdot 50
+&= 120750
 \end{align*}
 
 \newpage
