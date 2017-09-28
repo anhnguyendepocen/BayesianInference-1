@@ -66,8 +66,8 @@ P(data|U_1) &= 0.05767822 &P(data|U_2) &= 0.2560585\\
 
 \begin{align*}
 P(urn_2|data) &= \frac{P(data|U_2)\cdot P(U_2)}{P(data|U_2)\cdot P(U_2) + P(data|U_1) \cdot P(U_1)}\\
-&= \frac{0.2560585 \cdot 0.6666667}{0.2560585 \cdot 0.6666667 + 0.05767822 \cdot 0.5}\\
-&= 0.8555
+&= \frac{0.2560585 \cdot 0.6666667}{0.2560585 \cdot 0.6666667 + 0.05767822 \cdot 0.333333}\\
+&= 0.0.6894
 \end{align*}
 
 
@@ -89,9 +89,10 @@ Bob submits two claims in one year. What is the posterior probability that Bob i
 P(low) &= 0.8 &P(high) &= 0.2\\
 E[low] &= 0.8 &E[high] &= 1.5\\
 P(data|low) &= 0.1437853 & P(data|high) &= 0.2510214\\
+\end{align*}
+\begin{align*}
 P(high|data) &= \frac{0.2510214 \cdot 0.2}{0.2510214 \cdot 0.2 + 0.1437853 \cdot 0.8}\\
 &= 0.3038402
-
 \end{align*}
 
 \newpage
