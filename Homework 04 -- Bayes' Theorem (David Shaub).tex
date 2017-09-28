@@ -1,0 +1,301 @@
+\documentclass[12pt]{article}
+
+\title{Problem Set 4: Bayes' Theorem}
+\author{MATH E-158: Introduction to Bayesian Inference}
+\date{Due October 2, 2017}
+
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\renewcommand\qedsymbol{$\blacksquare$}
+	
+\begin{document}
+	
+	\maketitle
+
+
+
+
+
+\section*{Problem 1}
+
+This problem is very similar to the examples that we did in lecture.
+
+\subsection*{Problem Statement}
+
+There are two ancient classical Greek urns:
+\begin{itemize}
+	\item Urn 1 contains 12 red balls, and 4 white balls.
+	\item Urn 2 contains 4 red balls, and 8 white balls.
+\end{itemize}
+Tyrone rolls a die. If it comes up a 1 or a 2, then he samples from Urn 1. If the die is a 3, 4, 5, or a 6, then he samples from Urn 2.
+$$
+\begin{tabular}{ccccc}
+& Die & & Urn \\
+\hline
+& 1 or 2 & & Urn 1\\
+& 3, 4, 5, or 6 & & Urn 2\\
+\hline
+\end{tabular}
+$$
+Tyrone draws 7 balls from the selected urn with replacement. Of these 7 balls, exactly 3 are red.
+
+\bigskip
+\noindent
+What is the posterior probability that Tyrone was sampling from Urn 2?
+
+
+\subsection*{Problem Solution}
+
+
+\newpage
+\subsubsection*{Problem 1, continued}
+
+
+
+\newpage
+\section*{Problem 2}
+
+This problem tests your understanding of using Bayes' Theorem with the Poisson distribution.
+
+\subsection*{Problem Statement}
+
+Elvis has finally decided to give up music to pursue his life-long dream of selling car insurance. He notes that 80\% of all drivers are low-risk, while 20\% of drivers are high-risk. The number of claims in a year for an individual policyholder follows a Poisson distribution. Low-risk drivers are expected to submit 0.8 claims per year, while high-risk drivers are expected to submit 1.5 claims per year.
+
+\bigskip
+Bob submits two claims in one year. What is the posterior probability that Bob is a high-risk driver?
+
+
+\subsection*{Problem Solution}
+
+
+\newpage
+\subsubsection*{Problem 2, continued}
+
+
+
+
+
+
+
+\newpage
+\section*{Problem 3}
+
+This problem considers Bayes' Theorem for three categories. It is purely fictional, and has no connection with any events in the real world.
+
+\subsection*{Problem Statement}
+
+Tom Gravy, star quarterback for the New England Clam Chowder, likes to play in cold weather, because this decreases the air pressure of the football and makes it easier for him to grip it, but he doesn't like to play in hot weather, because this increases the air pressure of the football. The number of touchdown passes that he throws in a game follows a Poisson distribution, with a different expected value depending on the weather:
+$$
+\begin{tabular}{ccccccc}
+& Weather & & Frequency & & Expected Touchdown Passes\\
+\hline
+& Cold & & 25\% & & 3.2\\
+& Regular & & 45\% & & 2.1\\
+& Hot & & 30\% & & 1.7\\
+\hline
+\end{tabular}
+$$
+
+\bigskip
+In the last game with the Buffalo Wings, Tom threw 3 touchdown passes. What is the posterior probability that the weather was cold?
+
+
+\subsection*{Problem Solution}
+
+
+\newpage
+\subsection*{Problem 3, continued}
+
+
+
+
+
+\newpage
+\section*{Problem 4}
+
+This problem tests your understanding of using Bayes' Theorem with the geometric distribution.
+
+
+\subsection*{Problem Statement}
+
+Obie is planning on buying a new Banana computer, but he's concerned about the lifetime of the hard drive. His friend Taylor had a Banana computer, but she only got 2 full years of service from it, and the hard drive failed during the third year. Obie decides to model the lifetime of a hard drive using a geometric distribution. He has compiled a table of the three drive manufacturers used in Banana computers, with their frequency and expected lifetimes (which is the expected number of complete years that the hard drive works):
+$$
+\begin{tabular}{ccccccc}
+& Manufacturer & & Frequency & & Expected Lifetime\\
+\hline
+& MaxxxDrive & & 45\% & & 9.8\\
+& UltraMem & & 45\% & & 10.3\\
+& SuperDisk & & 10\% & & 4.9\\
+\hline
+\end{tabular}
+$$
+
+\bigskip
+What is the posterior probability that Taylor's computer was using a SuperDisk drive?
+
+
+\subsection*{Problem Solution}
+
+\newpage
+\subsection*{Problem 4, continued}
+
+
+\newpage
+\section*{Problem 5}
+
+This is a straightforward screening problem. It comes from Sharon Bertsch McGrayne's {\em The Theory That Would Not Die}.
+
+\subsection*{Problem Statement}
+
+If a woman in her 40s has breast cancer, a mammogram will detect this about 80\% of the time. Conversely, for women in their 40s who do not have breast cancer, the mammogram will indicate cancer about 10\% of the time. Approximately 0.4\% of women in their 40s have breast cancer.
+
+\bigskip
+\noindent
+{\bf Part (a)}\ What is the negative predictive value of mammograms for women in their 40s?
+
+\bigskip
+\noindent
+{\bf Part (b)}\ What is the positive predictive value of mammograms for women in their 40s?
+
+
+\subsection*{Problem Solution}
+
+{\bf Part (a)}\ What is the negative predictive value of mammograms for women in their 40s?
+
+
+
+\newpage
+\subsubsection*{Problem 5, continued}
+
+
+\vspace{1.5in}
+\noindent
+{\bf Part (b)}\ What is the positive predictive value of mammograms for women in their 40s?
+
+
+
+\newpage
+\section*{Problem 6}
+
+This problem explores the ideas of sensitivity and specificity. You'll have to use a computer to do the calculations, but Excel will work just fine.
+
+\subsection*{Problem Statement}
+
+A diagnostic test consists of measuring a particular enzyme level, which is measured in integers. The enzyme level can be modelled using a Poisson distribution, with a different mean depending on the disease status of the patient:
+\begin{itemize}
+	\item Patients with disease have an expected enzyme level of 22.
+	\item Patients without disease have an expected enzyme level of 40.
+\end{itemize}
+The diagnostic test assigns a positive test result to patients with an enzyme level less than or equal to 30, and assigns a negative test result to patients with an enzyme level strictly greater than 30.
+
+\bigskip
+\noindent
+{\bf Part (a)}\ What is the sensitivity of the test?
+
+\bigskip
+\noindent
+{\bf Part (b)}\ What is the specificity of the test?
+
+
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)}\ What is the sensitivity of the test?
+
+
+\newpage
+\subsubsection*{Problem 6, continued}
+
+\vspace{1.5in}
+\noindent
+{\bf Part (b)}\ What is the specificity of the test?
+
+
+
+
+\newpage
+\section*{Problem 7 (Graduate)}
+
+In this problem, you will extend the ideas from Problem 6. Make sure you read the problem statement carefully.
+
+\subsection*{Problem Statement}
+
+A diagnostic test consists of measuring a particular enzyme level, which is measured in integers. The enzyme level can be modelled using a Poisson distribution, with a different mean depending on the disease status of the patient:
+\begin{itemize}
+	\item Patients with disease have an expected enzyme level of 38.
+	\item Patients without disease have an expected enzyme level of 21.
+\end{itemize}
+The diagnostic test assigns a positive test result to patients with an enzyme level greater than or equal to 28, and assigns a negative test result to patients with an enzyme level strictly less than 28. In this population, 2 patients out of 100 have the disease.
+
+\bigskip
+\noindent
+{\bf Part (a)}\ What is the positive predictive value of the test?
+
+\bigskip
+\noindent
+{\bf Part (b)}\ What is the negative predictive value of the test?
+
+\subsection*{Problem Solution}
+
+\bigskip
+\noindent
+{\bf Part (a)}\ What is the positive predictive value of the test?
+
+
+\newpage
+\subsubsection*{Problem 7, continued}
+
+\newpage
+\subsubsection*{Problem 7, continued}
+
+\noindent
+{\bf Part (b)}\ What is the negative predictive value of the test?
+
+\newpage
+\section*{Problem 8 (Graduate)}
+
+This problem tests your knowledge of screening terminology, along with Bayes' Theorem.
+
+\subsection*{Problem Statement}
+
+For a screening test, you have three pieces of information:
+\begin{itemize}
+	\item The positive predictive value is 0.17043.
+	\item The negative predictive value is 0.99749.
+	\item The probability that a patient receives a positive test result is 0.16370.
+\end{itemize}
+
+\bigskip
+\noindent
+{\bf Part (a)}\ What is the sensitivity of the test?
+
+\bigskip
+\noindent
+{\bf Part (b)}\ What is the specificity of the test?
+
+
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)}\ What is the sensitivity of the test?
+
+
+
+\newpage
+\subsubsection*{Problem 8, continued}
+
+\vspace{2in}
+\noindent
+{\bf Part (b)}\ What is the specificity of the test?
+
+
+
+\end{document}
