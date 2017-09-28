@@ -2,6 +2,7 @@
 
 \title{Problem Set 4: Bayes' Theorem}
 \author{MATH E-158: Introduction to Bayesian Inference}
+\author{David Shaub}
 \date{Due October 2, 2017}
 
 
@@ -57,7 +58,17 @@ What is the posterior probability that Tyrone was sampling from Urn 2?
 
 \newpage
 \subsubsection*{Problem 1, continued}
+\begin{align*}
+P(U_1) &= \frac{1}{3}  &P(U_2) &= \frac{2}{3}\\
+P(R|U_1) &= 0.75 &P(R|U_2) &= \frac{1}{3}\\
+P(data|U_1) &= 0.05767822 &P(data|U_2) &= 0.2560585\\
+\end{align*}
 
+\begin{align*}
+P(urn_2|data) &= \frac{P(data|U_2)\cdot P(U_2)}{P(data|U_2)\cdot P(U_2) + P(data|U_1) \cdot P(U_1)}\\
+&= \frac{0.2560585 \cdot 0.6666667}{0.2560585 \cdot 0.6666667 + 0.05767822 \cdot 0.5}\\
+&= 0.8555
+\end{align*}
 
 
 \newpage
