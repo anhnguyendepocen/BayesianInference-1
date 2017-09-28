@@ -128,7 +128,15 @@ In the last game with the Buffalo Wings, Tom threw 3 touchdown passes. What is t
 
 
 \subsection*{Problem Solution}
-
+\begin{align*}
+P(cold) &= 0.25 &P(reg) &= 0.45 &P(hot) &= 0.3\\
+E[cold] &= 3.2 &E[reg] &= 2.1 &E[hot] &= 1.7\\
+P(data|cold) &= 0.222616 & P(data|reg) &= 0.1890115 &P(data|hot) &= 0.1495874\\
+\end{align*}
+\begin{align*}
+P(cold|data) &= \frac{0.222616 \cdot 0.25}{0.222616 \cdot 0.25 + 0.1890115 \cdot 0.45 + 0.1495874 \cdot 0.3}\\
+&= 0.2998835
+\end{align*}
 
 \newpage
 \subsection*{Problem 3, continued}
