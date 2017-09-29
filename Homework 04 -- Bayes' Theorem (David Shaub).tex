@@ -211,7 +211,7 @@ P(D^+) &= .004 &P(T^+|D^+) &= 0.8 &P(T^+|D^-) &= 0.1\\
 P(D^-)&= 0.996 &P(T^-|D^+) &= 0.2 &P(T^-|D^-) &= 0.9\\
 \end{align*}
 \begin{align*}
-NPV &= P(D^-|T^-) = \frac{0.9 * 0.996}/{0.9 * 0.996 + 0.1*0.004}\\
+NPV &= P(D^-|T^-) = \frac{0.9 \cdot 0.996}{0.9 \cdot 0.996 + 0.1 \cdot 0.004}\\
 &= 0.999554
 \end{align*}
 
@@ -222,7 +222,10 @@ NPV &= P(D^-|T^-) = \frac{0.9 * 0.996}/{0.9 * 0.996 + 0.1*0.004}\\
 \vspace{1.5in}
 \noindent
 {\bf Part (b)}\ What is the positive predictive value of mammograms for women in their 40s?
-
+\begin{align*}
+PPV &= P(D^+|T^+) = \frac{0.8 \cdot .004}{0.8 \cdot .004 + 0.2 \cdot 0.996}\\
+&= 0.01581028
+\end{align*}
 
 
 \newpage
