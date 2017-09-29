@@ -206,8 +206,14 @@ If a woman in her 40s has breast cancer, a mammogram will detect this about 80\%
 \subsection*{Problem Solution}
 
 {\bf Part (a)}\ What is the negative predictive value of mammograms for women in their 40s?
-
-
+\begin{align*}
+P(D^+) &= .004 &P(T^+|D^+) &= 0.8 &P(T^+|D^-) &= 0.1\\
+P(D^-)&= 0.996 &P(T^-|D^+) &= 0.2 &P(T^-|D^-) &= 0.9\\
+\end{align*}
+\begin{align*}
+NPV &= P(D^-|T^-) = \frac{0.9 * 0.996}/{0.9 * 0.996 + 0.1*0.004}\\
+&= 0.999554
+\end{align*}
 
 \newpage
 \subsubsection*{Problem 5, continued}
