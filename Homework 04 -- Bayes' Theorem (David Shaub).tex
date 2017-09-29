@@ -170,6 +170,16 @@ What is the posterior probability that Taylor's computer was using a SuperDisk d
 
 
 \subsection*{Problem Solution}
+\begin{align*}
+P(maxx) &= 0.45 &p(ultra) &= 0.45 &P(super) &= 0.1\\
+p_{maxx} &= 0.9074074 &p_{ultra} &= 0.9115044 &p_{super} &= 0.8305085\\
+S(maxx) &= 1-p_{maxx}^2 &S(ultra) &= 1-p_{ultra}^2 &S(super) &= 1-p_{super}^2\\
+P(data|maxx) &= 0.1766118 &P(data|ultra) &= 0.1691597 &P(data|super) &= 0.3102556\\
+\end{align*}
+\begin{align*}
+P(super|data) &= \frac{0.3102556 \cdot 0.1}/{0.3102556 \cdot 0.1 + 0.1691597 \cdot 0.45 + 0.1766118 *\cdot 0.45}
+&= 0.1662475
+\end{align*}
 
 \newpage
 \subsection*{Problem 4, continued}
