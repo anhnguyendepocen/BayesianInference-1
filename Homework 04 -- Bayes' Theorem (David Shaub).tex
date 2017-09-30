@@ -304,17 +304,28 @@ The diagnostic test assigns a positive test result to patients with an enzyme le
 \newpage
 \subsubsection*{Problem 7, continued}
 \begin{align*}
-P(D^+) &= .02 \\
+P(D^+) &= 0.02 \\
+P(D^-) &= 0.98
 P(T^+|D^+) &= P(X \geq 28|\mu = 38) = 0.9434806\\
 P(T^-|D^+) &= P(X<28|\mu = 38) = 0.03887492\\
 P(T^-|D^-) &= P(X<28|\mu = 21) = 0.9174593\\
 P(T^+|D^-) &= P(X \geq 28|\mu = 21) = 0.08254069\\
 \end{align*}
+
+\begin{align*}
+PPV &= P(D^+|T^+) &= \frac{0.9434806 \cdot 0.02}{0.9434806 \cdot 0.02 + 0.08254069 \cdot 0.98}\\
+&= 0.1891511
+\end{align*}
+
 \newpage
 \subsubsection*{Problem 7, continued}
 
 \noindent
 {\bf Part (b)}\ What is the negative predictive value of the test?
+\begin{align*}
+NPV &= P(D^-|T^-) &= \frac{0.9174593 \cdot 0.98}{0.9174593 \cdot 0.98 + 0.03887492 \cdot 0.02}\\
+&= 0.999136
+\end{align*}
 
 \newpage
 \section*{Problem 8 (Graduate)}
