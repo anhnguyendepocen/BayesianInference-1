@@ -255,7 +255,10 @@ The diagnostic test assigns a positive test result to patients with an enzyme le
 
 \noindent
 {\bf Part (a)}\ What is the sensitivity of the test?
-
+\begin{align*}
+sensitivity = P(T^+|D^+) = P(X \leq 30|\mu = 22)
+\end{align*}
+In R we can calculate this with $ppois(30, 22) = 0.959486$
 
 \newpage
 \subsubsection*{Problem 6, continued}
@@ -263,8 +266,10 @@ The diagnostic test assigns a positive test result to patients with an enzyme le
 \vspace{1.5in}
 \noindent
 {\bf Part (b)}\ What is the specificity of the test?
-
-
+\begin{align*}
+specificity = P(T^-|D^-) = P(X > 30|\mu = 40)
+\end{align*}
+In R we can calculate this with $ppois(30, 40, lower.tail = FALSE) = 0.9383058$
 
 
 \newpage
