@@ -287,10 +287,20 @@ The key to solving this problem is to be systematic. We don't need to see every 
 
 
 \subsection*{Problem Solution}
-Carlson wins if \textbf{1)} He wins one game and Karjakin wins none \textit{or} \textbf{2)} He wins two games and Karjakin wins no more than one \textit{or} \textbf{3)} He wins 3 or more games. The later two cases include multiple game outcomes (e.g. win three tie one, win three lose one, win four) but are shown as a combined probability.
+
+Carlson wins if his score is 2.5, 3.0, 3.5, or 4.0. We'll enumerate all possible scenarios to achieve these scores and the associated probabilities. Adding these together gives us the final probability that he wins the tiebreaker.\\
+
+Carlson's score is 4.0 only if he wins all games, so $P(4.0) = 0.4^4 = 0.0256$.
+
+\newpage
+\noindent
+{\bf Problem 6, continued}\\
+
+For a score or 3.5, Carlson wins three games and ties one. There are four possible orderings for this scenario, so $P(3.5) = 4 \cdot 0.4^3 \cdot 0.35 = 0.0896$.\\
+
+For a score of 3.0, there are four possible orderings of Carlson winning three games and losing one but there are also six possible orderings where he wins two games and ties two games. We therefore have
 \begin{align*}
-P(win_{Carl}) &= P(Carl = 1 ; Karj = 0) + P(Carl = 2 ; Karj \leq 1) + P(Carl \geq 3)\\
-&= 0.1458 + 0.25515 + 0.1729 = 0.57385\\
+P(3.0) = 4 \cdot 0.4^3 \cdot 0.25 + 6 \cdot 0.4^2 + 0.35^2 = 
 \end{align*}
 
 
