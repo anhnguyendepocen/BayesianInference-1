@@ -323,22 +323,13 @@ This problem tests your understanding of conditional probability and conditional
 What is the expected value of Carlsen's score, conditional on his winning the tiebreaker? Again, be systematic.
 
 \subsection*{Problem Solution}
+We can use the probabilities from problem 6 to solve this
 \begin{align*}
-E[win_{Carl}] = \frac{1}{P(win_{Carl})}(x\cdot P(Carl = 4) &+ x\cdot P(Carl = 3; Karj = 1)\\
-&+ x\cdot P(Carl = 3; Karj = 0) \\
-&+ x\cdot P(Carl = 2; Karj = 1) \\
-&+ x\cdot P(Carl = 2; Karj = 0) \\
-&+ x\cdot P(Carl = 1; Karj = 0))
+E[Carlson|win_{Carlson}] &= \frac{P(4.0)\cdot 4.0 + P(3.5) \cdot 3.5 + P(3.0) \cdot 3.0 + P(2.5) \cdot 2.5}{P(win_{Carlson})}\\
+&= \frac{0.0256 \cdot 4.0 + 0.0896 \cdot 3.5 + 0.1816 \cdot 3.0 + 0.2366 \cdot 2.5}{0.5334}\\
+&= 2.910199
 \end{align*}
-\begin{align*}
-E[win_{Carl}] &= \frac{1}{0.57385}(4 \cdot  0.0256 \\
-&+ 3.0 \cdot  (0.1536 \cdot  0.4166667) \\
-&+ 3.5\cdot (0.1536 \cdot  0.5833333)\\
-&+ 2.5\cdot (0.3456\cdot 0.4861111) \\
-&+ 3.0\cdot (0.3456\cdot 0.1736111)\\
-&+ 2.5\cdot (0.3456\cdot 0.1984954))\\
-&= 2.403938
-\end{align*}
+
 
 
 \newpage
