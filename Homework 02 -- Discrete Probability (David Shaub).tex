@@ -351,11 +351,16 @@ $$
 
 
 \subsection*{Problem Solution}
+Start by defining partitions $A = P(X \leq x)$ and $A^c = P(X > x)$. Since these are disjoint and form a partition on the whole space
 \begin{align*}
-F(x) &= P(X \leq x)\\
-&= 1 - F^c(x) \\
-&= 1 - P(X > x)\\
-&= 1 - S(x)\\
+1 = P(A \cup A^c) &= P(A) + P(A^c)\\
+&= P(X \leq x) + P(X > x)
 \end{align*}
-
+By the definition of $F$ and $S$, we can make substitutions and arrive at the desired result
+\begin{align*}
+1 &= P(X \leq x) + P(X > x)\\
+&= F(x) + S(x)\\
+&\Rightarrow\\
+F(x) &= 1 - S(x)
+\end{align*}
 \end{document}
