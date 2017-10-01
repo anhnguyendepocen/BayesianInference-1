@@ -300,10 +300,18 @@ For a score or 3.5, Carlson wins three games and ties one. There are four possib
 
 For a score of 3.0, there are four possible orderings of Carlson winning three games and losing one but there are also six possible orderings where he wins two games and ties two games. We therefore have
 \begin{align*}
-P(3.0) = 4 \cdot 0.4^3 \cdot 0.25 + 6 \cdot 0.4^2 + 0.35^2 = 
+P(3.0) = 4 \cdot 0.4^3 \cdot 0.25 + 6 \cdot 0.4^2 + 0.35^2 = 0.1816
 \end{align*}
 
-
+Finally, for a score of 2.5 there are again two scenarios for this: there are four sequences where he wins one game and draws the remaining three, but there are also 12 sequences where he wins two games, loses one game, and draws one game, so we have
+\begin{align*}
+P(2.5) &= 4 \cdot 0.4 \cdot 0.35^3 + 12 \cdot 0.4^2 \cdot 0.35 \cdot 0.25\\
+&= 0.2366
+\end{align*}
+Adding all of these scenarios together we have
+\begin{align*}
+P(Win_{Carlson}) = 0.0256 + 0.0896 + 0.1816 + 0.2366 = 0.5334
+\end{align*}
 
 \newpage
 \section*{Problem 7 (Graduate)}
