@@ -2,6 +2,7 @@
 
 \title{Problem Set 5: Bayesian Inference for a Discrete Parameter}
 \author{MATH E-158: Introduction to Bayesian Inference}
+\author{David Shaub}
 \date{Due October 16, 2017}
 
 
@@ -46,7 +47,24 @@ Ashley has a deck of Zener cards that she uses to select an urn; recall that Zen
 \subsection*{Problem Solution}
 
 \noindent
-{\bf Part (a)}\ On the basis of the observed sample, what is your best guess as to which urn Ashley was sampling from? Be sure to present your work using the tabular form we saw in lecture.
+{\bf Part (a)}\ On the basis of the observed sample, what is your best guess as to which urn Ashley was sampling from? Be sure to present your work using the tabular form we saw in lecture.\\
+
+The liklihoods can be calculated by using the binomial distribution for each urn's probability of drawing red once.
+
+\begin{table}[]
+\centering
+\begin{tabular}{lllll}
+          & Urn 1      & Urn 2     & Urn 3     &           \\
+\hline
+Prior     & 0.2        & 0.4       & 0.4       &           \\
+Liklihood & 0.0917573  & 0.2539293 & 0.2594381 &           \\
+Joint     & 0.01835146 & 0.1015717 & 0.1037752 & 0.2236984 \\
+Posterior & 0.08203663 & 0.4540565 & 0.3667288 &          \\
+\hline
+\end{tabular}
+\end{table}
+
+The MAP estimate is urn 2.
 
 \newpage
 \subsubsection*{Problem 1, continued}
