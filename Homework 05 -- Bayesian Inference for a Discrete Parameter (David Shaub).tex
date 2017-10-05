@@ -1,0 +1,415 @@
+\documentclass[12pt]{article}
+
+\title{Problem Set 5: Bayesian Inference for a Discrete Parameter}
+\author{MATH E-158: Introduction to Bayesian Inference}
+\date{Due October 16, 2017}
+
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\renewcommand\qedsymbol{$\blacksquare$}
+	
+\begin{document}
+	
+	\maketitle
+
+
+\section*{Problem 1}
+
+
+\subsection*{Problem Statement}
+
+Ashley has three ancient classical Greek urns:
+\begin{itemize}
+	\item The first urn contains 4 red balls and 7 white balls.
+	\item The second urn contains 6 red balls and 5 white balls.
+	\item The third urn contains 18 red balls and 8 white balls.
+\end{itemize}
+Ashley has a deck of Zener cards that she uses to select an urn; recall that Zener cards can one of five designs (Circle, Cross, Waves, Square, or Star) and each occurs with equal frequency. She draws a card at random from the deck, and she selects Urn 1 if the card is a Circle, Urn 2 if the card is a Cross or a Waves, and Urn 3 if the card is a Square or a Star. Once she's selected the urn, she draws a sample of 8 balls with replacement, and in that sample she observes 5 red balls.
+
+\bigskip
+\noindent
+{\bf Part (a)}\ On the basis of the observed sample, what is your best estimate of which urn Ashley was sampling from? Be sure to present your work using the tabular form we saw in lecture.
+
+\bigskip
+\noindent
+{\bf Part (b)}\ Now suppose Ashley draws another sample with replacement from the same urn, except this time she draws 11 balls. What is the expected total number of red balls observed in this new sample?
+
+\newpage
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)}\ On the basis of the observed sample, what is your best guess as to which urn Ashley was sampling from? Be sure to present your work using the tabular form we saw in lecture.
+
+\newpage
+\subsubsection*{Problem 1, continued}
+
+\noindent
+{\bf Part (b)}\ Now suppose Ashley draws another sample with replacement from the same urn, except this time she draws 11 balls. What is the expected total number of red balls observed in this new sample?
+
+\newpage
+\section*{Problem 2}
+
+\subsection*{Problem Statement}
+
+There are 3 ancient classical Greek urns filled with numbered balls. In the first urn, the numbered balls start at 10 and go up to 70 in increments of 3. In the second urn, the balls start at 5 and go up to 85 in increments of 4. In the third urn, the balls start at 12 and go up to 72 in increments of 5. Tyrone rolls a fair die, and selects urn 1 if the die is 1 or 2, urn 2 if the die is 3, 4, or 5, and urn 3 if the die is 6.
+
+\bigskip
+\noindent
+Suppose Tyrone rolls the die, selects one of the urns, draws a ball from it, and observes that the number is 32. Tyrone then returns the ball back to its original urn, mixes the balls up, and then draws a second ball from the same urn. What is the expected value of this ball?
+
+\bigskip
+\noindent
+{\bf Hint:}\ Think very carefully about the observed value.
+
+\bigskip
+\noindent
+{\bf Note:}\ You might have some intuitions about how to do this problem, and if so, that's great! But we still want you to go through all the steps of the formal theory and show us how you can derive the answer using the machinery that we've developed in lecture. Use the tabular display! Of course you are certainly welcome to use any intuitions you might have to check your result.
+
+
+
+\subsection*{Problem Solution}
+
+
+\newpage
+\subsubsection*{Problem 2, continued}
+
+\newpage
+\section*{Problem 3}
+
+
+\subsection*{Problem Statement}
+
+A fisherman has been lost at sea. There are three possible regions in which the boat might be located. On the basis of interviews and fishing records, the rescue team initially assigns 30\% probability to region A, 55\% probability to region B, and 15\% probability to region C. On the first day, search operations are limited to the high-probability regions A and B, with 85\% search effectiveness for region A and 65\% search effectiveness for region B. After the first day, what is the posterior probability that the fisherman is located in region C?
+
+\subsection*{Problem Solution}
+
+
+
+\newpage
+\section*{Problem 4}
+
+
+\subsection*{Problem Statement}
+
+After some experience writing car insurance policies, Elvis notices that there are really 3 classes of drivers: Low Risk, Medium Risk, and High Risk. Low Risk drivers make up 50\% of the insurance pool, Medium Risk drivers make up 40\% of the pool, and High Risk drivers make up the remaining 10\% of the pool. For Low Risk drivers, the number of claims follows a Poisson distribution with parameter 0.25. For Medium Risk drivers, the number of claims follows a Poisson distribution with parameter 0.7. For High Risk drivers, the number of claims follows a Poisson distribution with parameter 1.2.
+$$
+\begin{tabular}{ccccccc}
+& Class & & Frequency & & Parameter Value\\
+\hline
+& Low Risk & & 0.50 & & 0.25\\
+& Medium Risk & & 0.40 & & 0.70\\
+& High Risk & & 0.10 & & 1.20\\
+\hline
+\end{tabular}
+$$
+
+\bigskip
+Last year, Bob had exactly 1 claim.
+
+\bigskip
+\noindent
+{\bf Part (a)}\ For each class of driver (Low Risk, Medium Risk, and High Risk) calculate the posterior probability that Bob is in that class. Be sure to use the tabular display presented in lecture.
+
+\bigskip
+\noindent
+{\bf Part (b)}\ Once you have the posterior probabilities for Bob, use the Law of Total Probability to estimate the probability that Bob will have exactly one claim next year.
+
+\newpage
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)}\ For each class of driver (Low Risk, Medium Risk, and High Risk) calculate the posterior probability that Bob is in that class. Be sure to use the tabular display presented in lecture.
+
+\newpage
+\subsubsection*{Problem 4, continued}
+\noindent
+{\bf Part (b)}\ Once you have the posterior probabilities for Bob, use the Law of Total Probability to estimate the probability that Bob will have exactly one claim next year.
+
+\newpage
+\section*{Problem 5}
+
+
+
+\subsection*{Problem Statement}
+
+Obie's friend Taylor has a Mango computer that she bought on October 1, 2012, and is still working. As usual, Obie is interested in the lifetime of the hard disk drive, and he models the number of complete years of service using a geometric distribution with parameter $p$. Obie knows that Mango computers used three different brands of hard drive, and he has information on the parameter $p$ for each brand:
+$$
+\begin{tabular}{ccccc}
+& Brand & & Parameter Value\\
+\hline
+& SuprDrive & & 0.90\\
+& MaxxxMem & & 0.85\\
+& UltraDisq & & 0.80\\
+\hline 
+\end{tabular}
+$$
+Unfortunately, Obie has no information about the frequencies that the different brands occurred in Mango computers during 2012.
+
+\bigskip
+\noindent
+{\bf Part (a)}\ Calculate the posterior probabilities of the three brands of drives for Taylor's computer. Be very careful about the likelihood! Think very carefully about exactly what is observed here, and what sort of probability you should use for the likelihood. You might want to review earlier problems with Obie, and how he handles the fact that the drive is still working.
+
+\bigskip
+\noindent
+{\bf Part (b)}\ Use the Law of Total Expectation to estimate the expected future lifetime of the drive.
+
+\bigskip
+\noindent
+{\bf Note:}\ The geometric distribution has an unusual property: conditional on having survived to time $t$, the expected future lifetime is always the same. That is, if a hard drive has an expected lifetime of 10 years, then once it has survived to 5 years, its future expected lifetime is still 10 years. This is sometimes referred to as being ``memoryless'', in that the drive doesn't ``remember'' how long it has been in service. Colloquially, we can say that if the lifetime of an object follows the geometric distribution, then it never ``gets old'', in that its risk of failure does not increase over time. So, for this problem, you can assume that the expected future lifetime of the drive, conditional on having survived to time $t$, is the same as if it were brand-new.
+
+
+\newpage
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)}\ Calculate the posterior probabilities of the three brands of drives for Taylor's computer. Be very careful about the likelihood! Think very carefully about exactly what is observed here, and what sort of probability you should use for the likelihood. You might want to review earlier problems with Obie, and how he handles the fact that the drive is still working.
+
+\newpage
+\subsubsection*{Problem 5, continued}
+
+\noindent
+{\bf Part (b)}\ Use the Law of Total Expectation to estimate the expected future lifetime of the drive.
+
+
+\newpage
+\section*{Problem 6}
+
+
+\subsection*{Problem Statement}
+
+The New York Knacks have two star players, Chicken Curry and Kobe Beef. Unfortunately, due to ego issues, they refuse to play with each other, so in any game only one of them plays. Chicken Curry takes on average 32 shots per game, and the number of shots he takes is modelled by a Poisson distribution. For each shot, independently of all the others, he scores points with a probability distribution:
+$$
+\begin{tabular}{ccccc}
+& Points & & Probability\\
+\hline
+& 0 & & 0.30\\
+& 1 & & 0.15\\
+& 2 & & 0.30\\
+& 3 & & 0.25\\
+\hline
+\end{tabular}
+$$
+For Kobe Beef, the number of shots that he takes during a game follows a Poisson distribution with mean 46. For each shot, independently of all the others, he scores points with a probability distribution:
+$$
+\begin{tabular}{ccccc}
+& Points & & Probability\\
+\hline
+& 0 & & 0.35\\
+& 1 & & 0.25\\
+& 2 & & 0.25\\
+& 3 & & 0.15\\
+\hline
+\end{tabular}
+$$
+
+\bigskip
+In last night's game, you don't know which of the two players actually played. But you do learn that whoever was playing took 37 shots. 
+
+\bigskip
+\noindent
+{\bf Part (a)}\ Using the observed number of shots, calculate the posterior probabilities that the unknown player was either Chicken Curry or Kobe Beef.
+
+\bigskip
+\noindent
+{\bf Part (b)}\ Using the Law of Total Expectation, calculate the expected number of points scored by the player. Hint: you know that the number of shots is a fixed, non-random quantity.
+
+\newpage
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)}\ Using the observed number of shots, calculate the posterior probabilities that the unknown player was either Chicken Curry or Kobe Beef.
+
+\newpage
+\subsubsection*{Problem 6, continued}
+
+\noindent
+{\bf Part (b)}\ Using the Law of Total Expectation, calculate the expected number of points scored by the player. Hint: you know that the number of shots is a fixed, non-random quantity.
+
+
+
+
+\newpage
+\section*{Problem 7 (Graduate)}
+
+
+\subsection*{Problem Statement}
+
+After some experience writing car insurance policies, Elvis notices that there are really 3 classes of drivers: Low Risk, Medium Risk, and High Risk. Low Risk drivers make up 50\% of the insurance pool, Medium Risk drivers make up 40\% of the pool, and High Risk drivers make up the remaining 10\% of the pool.
+
+\bigskip
+For Low Risk drivers, the number of claims follows a Poisson distribution with parameter 0.25, and for each claim, independently of the others, the claim amount is:
+$$
+\begin{tabular}{ccccc}
+& Claim Amount & & Probability\\
+\hline
+& 1,500 & & 0.05\\
+& 1,000 & & 0.15\\
+& 750 & & 0.35\\
+& 500 & & 0.45\\
+\hline
+\end{tabular}
+$$
+
+\bigskip
+For Medium Risk drivers, the number of claims follows a Poisson distribution with parameter 0.7, and for each claim, independently of the others, the claim amount is:
+$$
+\begin{tabular}{ccccc}
+& Claim Amount & & Probability\\
+\hline
+& 2,000 & & 0.10\\
+& 1,500 & & 0.25\\
+& 1,000 & & 0.35\\
+& 500 & & 0.30\\
+\hline
+\end{tabular}
+$$
+
+\bigskip
+For High Risk drivers, the number of claims follows a Poisson distribution with parameter 1.2, and for each claim, independently of the others, the claim amount is:
+$$
+\begin{tabular}{ccccc}
+& Claim Amount & & Probability\\
+\hline
+& 4,000 & & 0.15\\
+& 2,000 & & 0.25\\
+& 1,500 & & 0.35\\
+& 1,000 & & 0.25\\
+\hline
+\end{tabular}
+$$
+
+\bigskip
+Bob had one claim last year. Estimate the expected total claim amount for Bob for next year. You are allowed to quote results from Problem 4 without having to re-derive them.
+
+
+\subsection*{Problem Solution}
+
+
+
+\newpage
+\subsubsection*{Problem 7, continued}
+
+
+
+
+
+
+\newpage
+\section*{Problem 8 (Graduate)}
+
+
+\subsection*{Problem Statement}
+
+Ashley and Justin are salespersons at the antique store. Each sale at the store is independent of the other sales, and the value of the sale always follows a common distribution:
+$$
+\begin{tabular}{ccccc}
+&  Sales Amount & & Frequency\\
+\hline
+& 1,000 & & 0.15\\
+& 800 & & 0.20\\
+& 600 & & 0.25\\
+& 500 & & 0.25\\
+& 400 & & 0.15\\
+\hline
+\end{tabular}
+$$
+The distribution of daily sales for Ashley follows a binomial distribution, with parameters $n = 2$ and $p = 0.6$. The distribution of daily sales for Justin also follows a binomial distribution, but with parameters $n = 2$ and $p = 0.4$.
+
+\bigskip
+Each day, only one salesperson works at the store, and Ashley works for 60\% of the days the store is open, while Justin works 40\% of the days the store is open. You don't know who was working at the store yesterday, but you do know that the total sales were 1,000. 
+
+\bigskip
+\noindent
+{\bf Part (a)}\ Let the random variable $N$ denote the total number of daily sales, and let the random variable $Y$ denote the total value of daily sales i.e. $Y$ is the sum of the amounts of all the sales for the day. Calculate the probability of observing total daily sales of 1,000 given that there was exactly one sale i.e.\ determine the value of $\Pr(Y = 1,000\ |\ N = 1)$.
+
+\bigskip
+\noindent
+{\bf Part (b)}\ Calculate the probability of observing total daily sales of 1,000 given that there was exactly two sales i.e.\ determine the value of $\Pr(Y = 1,000\ |\ N = 2)$.
+
+\bigskip
+\noindent
+{\bf Part (c)}\ Calculate the probabilities that Ashley has one and two sales in a day i.e.\ calculate $\Pr(N = 1\ |\ \hbox{Ashley})$ and $\Pr(N = 2\ |\ \hbox{Ashley})$.
+
+
+\bigskip
+\noindent
+{\bf Part (d)}\ Calculate the probabilities that Justin has one and two sales in a day i.e.\ calculate $\Pr(N = 1\ |\ \hbox{Justin})$ and $\Pr(N = 2\ |\ \hbox{Justin})$.
+
+\bigskip
+\noindent
+{\bf Part (e)}\ Calculate the likelihood that Ashley was the salesperson, given that the total daily sales were 1,000.
+
+
+\bigskip
+\noindent
+{\bf Part (f)}\ Calculate the likelihood that Justin was the salesperson, given that the total daily sales were 1,000.
+
+
+
+\bigskip
+\noindent
+{\bf Part (g)}\ Estimate the posterior probability that Ashley was the salesperson yesterday.
+
+
+\subsection*{Problem Solution}
+
+\bigskip
+\noindent
+{\bf Part (a)}\ Let the random variable $N$ denote the total number of daily sales, and let the random variable $Y$ denote the total value of daily sales i.e. $Y$ is the sum of the amounts of all the sales for the day. Calculate the probability of observing total daily sales of 1,000 given that there was exactly one sale i.e.\ determine the value of $\Pr(Y = 1,000\ |\ N = 1)$.
+
+
+
+
+
+
+\newpage
+\subsubsection*{Problem 8, continued}
+\noindent
+{\bf Part (b)}\ Calculate the probability of observing total daily sales of 1,000 given that there were exactly two sales i.e.\ determine the value of $\Pr(Y = 1,000\ |\ N = 2)$.
+
+\newpage
+\subsubsection*{Problem 8, continued}
+\noindent
+{\bf Part (c)}\ Calculate the probabilities that Ashley has one and two sales in a day i.e.\ calculate $\Pr(N = 1\ |\ \hbox{Ashley})$ and $\Pr(N = 2\ |\ \hbox{Ashley})$.
+
+
+
+\vspace{3in}
+\noindent
+{\bf Part (d)}\ Calculate the probabilities that Justin has one and two sales in a day i.e.\ calculate $\Pr(N = 1\ |\ \hbox{Justin})$ and $\Pr(N = 2\ |\ \hbox{Justin})$.
+
+
+
+
+\newpage
+\subsubsection*{Problem 8, continued}
+\noindent
+{\bf Part (e)}\ Calculate the likelihood that Ashley was the salesperson, given that the total daily sales were 1,000.
+
+
+
+
+\vspace{3in}
+\noindent
+{\bf Part (f)}\ Calculate the likelihood that Justin was the salesperson, given that the total daily sales were 1,000.
+
+
+
+\newpage
+\subsubsection*{Problem 8, continued}
+\noindent
+{\bf Part (g)}\ Estimate the posterior probability that Ashley was the salesperson yesterday.
+
+
+
+
+
+\end{document}
