@@ -70,12 +70,13 @@ Posterior & 0.08203663 & 0.4540565 & 0.3667288 &          \\
 
 The Law of Total expectation allows us to calculate this by summing the products of the expected number of reds from each earn with the posterior probabilities above. Therefore
 \begin{align*}
-E[R|U_1] &= 11\cdot \frac{4}{11} &= 4\\
-E[R|U_2] &= 11\cdot \frac{6}{11} &= 6\\
-E[R|U_3] &= 11\cdot \frac{18}{26} &= 7.615385\\
+E[R|U_1] &= 11\cdot \frac{4}{11} = 4\\
+E[R|U_2] &= 11\cdot \frac{6}{11} = 6\\
+E[R|U_3] &= 11\cdot \frac{18}{26} = 7.615385\\
 \end{align*}
 \begin{align*}
-
+E[R|Data] &= 4 \cdot 0.08203663 + 6 \cdot 0.4540565 + 7.615385 \cdot 0.3667288\\
+&= 5.845267
 \end{align*}
 
 \newpage
