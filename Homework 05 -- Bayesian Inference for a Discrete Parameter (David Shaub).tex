@@ -102,9 +102,28 @@ Suppose Tyrone rolls the die, selects one of the urns, draws a ball from it, and
 
 \subsection*{Problem Solution}
 
+Since 32 is only in the sample space of urn 3, we can immediately conclude it came from urn 3. However, the table will be produced below.\\
 
 \newpage
 \subsubsection*{Problem 2, continued}
+\begin{tabular}{lllll}
+          & Urn 1      & Urn 2     & Urn 3     &           \\
+\hline
+Prior     & 0.33333333 & 0.5       & 0.1666667 &           \\
+Liklihood & 0.0        & 0.0       & 0.0769230 &           \\
+Joint     & 0.0        & 0.0       & 0.0128205 & 0.01282051\\
+Posterior & 0.0        & 0.0       & 1.0      &           \\
+\hline
+\end{tabular}
+
+\begin{align*}
+E[U_3] &= E[5X + 12] = 5 \cdot \frac{0 + 12}{2} + 12\\
+&= 42\\
+E[X|data] &= E[X|U_1]\cdot P(U_1|data) + E[X|U_2]\cdot P(U_2|data) + E[X|U_3]\cdot P(U_3|data)\\
+&= 0 + 0 + 42 \cdot 1.0 \\
+&= 42
+\end{align*}
+
 
 \newpage
 \section*{Problem 3}
