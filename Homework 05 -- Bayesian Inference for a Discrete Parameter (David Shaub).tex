@@ -134,7 +134,15 @@ E[X|data] &= E[X|U_1]\cdot P(U_1|data) + E[X|U_2]\cdot P(U_2|data) + E[X|U_3]\cd
 A fisherman has been lost at sea. There are three possible regions in which the boat might be located. On the basis of interviews and fishing records, the rescue team initially assigns 30\% probability to region A, 55\% probability to region B, and 15\% probability to region C. On the first day, search operations are limited to the high-probability regions A and B, with 85\% search effectiveness for region A and 65\% search effectiveness for region B. After the first day, what is the posterior probability that the fisherman is located in region C?
 
 \subsection*{Problem Solution}
-
+\begin{tabular}{lllll}
+          & Region A   & Region B  & Region C  &           \\
+\hline
+Prior     & 0.3        & 0.55      & 0.15      &           \\
+Liklihood & 0.15       & 0.45      & 1.0       &           \\
+Joint     & 0.045      & 0.2475    & 0.15      & 0.4425\\
+Posterior & 0.1016949  & 0.559322  & 0.3389831 &           \\
+\hline
+\end{tabular}
 
 
 \newpage
@@ -172,10 +180,24 @@ Last year, Bob had exactly 1 claim.
 \noindent
 {\bf Part (a)}\ For each class of driver (Low Risk, Medium Risk, and High Risk) calculate the posterior probability that Bob is in that class. Be sure to use the tabular display presented in lecture.
 
+\begin{tabular}{lllll}
+          & Low        & Medium    & High      &           \\
+\hline
+Prior     & 0.5        & 0.4       & 0.1       &           \\
+Liklihood & 0.1947002  & 0.3476097 & 0.3614331 &           \\
+Joint     & 0.0973501  & 0.1390439 & 0.0361433 & 0.2725373 \\
+Posterior & 0.3571992  & 0.510183  & 0.1326178 &           \\
+\hline
+\end{tabular}
 \newpage
 \subsubsection*{Problem 4, continued}
 \noindent
 {\bf Part (b)}\ Once you have the posterior probabilities for Bob, use the Law of Total Probability to estimate the probability that Bob will have exactly one claim next year.
+\begin{align*}
+E[X|data] &= E[X|low]\cdot P(low|data) + E[X|med]\cdot P(med|data) + E[X|high]\cdot P(high|data)\\
+&= 0.25 \cdot 0.3571992 + 0.7 \cdot 0.510183 + 1.2 \cdot 0.1326178 \\
+&= 0.6055693
+\end{align*}
 
 \newpage
 \section*{Problem 5}
