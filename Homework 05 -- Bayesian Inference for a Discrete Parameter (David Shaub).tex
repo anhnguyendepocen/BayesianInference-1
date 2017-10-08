@@ -254,8 +254,15 @@ Posterior & 0.4539381  & 0.3221478 & 0.2239141 &           \\
 
 \noindent
 {\bf Part (b)}\ Use the Law of Total Expectation to estimate the expected future lifetime of the drive.
-
-
+\begin{align*}
+E[Supr] &= \frac{0.9}{1-0.9} = 9\\
+E[Maxx] &= \frac{0.9}{1-0.85} = 6\\
+E[Ultra] &= \frac{0.9}{1-0.8} = 4.5\\
+\end{align*}
+\begin{align*}
+E[X|data] &= 9 * 0.4539381 + 6 * 0.3221478 + 4.5 * 0.2239141\\
+&= 7.025943
+\end{align*}
 \newpage
 \section*{Problem 6}
 
