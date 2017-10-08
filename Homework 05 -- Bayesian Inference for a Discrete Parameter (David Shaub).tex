@@ -236,7 +236,18 @@ Unfortunately, Obie has no information about the frequencies that the different 
 \subsection*{Problem Solution}
 
 \noindent
-{\bf Part (a)}\ Calculate the posterior probabilities of the three brands of drives for Taylor's computer. Be very careful about the likelihood! Think very carefully about exactly what is observed here, and what sort of probability you should use for the likelihood. You might want to review earlier problems with Obie, and how he handles the fact that the drive is still working.
+{\bf Part (a)}\ Calculate the posterior probabilities of the three brands of drives for Taylor's computer. Be very careful about the likelihood! Think very carefully about exactly what is observed here, and what sort of probability you should use for the likelihood. You might want to review earlier problems with Obie, and how he handles the fact that the drive is still working.\\\\
+Since we have no information about the priors, we will assume 1/3 for each drive. For calculating the likelihoods, we are interested in $P(X>5) = S(5) = p^{5 + 1}$.\\
+\begin{tabular}{lllll}
+          & SuprDrive  & MaxxxMem  & UltraDisq &           \\
+\hline
+Prior     & 0.3333333  & 0.3333333 & 0.3333333 &           \\
+Liklihood & 0.531441   & 0.3771495 & 0.262144  &           \\
+Joint     & 0.177147   & 0.1257165 & 0.0873813 & 0.3902448 \\
+Posterior & 0.4539381  & 0.3221478 & 0.2239141 &           \\
+\hline
+\end{tabular}
+
 
 \newpage
 \subsubsection*{Problem 5, continued}
