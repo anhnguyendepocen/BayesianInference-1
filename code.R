@@ -32,21 +32,21 @@ latexPosterior <- function(priors, liklihoods){
     }
     cat("\\\\\n")
     cat("\\hline\n")
-    cat("Prior\t")
+    cat("Prior      ")
     for(i in res$priors){
         cat("&  ", i, "  ")
         }
     cat("&\\\\\n")
-    cat("Liklihood\t")
+    cat("Liklihood  ")
     for(i in res$liklihoods){
         cat("&  ", i, "  ")
         }
     cat("&\\\\\n")
-    cat("Joint\t")
+    cat("Joint      ")
     for(i in res$joint){
         cat("&  ", i, "  ")
         }
-    cat(sum(res$joint), "&")
+    cat("&  ", sum(res$joint))
     cat("\\\\\n")
     cat("Liklihood  ")
     for(i in res$posterior){
