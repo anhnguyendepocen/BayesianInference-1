@@ -309,14 +309,37 @@ In last night's game, you don't know which of the two players actually played. B
 \subsection*{Problem Solution}
 
 \noindent
-{\bf Part (a)}\ Using the observed number of shots, calculate the posterior probabilities that the unknown player was either Chicken Curry or Kobe Beef.
+{\bf Part (a)}\ Using the observed number of shots, calculate the posterior probabilities that the unknown player was either Chicken Curry or Kobe Beef.\\\\
+
+Since we have no information about the prior, we will use 1/2 for each. The liklihood for each player is calculated using the Poisson density function.\\
+\begin{tabular}{lllll}
+&   Curry   &   Beef   \\
+\hline
+Prior      &   0.5   &   0.5   &\\
+Liklihood  &   0.04936141   &   0.02127227   &\\
+Joint      &   0.02468071   &   0.01063613   &   0.03531684\\
+Liklihood  &   0.6988368   &   0.3011632   &\\
+\hline
+\end{tabular}
 
 \newpage
 \subsubsection*{Problem 6, continued}
 
 \noindent
-{\bf Part (b)}\ Using the Law of Total Expectation, calculate the expected number of points scored by the player. Hint: you know that the number of shots is a fixed, non-random quantity.
+{\bf Part (b)}\ Using the Law of Total Expectation, calculate the expected number of points scored by the player. Hint: you know that the number of shots is a fixed, non-random quantity.\\\\
 
+First we calculate the expected values for Curry and Beef.\\
+\begin{align*}
+E[X|curry] &= 0 \cdot .3 \cdot 37 + 1 \cdot .15 \cdot 37 + 2 \cdot .3 \cdot 37 + 3 \cdot 0.25 \cdot 37\\
+&= 55.5\\
+E[X|beef] &= 0 \cdot .35 \cdot 37 + 1 \cdot 0.25 \cdot 37 + 2 \cdot 0.25 \cdot 37 + 3 \cdot 0.15 \cdot 37\\
+&= 44.4
+\end{align*}
+Then we multiply these expected values by the posteriors
+\begin{align*}
+E[X|data] &= 55.5 \cdot 0.6988368 + 44.4 \cdot 0.3011632\\
+&= 52.15709
+\end{align*}
 
 
 
@@ -376,7 +399,31 @@ Bob had one claim last year. Estimate the expected total claim amount for Bob fo
 
 \subsection*{Problem Solution}
 
-
+The posterior probabilities can be copied from \textbf{Problem 4}.\\\\
+\begin{tabular}{lllll}
+          & Low        & Medium    & High      &           \\
+\hline
+Prior     & 0.5        & 0.4       & 0.1       &           \\
+Liklihood & 0.1947002  & 0.3476097 & 0.3614331 &           \\
+Joint     & 0.0973501  & 0.1390439 & 0.0361433 & 0.2725373 \\
+Posterior & 0.3571992  & 0.510183  & 0.1326178 &           \\
+\hline
+\end{tabular}
+\\
+The expected claim amount for each risk pool is then calculated
+\begin{align*}
+E[X|low] &= 1500 \cdot 0.05 + 1000 \cdot 0.15 + 750 \cdot 0.35 + 500 \cdot 0.45\\
+&= 712.5\\
+E[X|med] &= 2000 \cdot 0.1 + 1500 \cdot 0.25 + 1000 \cdot 0.35 + 500 \cdot 0.3\\
+&= 1075\\
+E[X|high] &= 4000 \cdot 0.25 + 2000 \cdot 0.25 + 1500 \cdot 0.35 + 1000 \cdot 0.25\\
+&= 2275\\
+\end{align*}
+Finally, we multiply these expected claims amounts with the expected number of accidents and the posterior probabilities\\
+\begin{align*}
+E[X|data] &= 712.5 \cdot 0.3571992 \cdot 0.25 + 1075 \cdot 0.510183 \cdot 0.7 + 2275 \cdot 0.1326178 \cdot 1.2\\
+&= 809.5854
+\end{align*}
 
 \newpage
 \subsubsection*{Problem 7, continued}
