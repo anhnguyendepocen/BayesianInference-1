@@ -494,9 +494,9 @@ Each day, only one salesperson works at the store, and Ashley works for 60\% of 
 
 \bigskip
 \noindent
-{\bf Part (a)}\ Let the random variable $N$ denote the total number of daily sales, and let the random variable $Y$ denote the total value of daily sales i.e. $Y$ is the sum of the amounts of all the sales for the day. Calculate the probability of observing total daily sales of 1,000 given that there was exactly one sale i.e.\ determine the value of $\Pr(Y = 1,000\ |\ N = 1)$.
+{\bf Part (a)}\ Let the random variable $N$ denote the total number of daily sales, and let the random variable $Y$ denote the total value of daily sales i.e. $Y$ is the sum of the amounts of all the sales for the day. Calculate the probability of observing total daily sales of 1,000 given that there was exactly one sale i.e.\ determine the value of $\Pr(Y = 1,000\ |\ N = 1)$.\\
 
-
+With a single sale, there is only one way to realize total sales of 1,000. Reading from the frequency in the table, this is $p = 0.15$.
 
 
 
@@ -504,20 +504,36 @@ Each day, only one salesperson works at the store, and Ashley works for 60\% of 
 \newpage
 \subsubsection*{Problem 8, continued}
 \noindent
-{\bf Part (b)}\ Calculate the probability of observing total daily sales of 1,000 given that there were exactly two sales i.e.\ determine the value of $\Pr(Y = 1,000\ |\ N = 2)$.
+{\bf Part (b)}\ Calculate the probability of observing total daily sales of 1,000 given that there were exactly two sales i.e.\ determine the value of $\Pr(Y = 1,000\ |\ N = 2)$.\\
+
+With two sales, we can achieve total sales of 1,000 through combinations of 600 and 400 \textit{or} 500 and 500. There are two possible orderings of these each. Therefore \\
+\begin{align*}
+P(Y = 1,000 |N = 2) &= 2 * 0.25 * 0.15 + 2 * 0.25 * 0.25\\
+&= 0.2
+\end{align*}
 
 \newpage
 \subsubsection*{Problem 8, continued}
 \noindent
-{\bf Part (c)}\ Calculate the probabilities that Ashley has one and two sales in a day i.e.\ calculate $\Pr(N = 1\ |\ \hbox{Ashley})$ and $\Pr(N = 2\ |\ \hbox{Ashley})$.
+{\bf Part (c)}\ Calculate the probabilities that Ashley has one and two sales in a day i.e.\ calculate $\Pr(N = 1\ |\ \hbox{Ashley})$ and $\Pr(N = 2\ |\ \hbox{Ashley})$.\\
+
+These are calculated using Ashley's binomail distribution of $n = 2$ and $p = 0.6$
+\begin{align*}
+P(k = 1|n = 2;p = 0.6) &= 0.48\\
+P(k = 2|n = 2;p = 0.6) &= 0.36\\
+\end{align*}
 
 
 
 \vspace{3in}
 \noindent
-{\bf Part (d)}\ Calculate the probabilities that Justin has one and two sales in a day i.e.\ calculate $\Pr(N = 1\ |\ \hbox{Justin})$ and $\Pr(N = 2\ |\ \hbox{Justin})$.
+{\bf Part (d)}\ Calculate the probabilities that Justin has one and two sales in a day i.e.\ calculate $\Pr(N = 1\ |\ \hbox{Justin})$ and $\Pr(N = 2\ |\ \hbox{Justin})$.\\
 
-
+Similarly, these are calculated using Justin's binomail distribution of $n = 2$ and $p = 0.4$
+\begin{align*}
+P(k = 1|n = 2;p = 0.4) &= 0.48\\
+P(k = 2|n = 2;p = 0.4) &= 0.16\\
+\end{align*}
 
 
 \newpage
