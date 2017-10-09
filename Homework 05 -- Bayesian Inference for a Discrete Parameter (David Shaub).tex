@@ -318,7 +318,7 @@ Since we have no information about the prior, we will use 1/2 for each. The likl
 Prior      &   0.5   &   0.5   &\\
 Liklihood  &   0.04936141   &   0.02127227   &\\
 Joint      &   0.02468071   &   0.01063613   &   0.03531684\\
-Liklihood  &   0.6988368   &   0.3011632   &\\
+Posterior  &   0.6988368   &   0.3011632   &\\
 \hline
 \end{tabular}
 
@@ -508,7 +508,7 @@ With a single sale, there is only one way to realize total sales of 1,000. Readi
 
 With two sales, we can achieve total sales of 1,000 through combinations of 600 and 400 \textit{or} 500 and 500. There are two possible orderings of these each. Therefore \\
 \begin{align*}
-P(Y = 1,000 |N = 2) &= 2 * 0.25 * 0.15 + 2 * 0.25 * 0.25\\
+P(Y = 1,000 |N = 2) &= 2 \cdot 0.25 \cdot 0.15 + 2 \cdot 0.25 \cdot 0.25\\
 &= 0.2
 \end{align*}
 
@@ -539,22 +539,41 @@ P(k = 2|n = 2;p = 0.4) &= 0.16\\
 \newpage
 \subsubsection*{Problem 8, continued}
 \noindent
-{\bf Part (e)}\ Calculate the likelihood that Ashley was the salesperson, given that the total daily sales were 1,000.
+{\bf Part (e)}\ Calculate the likelihood that Ashley was the salesperson, given that the total daily sales were 1,000.\\
+
+\begin{align*}
+P(1000|Ashley) &= P(1000|Ashley;N=1) + P(1000|Ashley;N=2)\\
+&= 0.15 \cdot 0.48 +  0.2 \cdot 0.36\\
+&= 0.144\\
+\end{align*}
 
 
 
 
 \vspace{3in}
 \noindent
-{\bf Part (f)}\ Calculate the likelihood that Justin was the salesperson, given that the total daily sales were 1,000.
+{\bf Part (f)}\ Calculate the likelihood that Justin was the salesperson, given that the total daily sales were 1,000.\\
 
-
+\begin{align*}
+P(1000|Justin) &= P(1000|Justin;N=1) + P(1000|Justin;N=2)\\
+&= 0.15 \cdot 0.48 + 0.2 \cdot 0.16\\
+&= 0.104\\
+\end{align*}
 
 \newpage
 \subsubsection*{Problem 8, continued}
 \noindent
-{\bf Part (g)}\ Estimate the posterior probability that Ashley was the salesperson yesterday.
+{\bf Part (g)}\ Estimate the posterior probability that Ashley was the salesperson yesterday.\\
 
+\begin{tabular}{lllll}
+&   Ashley   &   Justin   \\
+\hline
+Prior      &   0.6   &   0.4   &\\
+Liklihood  &   0.144   &   0.104   &\\
+Joint      &   0.0864   &   0.0416   &   0.128\\
+Posterior  &   0.675   &   0.325   &\\
+\hline
+\end{tabular}
 
 
 

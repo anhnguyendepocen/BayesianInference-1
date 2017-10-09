@@ -48,7 +48,7 @@ latexPosterior <- function(priors, liklihoods){
         }
     cat("&  ", sum(res$joint))
     cat("\\\\\n")
-    cat("Liklihood  ")
+    cat("Posterior  ")
     for(i in res$posterior){
         cat("&  ", i, "  ")
         }
