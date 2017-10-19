@@ -1,0 +1,463 @@
+\documentclass[12pt]{article}
+
+\title{Problem Set 6: Naive Bayes}
+\author{MATH E-158: Introduction to Bayesian Inference}
+\author{David Shaub}
+\date{Due October 23, 2017}
+
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\renewcommand\qedsymbol{$\blacksquare$}
+	
+\begin{document}
+	
+	\maketitle
+
+
+\section*{Problem 1}
+
+
+\subsection*{Problem Statement}
+
+Ashley has two ancient classical Greek urns:
+\begin{itemize}
+	\item The first urn contains 3 red balls and 7 white balls.
+	\item The second urn contains 8 red balls and 2 white balls.
+\end{itemize}
+Ashley flips a fair coin, and selects the first urn if the coin comes up Heads, and the second urn if the coin comes up Tails. She randomly selects a ball from the selected urn, observes its color, and then replaces the ball and mixes them up. She then draws a second ball from the same urn.
+\begin{itemize}
+	\item Let $A$ denote the event that the first sampled ball is red.
+	\item Let $B$ denote the event that the second sampled ball is red.
+	\item Let $C$ denote the event that the first urn was selected.
+\end{itemize}
+From our experimental design, you should be able to convince yourself that, given that the first urn was selected, the events $A$ and $B$ are independent. Thus,
+$$
+\Pr(A\ \cap\ B\ |\ C) = \Pr(A\ |\ C) \cdot \Pr(B\ |\ C)
+$$
+Thus, events $A$ and $B$ are conditionally independent, given event $C$.
+
+\bigskip
+\noindent
+{\bf Part (a)}\ Using the Law of Total Probability, calculate the unconditional probability of $A$.
+
+\bigskip
+\noindent
+{\bf Part (b)}\ Using the Law of Total Probability, calculate the unconditional probability of $B$.
+
+
+\bigskip
+\noindent
+{\bf Part (c)}\ Using the Law of Total Probability, calculate the unconditional probability of $A\ \cap\ B$.
+
+
+\bigskip
+\noindent
+{\bf Part (d)}\ What can you conclude about the unconditional independence of $A$ and $B$?
+
+
+\subsection*{Problem Solution}
+
+\bigskip
+\noindent
+{\bf Part (a)}\ Using the Law of Total Probability, calculate the unconditional probability of $A$.
+
+\bigskip
+\noindent
+{\bf Solution}
+\begin{align*}
+P(A) &= P(A|C)\cdot P(C) + P(A|C^c)\cdot P(C^c)\\
+\end{align*}
+
+\newpage
+\subsubsection*{Problem 1, continued}
+\noindent
+{\bf Part (b)}\ Using the Law of Total Probability, calculate the unconditional probability of $B$.
+
+
+\newpage
+\subsubsection*{Problem 1, continued}
+{\bf Part (c)}\ Using the Law of Total Probability, calculate the unconditional probability of $A\ \cap\ B$.
+
+
+\vspace{4.5in}
+\noindent
+{\bf Part (d)}\ What can you conclude about the unconditional independence of $A$ and $B$?
+
+\newpage
+\section*{Problem 2}
+
+\subsection*{Problem Statement}
+
+Let $A$, $B$, and $C$ be random variables which take on the values either 0 or 1. The joint distribution of $A$, $B$, and $C$ is:
+$$
+\begin{tabular}{ccccccccc}
+& $A$ & & $B$ & & $C$ & & Probability\\
+\hline
+& 1 & & 1 & & 1 & & 0.13\\
+& 1 & & 1 & & 0 & & 0.11\\
+& 1 & & 0 & & 1 & & 0.22\\
+& 1 & & 0 & & 0 & & 0.14\\
+& 0 & & 1 & & 1 & & 0.09\\
+& 0 & & 1 & & 0 & & 0.07\\
+& 0 & & 0 & & 1 & & 0.17\\
+& 0 & & 0 & & 0 & & 0.07\\
+\hline
+\end{tabular}
+$$
+
+\bigskip
+\noindent
+{\bf Part (a)}\ Calculate the unconditional probabilities $\Pr(A = 1)$, $\Pr(B = 1)$, and $\Pr( (A = 1)\ \cap\ (B=1) )$. What can you conclude about the unconditional independence of the events $A = 1$ and $B = 1$?
+
+\bigskip
+\noindent
+{\bf Part (b)}\ Calculate the conditional probabilities $\Pr(A = 1\ |\ C = 1)$,\\ $\Pr(B = 1\ |\ C = 1)$, and $\Pr( (A = 1)\ \cap\ (B=1)\ |\ C = 1 )$. What can you conclude about the conditional independence of the events $A = 1$ and $B = 1$, given $C = 1$?
+
+\newpage
+\subsection*{Problem Solution}
+
+\bigskip
+\noindent
+{\bf Part (a)}\ Calculate the unconditional probabilities $\Pr(A = 1)$, $\Pr(B = 1)$, and $\Pr( (A = 1)\ \cap\ (B=1) )$. What can you conclude about the unconditional independence of the events $A = 1$ and $B = 1$?
+
+\bigskip
+\noindent
+{\bf Solution}
+
+
+
+\newpage
+\subsubsection*{Problem 2, continued}
+\noindent
+{\bf Part (b)}\ Calculate the conditional probabilities $\Pr(A = 1\ |\ C = 1)$,\\ $\Pr(B = 1\ |\ C = 1)$, and $\Pr( (A = 1)\ \cap\ (B=1)\ |\ C = 1 )$. What can you conclude about the conditional independence of the events $A = 1$ and $B = 1$, given $C = 1$?
+
+\bigskip
+\noindent
+{\bf Solution}
+
+
+
+\newpage
+\section*{Problem 3}
+
+In this problem, we will practice using the extended probability chain rule with the (perhaps not justified) assumption of conditional independence.
+
+\subsection*{Problem Statement}
+
+Let's revisit the training dataset we studied in lecture:
+$$
+\begin{tabular}{ccccccc}
+Age & & Speeding Ticket & & Risk & & $n$\\
+\hline
+Old & & No & & Low Risk & & 58\\
+Old & & No & & High Risk & & 0 \\
+Old & & Yes & & Low Risk & & 1\\
+Old & & Yes & & High Risk& & 1\\
+Young & & No & & Low Risk & & 25\\
+Young & & No & & High Risk & & 5\\
+Young & & Yes & & Low Risk & & 7\\
+Young & & Yes & & High Risk & & 3\\
+\hline
+& & & & & & 100
+\end{tabular}
+$$
+
+\bigskip
+\noindent
+{\bf Part (a)}\ First, just using the observed empirical frequencies in the training dataset, estimate the probability of a driver being young and not having a speeding ticket.
+
+\bigskip
+\noindent
+{\bf Part (b)}\ Next, assume that Age and Speeding Ticket are conditionally independent, given a driver's risk class. Use this assumption along with the extended probability chain rule to estimate the probability that a driver is young, does not have a speeding ticket, and is a low-risk driver.
+
+\bigskip
+\noindent
+{\bf Part (c)} Again, assuming that Age and Speeding Ticket are conditionally independent given a driver's risk class, use the extended probability chain rule to estimate the probability that a driver is young, does not have a speeding ticket, and is a high-risk driver.
+
+\bigskip
+\noindent
+{\bf Part (d)} Finally, use the results from Part (b) and Part (c), along with the Law of Total Probability, to estimate the probability of a driver being young and not having a speeding ticket.
+
+\newpage
+\subsection*{Problem Solution}
+
+\bigskip
+\noindent
+{\bf Part (a)}\ First, just using the observed empirical frequencies in the training dataset, estimate the probability of a driver being young and not having a speeding ticket.
+
+\vspace{2in}
+\noindent
+{\bf Part (b)}\ Next, assume that Age and Speeding Ticket are conditionally independent, given a driver's risk class. Use this assumption along with the extended probability chain rule to estimate the probability that a driver is young, does not have a speeding ticket, and is a low-risk driver.
+
+\newpage
+\subsubsection*{Problem 3, continued}
+
+\bigskip
+\noindent
+{\bf Part (c)} Again, assuming that Age and Speeding Ticket are conditionally independent given a driver's risk class, use the extended probability chain rule to estimate the probability that a driver is young, does not have a speeding ticket, and is a high-risk driver.
+
+\vspace{3.5in}
+\noindent
+{\bf Part (d)} Finally, use the results from Part (b) and Part (c), along with the Law of Total Probability, to estimate the probability of a driver being young and not having a speeding ticket.
+
+
+
+\newpage
+\section*{Problem 4}
+
+
+\subsection*{Problem Statement}
+
+A bank decides to use a Naive Bayes predictive model to determine if customers are a credit risk. They decide to use two predictors: whether or not a customer has a credit score greater than 700, and whether or not the customer has a college degree. The bank then analyzes all lonas from the last year, and categorizes each loan as either risky or not risky.
+$$
+\begin{tabular}{ccccccccc}
+& High Credit & & Degree & & Risky & & $n$\\
+\hline
+& Yes & & Yes & & Yes & & 4\\
+& Yes & & Yes & & No & & 22\\
+& Yes & & No & & Yes & & 5\\
+& Yes & & No & & No & & 12\\
+& No & & Yes & & Yes & & 14\\
+& No & & Yes & & No & & 17\\
+& No & & No & & Yes & & 10\\
+& No & & No & & No & & 16\\
+\hline
+\end{tabular}
+$$
+Assume that a person's credit score and possession of a college degree are conditionally independent, given his or her risk status.
+
+\bigskip
+\noindent
+{\bf Problem} Use the method of Naive Bayes to esitmate the probability that a person with a high credit score but no college degree is not risky.
+
+\subsection*{Problem Solution}
+
+\newpage
+\subsubsection*{Problem 4, continued}
+
+
+
+
+\newpage
+\section*{Problem 5}
+
+
+
+\subsection*{Problem Statement}
+
+Obie has started a new business, selling two drinks: a kale and tofu smoothie, and Bayes Brew, which is an artisinal hand-crafted ale. Obie wants to market his drinks on the internet, and he wants to use information about a user's browser and platform to determine which drink he should advertise. From a focus group testing, he obtains a small training dataset, in which each subject's browser and platform are recorded, along with their drink preference:
+$$
+\begin{tabular}{ccccccccc}
+& Browser & & Platform & & Drink & & $n$\\
+\hline
+& Chrome & & Windows & & Kale \& Tofu & & 14\\
+& Chrome & & Windows & & Bayes Brew & & 59\\
+& Chrome & & Mac & & Kale \& Tofu & & 23\\
+& Chrome & & Mac & & Bayes Brew & & 7\\
+& Firefox & & Windows & & Kale \& Tofu & & 14\\
+& Firefox & & Windows & & Bayes Brew & & 59\\
+& Firefox & & Mac & & Kale \& Tofu & & 23\\
+& Firefox & & Mac & & Bayes Brew & & 7\\
+& Explorer & & Windows & & Kale \& Tofu & & 14\\
+& Explorer & & Windows & & Bayes Brew & & 59\\
+& Safari & & Mac & & Kale \& Tofu & & 23\\
+& Safari & & Mac & & Bayes Brew & & 7\\
+\hline
+\end{tabular}
+$$
+Notice that in this training dataset, there are no Windows users who use Safari, and there are no Mac users who use Explorer.
+
+\bigskip
+\noindent
+{\bf Problem} Obie encounters someone who is running Safari on a Windows platform, and decides to use a Naive Bayes predictive model to select which ad to run for this person. Assuming that the browser type and platform are conditionally independent, given the drink preference, determine which drink Obie should advertise.
+
+
+\newpage
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Problem} Obie encounters someone who is running Safari on a Windows platform, and decides to use a Naive Bayes predictive model to select which ad to run for this person. Assuming that the browser type and platform are conditionally independent, given the drink preference, determine which drink Obie should advertise.
+
+\newpage
+\subsubsection*{Problem 5, continued}
+
+
+
+\newpage
+\section*{Problem 6}
+
+
+\subsection*{Problem Statement}
+
+Can you believe it? This week, new singles from \textsf{\textbf{both}} pop music supergroups One Dimension and Out of Synk have been released. Your job is to develop a program that will recommend one of the songs to listeners, based on their personal preferences. You have a training dataset in which subjects in a focus group were asked if they liked the so-called music of three other famous performers: 5 Felonz, Taylor Drift, and Katy Scary.
+$$
+\begin{tabular}{ccccccccr}
+5 Felonz & & Taylor Drift & & Katy Scary & & New Music & & $n$\\
+\hline
+Like & & Like & & Like & & One Dimension & & 42\\
+Like & & Like & & Like & & Out of Synk & & 17\\
+Like & & Like & & Don't Like & & One Dimension & & 5\\
+Like & & Like & & Don't Like & & Out of Synk & & 12\\
+Like & & Don't Like & & Like & & One Dimension & & 31\\
+Like & & Don't Like & & Like & & Out of Synk & & 19\\
+Like & & Don't Like & & Don't Like & & One Dimension & & 12\\
+Like & & Don't Like & & Don't Like & & Out of Synk & & 26\\
+Don't Like & & Like & & Like & & One Dimension & & 18\\
+Don't Like & & Like & & Like & & Out of Synk & & 5\\
+Don't Like & & Like & & Don't Like & & One Dimension & & 24\\
+Don't Like & & Like & & Don't Like & & Out of Synk & & 42\\
+Don't Like & & Don't Like & & Like & & One Dimension & & 33\\
+Don't Like & & Don't Like & & Like & & Out of Synk & & 17\\
+Don't Like & & Don't Like & & Don't Like & & One Dimension & & 5\\
+Don't Like & & Don't Like & & Don't Like & & Out of Synk & & 8\\
+\hline
+& & & & & & {\bf Total} & & 316
+\end{tabular}
+$$
+
+\noindent
+{\bf Problem} Using a Naive Bayes prediction model trained on this dataset, would you recommend the One Dimension single or the Out of Synk single to someone who liked 5 Felonz and Taylor Drift, but did not like Katy Scary? Assume that preferences for 5 Felonz, Taylor Drift, and Katy Scary are all conditionally independent, given a preference for either One Dimension or Out of Synk.
+
+\bigskip
+\noindent
+{\bf Hint:} Encoding the data using random variables might make your notation a little simpler.
+
+\newpage
+\subsection*{Problem Solution}
+
+
+\newpage
+\subsubsection*{Problem 6 Solution, continued}
+
+
+
+\newpage
+\section*{Problem 7}
+
+
+\subsection*{Problem Statement}
+
+Elvis has determined that the policyholders in his car-insurance business can be grouped into three risk classes: Low Risk, Medium Risk, and High Risk.
+
+\bigskip
+For Low Risk drivers, the number of claims follows a Poisson distribution with parameter $\mu = 0.75$. The amount of each claim is independent of all other claims, and always has this probability distribution:
+$$
+\begin{tabular}{ccccc}
+& Claim Amount & & Probability\\
+\hline
+& 1,200 & & 0.10\\
+& 900 & & 0.25 \\
+& 600 & & 0.35 \\
+& 250 & & 0.30 \\
+\hline
+\end{tabular}
+$$
+For Medium Risk drivers, the number of claims follows a Poisson distribution with parameter $\mu = 1.20$. The amount of each claim is independent of all other claims, and always has this probability distribution:
+$$
+\begin{tabular}{ccccc}
+& Claim Amount & & Probability\\
+\hline
+& 1,800 & & 0.15\\
+& 1,250 & & 0.35 \\
+& 800 & & 0.25 \\
+& 500 & & 0.25 \\
+\hline
+\end{tabular}
+$$
+For High Risk drivers, the number of claims follows a Poisson distribution with parameter $\mu = 1.80$. The amount of each claim is independent of all other claims, and always has this probability distribution:
+$$
+\begin{tabular}{ccccc}
+& Claim Amount & & Probability\\
+\hline
+& 5,000 & & 0.20\\
+& 2,500 & & 0.20 \\
+& 1,800 & & 0.40 \\
+& 1,200 & & 0.20 \\
+\hline
+\end{tabular}
+$$
+Let $N$ denote the number of claims in a year, $\hbox{E}[X]$ the expected value of an individual claim, and $Y$ the total claim amount in a year.
+
+\newpage
+\subsection*{Problem Solution}
+
+\bigskip
+\noindent
+{\bf Part (a)} Calculate $\hbox{E}[N\ |\ \hbox{Low Risk}]$, the expected number of claims in a year for a low-risk driver.
+
+\vspace{1in}
+\noindent
+{\bf Part (b)} Calculate $\hbox{E}[X\ |\ \hbox{Low Risk}]$, the expected amount of an individual claim for a low-risk driver.
+
+\vspace{3.5in}
+\noindent
+{\bf Part (c)} Calculate $\hbox{E}[Y\ |\ \hbox{Low Risk}]$, the expected total claim amount in a year for a low-risk driver.
+
+\newpage
+\subsubsection*{Problem 7, continued}
+
+\bigskip
+\noindent
+{\bf Part (d)} Calculate $\hbox{E}[N\ |\ \hbox{Medium Risk}]$, the expected number of claims in a year for a medium-risk driver.
+
+\vspace{1in}
+\noindent
+{\bf Part (e)} Calculate $\hbox{E}[X\ |\ \hbox{Medium Risk}]$, the expected amount of an individual claim for a medium-risk driver.
+
+\vspace{3.5in}
+\noindent
+{\bf Part (f)} Calculate $\hbox{E}[Y\ |\ \hbox{Medium Risk}]$, the expected total claim amount in a year for a medium-risk driver.
+
+
+\newpage
+\subsubsection*{Problem 7, continued}
+
+\bigskip
+\noindent
+{\bf Part (g)} Calculate $\hbox{E}[N\ |\ \hbox{High Risk}]$, the expected number of claims in a year for a high-risk driver.
+
+\vspace{1in}
+\noindent
+{\bf Part (h)} Calculate $\hbox{E}[X\ |\ \hbox{High Risk}]$, the expected amount of an individual claim for a high-risk driver.
+
+\vspace{3.5in}
+\noindent
+{\bf Part (i)} Calculate $\hbox{E}[Y\ |\ \hbox{High Risk}]$, the expected total claim amount in a year for a high-risk driver.
+
+
+\newpage
+\section*{Problem 8}
+
+This problem is a continuation of Problem 7, and you should assume all the information in the problem statement for that problem.
+
+\subsection*{Problem Statement}
+
+Elvis has determined that 50\% of his policyholders are Low Risk drivers, 35\% are Medium Risk policyholders, and 15\% are High Risk drivers. Last year, Bob had 2 claims.
+
+\bigskip
+\noindent
+{\bf Problem} Estimate the total claim amount for Bob for next year, using the expected predicted total cost given the observed data.
+
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Problem} Estimate the total claim amount for Bob for next year, using the expected predicted total cost given the observed data.
+
+\bigskip
+\noindent
+{\bf Solution}
+
+
+\newpage
+\subsubsection*{Problem 8, continued}
+
+
+\end{document}
