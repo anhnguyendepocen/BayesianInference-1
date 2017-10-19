@@ -85,18 +85,32 @@ P(A) &= P(A|C)\cdot P(C) + P(A|C^c)\cdot P(C^c)\\
 
 \begin{align*}
 P(B) &= P(B|C) \cdot P(C) + P(B|C^c) \cdot P(C^c)\\
-&= 0.7 \cdot 0.5 + 0.2 \cdot 0.5 \\
-&= 0.45
+&= 0.3 \cdot 0.5 + 0.8 \cdot 0.5 \\
+&= 0.55
 \end{align*}
 
 \newpage
 \subsubsection*{Problem 1, continued}
 {\bf Part (c)}\ Using the Law of Total Probability, calculate the unconditional probability of $A\ \cap\ B$.
 
+\begin{align*}
+P(A \cap B) &=  P(A \cap B|C) \cdot P(C) + P(A \cap B|C^c) \cdot P(C^c)\\
+&= P(A|C) \cdot P(B|C) \cdot P(C) + P(A|C^c) \cdot P(B|C^c) \cdot P(C^c)\\
+&= 0.3 \cdot 0.3 \cdot 0.5 + 0.8 \cdot 0.8 \cdot 0.5\\
+&= 0.365
+\end{align*}
 
-\vspace{4.5in}
+\vspace{2.5in}
 \noindent
 {\bf Part (d)}\ What can you conclude about the unconditional independence of $A$ and $B$?
+
+We see that $A$ and $B$ are \textit{not} unconditionally independent since
+
+\begin{align*}
+P(A \cap B) & \neq P(A) \cdot P(B) \\
+0.365 & \neq 0.55 \cdot 0.55\\
+ & \neq 0.3025
+\end{align*}
 
 \newpage
 \section*{Problem 2}
