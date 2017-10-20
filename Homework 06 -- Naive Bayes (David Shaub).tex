@@ -174,7 +174,15 @@ We see that $A = 1$ and $B = 1$ are unconditionally independent since $P(A = 1 \
 \noindent
 {\bf Solution}
 
-
+\begin{align*}
+P(A=1|C=1) &= \frac{0.13 + 0.22}{0.13 + 0.22 + 0.09 + 0.17}\\
+&= 0.5737705\\
+P(B=1|C=1) &= \frac{0.13 + 0.09}{0.13 + 0.22 + 0.09 + 0.17}\\
+&= 0.3606557\\
+P(A=1 \cap B=1|C=1) &= \frac{0.13}{0.13 + 0.22 + 0.09 + 0.17}\\
+&= 0.2131148
+\end{align*}
+The events $A = 1$ and $B = 1$ given $C = 1$ are \textit{not} conditionally independent since $0.5737705 \cdot 0.3606557 \neq 0.2131148$.
 
 \newpage
 \section*{Problem 3}
