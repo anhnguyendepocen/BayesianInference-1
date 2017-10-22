@@ -303,8 +303,13 @@ Assume that a person's credit score and possession of a college degree are condi
 \subsubsection*{Problem 4, continued}
 
 \begin{align*}
-P(not risky|high credit \catp no degreee) &= P(high credit|not risky) \cdot P(no degree|not risky) \cdot P(not risky)\\
-&= \\
+P(risk_{no}|cred_{high} \cap deg_{no}) &= \frac{P(risk_{no} \cap cred_{high \cap deg_{no}})}{P(cred_{high} \cap deg_{no})}\\
+&= \frac{P(cred_{high}|risk_{no}) \cdot P(deg_{no}|risk_{no}) \cdot P(risk_{no})}{P(cred_{high} \cap deg_{no})}\\
+&= \frac{\frac{22 + 12}{22 + 12 + 17 + 16} \cdot \frac{12 + 16}{22 + 12 + 17 + 16} \cdot \frac{22 + 12 + 17 + 16}{100}}{P(cred_{high} \cap deg_{no})}\\
+&= \frac{0.1420896}{0.1420896 + P(cred_{high}|risk_{yes}) \cdot P(deg_{no}|risk_{yes}) \cdot P(risk_{yes})}\\
+&= \frac{0.1420896}{0.1420896 + \frac{4 + 5}{4 + 5 + 14 + 10}\cdot \frac{5 + 10}{4 + 5 + 14 + 10} \cdot \frac{4 + 5 + 14 + 10}{100}}\\
+&= \frac{0.1420896}{0.1420896 + 0.04090909}\\
+&= 0.7764515
 \end{align*}
 
 
