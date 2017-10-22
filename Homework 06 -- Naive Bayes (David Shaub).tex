@@ -351,7 +351,21 @@ Notice that in this training dataset, there are no Windows users who use Safari,
 \subsection*{Problem Solution}
 
 \noindent
-{\bf Problem} Obie encounters someone who is running Safari on a Windows platform, and decides to use a Naive Bayes predictive model to select which ad to run for this person. Assuming that the browser type and platform are conditionally independent, given the drink preference, determine which drink Obie should advertise.
+{\bf Problem} Obie encounters someone who is running Safari on a Windows platform, and decides to use a Naive Bayes predictive model to select which ad to run for this person. Assuming that the browser type and platform are conditionally independent, given the drink preference, determine which drink Obie should advertise.\\
+
+We will predict the probability that the user drinks Bayes Brew (BB):
+
+\begin{align*}
+P(BB|Safari \cap Windows) &= \frac{P(BB \cap Safari \cap Windows)}{P(Safari \cap Windows)}\\
+&= \frac{P(Safari|BB) \cdot P(Windows|BB) \cdot P(BB)}{P(Safari \cap Windows)}\\
+&= \frac{\frac{7}{309}\frac{177}{309}\frac{198}{309}}{P(Safari \cap Windows)}\\
+&= \frac{0.008314977}{0.008314977 + P(Safari|KT) \cdot P(Windows|KT) \cdot P(KT)}\\
+&= \frac{0.008314977}{0.008314977 + \frac{23}{111} \frac{42}{111} \frac{111}{309}}\\
+&= \frac{0.008314977}{0.008314977 + 0.02816409}\\
+&= 0.2279383
+\end{align*}
+
+Using $P \geq 0.5$ as the decision threshold for recommending Bayes Brew, Obie should recommend Kale \& Tofu instead.
 
 \newpage
 \subsubsection*{Problem 5, continued}
