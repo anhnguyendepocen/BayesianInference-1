@@ -213,7 +213,6 @@ $$
 \noindent
 {\bf Part (a)}\ First, just using the observed empirical frequencies in the training dataset, estimate the probability of a driver being young and not having a speeding ticket.
 
-
 \bigskip
 \noindent
 {\bf Part (b)}\ Next, assume that Age and Speeding Ticket are conditionally independent, given a driver's risk class. Use this assumption along with the extended probability chain rule to estimate the probability that a driver is young, does not have a speeding ticket, and is a low-risk driver.
@@ -234,12 +233,18 @@ $$
 {\bf Part (a)}\ First, just using the observed empirical frequencies in the training dataset, estimate the probability of a driver being young and not having a speeding ticket.
 
 \begin{align*}
-P(Age = Young \cap Speeding = No) &= \frac{25 + 5}{100} = 0.3
+P(Young \cap No) &= \frac{25 + 5}{100} = 0.3
 \end{align*}
 
-\vspace{2in}
+\vspace{1in}
 \noindent
 {\bf Part (b)}\ Next, assume that Age and Speeding Ticket are conditionally independent, given a driver's risk class. Use this assumption along with the extended probability chain rule to estimate the probability that a driver is young, does not have a speeding ticket, and is a low-risk driver.
+
+\begin{align*}
+P(Young \cap No \cap Low) &= P(Young | Low) \cdot P(No|Low) \cdot P(Low)\\
+&= \frac{25 + 7}{58 + 1 + 25 + 7} \cdot \frac{58 + 25}{58 + 1 + 25 + 7} \cdot \frac{58 + 1 + 25 + 7}{100}\\
+&= 0.2918681
+\end{align*}
 
 \newpage
 \subsubsection*{Problem 3, continued}
@@ -248,11 +253,21 @@ P(Age = Young \cap Speeding = No) &= \frac{25 + 5}{100} = 0.3
 \noindent
 {\bf Part (c)} Again, assuming that Age and Speeding Ticket are conditionally independent given a driver's risk class, use the extended probability chain rule to estimate the probability that a driver is young, does not have a speeding ticket, and is a high-risk driver.
 
-\vspace{3.5in}
+\begin{align*}
+P(Young \cap No \cap High) &= P(Young | High) \cdot P(No|High) \cdot P(High)\\
+&= \frac{5 + 3}{1 + 5 + 3} \cdot \frac{0 + 5}{1 + 5 + 3} \cdot \frac{1 + 5 + 3}{100}\\
+&= 0.04444444
+\end{align*}
+
+\vspace{0.5in}
 \noindent
 {\bf Part (d)} Finally, use the results from Part (b) and Part (c), along with the Law of Total Probability, to estimate the probability of a driver being young and not having a speeding ticket.
 
-
+\begin{align*}
+P(Young \cap No) &= P(Young \cap No \cap Low) \cdot P(Low) + P(Young \cap No \cap High) \cdot P(High)\\
+&= 0.2918681 \cdot 0.91 + 0.04444444 \cdot 0.09\\
+&= 0.2696
+\end{align*}
 
 \newpage
 \section*{Problem 4}
