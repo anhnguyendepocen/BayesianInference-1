@@ -418,7 +418,13 @@ For more concise notation, the following abbreviations will be used: $FF = $ 5 F
 
 \begin{align*}
 P(OD|FF_l \cap TD_l \cap KS_{dl}) &= \frac{P(FF_l|OD) \cdot P(TD_l|OD) \cdot P(KS_{dl}|OD) \cdot P(OD)}{P(FF_l \cap TD_l \cap KS_{dl})}\\
+&= \frac{\frac{90}{170}\frac{89}{170}\frac{46}{170}\frac{170}{316}}{P(FF_l \cap TD_l \cap KS_{dl})}\\
+&= \frac{0.04034646}{0.04034646 + P(FF_l|OS) \cdot P(TD_l|OS) \cdot P(KS_{dl}|OS) \cdot P(OS)}\\
+&= \frac{0.04034646}{0.04034646 + \frac{74}{146}\frac{76}{146}\frac{88}{146}\frac{146}{316}}\\
+&= \frac{0.04034646}{0.04034646 + 0.07347425}\\
+&= 0.3544738
 \end{align*}
+Using a threshold of $p \geq 0.5$ for a One Dimension recommendation, we instead recommend Out of Synk.
 
 \newpage
 \subsubsection*{Problem 6 Solution, continued}
