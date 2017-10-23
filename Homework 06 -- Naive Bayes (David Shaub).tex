@@ -584,8 +584,27 @@ Elvis has determined that 50\% of his policyholders are Low Risk drivers, 35\% a
 
 \bigskip
 \noindent
-{\bf Solution}
+{\bf Solution}\\
 
+First we calculate the posterior probabilities using the Poisson distribution given Bob has 2 accidents.
+
+\begin{tabular}{lllll}
+&   Low   &   Medium   &   High   \\
+\hline
+Prior      &   0.5   &   0.35   &   0.15   &\\
+Liklihood  &   0.1328531   &   0.2168598   &   0.2677842   &\\
+Joint      &   0.06642655   &   0.07590094   &   0.04016763   &   0.1824951\\
+Posterior  &   0.3639908   &   0.4159067   &   0.2201025   &\\
+\hline
+\end{tabular}\\\\
+
+Now we we these probabilities and the results from \textbf{Problem 7}:
+
+\begin{align*}
+E[Y] &= E[Y|low] \cdot P(low) + E[Y|medium] \cdot P(medium) + E[Y|high] \cdot P(high)\\
+&= 472.5 \cdot 0.3639908 + 1239 \cdot 0.4159067 + 3276 \cdot 0.2201025\\
+&= 1408.35
+\end{align*}
 
 \newpage
 \subsubsection*{Problem 8, continued}
