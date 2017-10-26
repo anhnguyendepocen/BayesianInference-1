@@ -370,13 +370,15 @@ P(D^-|T^+) &= 0.82957\\
 \newpage
 \subsubsection*{Problem 8, continued}
 \begin{align*}
-P(T^+|D^+) &= \frac{0.17043 \cdot 0.16370}{0.17043 \cdot 0.16370 + 0.00251 \cdot 0.8363}\\
+P(T^+|D^+) &= \frac{P(D^+|D^+) \cdot P(D^+)}{P(D^+|D^+) \cdot P(D^+) + P(D^+|D^-) \cdot P(D^-)}\\
+&= \frac{0.17043 \cdot 0.16370}{0.17043 \cdot 0.16370 + 0.00251 \cdot 0.8363}\\
 &= 0.9300261
 \end{align*}
 
 {\bf Part (b)}\ What is the specificity of the test?
 \begin{align*}
-P(T^-|D^-) &= \frac{0.99749 \cdot 0.8363}{0.99749 \cdot 0.8363 + 0.82957 \cdot 0.16370}\\
+P(T^-|D^-) &= \frac{P(D^-|T^-) \cdot P(T^-)}{P(D^-|T^-) \cdot P(T^-) + P(D^-|T^+) \cdot P(T^+)}\\
+&= \frac{0.99749 \cdot 0.8363}{0.99749 \cdot 0.8363 + 0.82957 \cdot 0.16370}\\
 &= 0.8599996
 \end{align*}
 
