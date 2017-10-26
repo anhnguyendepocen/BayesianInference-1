@@ -307,15 +307,16 @@ The diagnostic test assigns a positive test result to patients with an enzyme le
 \begin{align*}
 P(D^+) &= 0.02 \\
 P(D^-) &= 0.98 \\
-P(T^+|D^+) &= P(X \geq 28|\mu = 38) = 0.9434806\\
+P(T^+|D^+) &= P(X \geq 28|\mu = 38) = 0.9611251\\
 P(T^-|D^+) &= P(X<28|\mu = 38) = 0.03887492\\
 P(T^-|D^-) &= P(X<28|\mu = 21) = 0.9174593\\
 P(T^+|D^-) &= P(X \geq 28|\mu = 21) = 0.08254069\\
 \end{align*}
 
 \begin{align*}
-PPV &= P(D^+|T^+) = \frac{0.9434806 \cdot 0.02}{0.9434806 \cdot 0.02 + 0.08254069 \cdot 0.98}\\
-&= 0.1891511
+PPV = P(D^+|T^+) &= \frac{P(T^+|D^+) \cdot P(D^+)}{P(T^+|D^+) \cdot P(D^+) + P(T^+|D^-) \cdot P(D^-)}\\
+&= \frac{0.9611251 \cdot 0.02}{0.9611251 \cdot 0.02 + 0.08254069 \cdot 0.98}\\
+&= 0.1920092
 \end{align*}
 
 \newpage
