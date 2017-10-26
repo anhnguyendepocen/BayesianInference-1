@@ -210,8 +210,9 @@ P(D^+) &= .004 &P(T^+|D^+) &= 0.8 &P(T^+|D^-) &= 0.1\\
 P(D^-)&= 0.996 &P(T^-|D^+) &= 0.2 &P(T^-|D^-) &= 0.9\\
 \end{align*}
 \begin{align*}
-NPV &= P(D^-|T^-) = \frac{0.9 \cdot 0.996}{0.9 \cdot 0.996 + 0.1 \cdot 0.004}\\
-&= 0.999554
+NPV = P(D^-|T^-) &= \frac{P(T^-|D^-)\cdot P(D^-)}{P(T^-|D^+)\cdot P(D^-)}\\
+&= \frac{0.9 \cdot 0.996}{0.9 \cdot 0.996 + 0.2 \cdot 0.004}\\
+&= 0.9991083
 \end{align*}
 
 \newpage
