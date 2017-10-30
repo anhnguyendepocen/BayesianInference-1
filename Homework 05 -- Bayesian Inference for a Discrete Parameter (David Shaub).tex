@@ -237,14 +237,15 @@ Unfortunately, Obie has no information about the frequencies that the different 
 
 \noindent
 {\bf Part (a)}\ Calculate the posterior probabilities of the three brands of drives for Taylor's computer. Be very careful about the likelihood! Think very carefully about exactly what is observed here, and what sort of probability you should use for the likelihood. You might want to review earlier problems with Obie, and how he handles the fact that the drive is still working.\\\\
-Since we have no information about the priors, we will assume 1/3 for each drive. For calculating the likelihoods, we are interested in $P(X>5) = S(5) = p^{5 + 1}$.\\
+Since we have no information about the priors, we will assume 1/3 for each drive. For calculating the likelihoods, we are interested in $P(X>4) = S(4) = p^{4 + 1}$.\\
+
 \begin{tabular}{lllll}
-          & SuprDrive  & MaxxxMem  & UltraDisq &           \\
+           & SuprDrive  & MaxxxMem  & UltraDisq &           \\
 \hline
-Prior     & 0.3333333  & 0.3333333 & 0.3333333 &           \\
-Liklihood & 0.531441   & 0.3771495 & 0.262144  &           \\
-Joint     & 0.177147   & 0.1257165 & 0.0873813 & 0.3902448 \\
-Posterior & 0.4539381  & 0.3221478 & 0.2239141 &           \\
+Prior      &   0.3333333   &   0.3333333   &   0.3333333   &\\
+Liklihood  &   0.59049   &   0.4437053   &   0.32768   &\\
+Joint      &   0.19683   &   0.1479018   &   0.1092267   &   0.4539584\\
+Posterior  &   0.4335859   &   0.3258047   &   0.2406094   &\\
 \hline
 \end{tabular}
 
@@ -256,12 +257,13 @@ Posterior & 0.4539381  & 0.3221478 & 0.2239141 &           \\
 {\bf Part (b)}\ Use the Law of Total Expectation to estimate the expected future lifetime of the drive.
 \begin{align*}
 E[Supr] &= \frac{0.9}{1-0.9} = 9\\
-E[Maxx] &= \frac{0.9}{1-0.85} = 6\\
-E[Ultra] &= \frac{0.9}{1-0.8} = 4.5\\
+E[Maxx] &= \frac{0.85}{1-0.85} = 5.666667\\
+E[Ultra] &= \frac{0.8}{1-0.8} = 4\\
 \end{align*}
 \begin{align*}
-E[X|data] &= 9 * 0.4539381 + 6 * 0.3221478 + 4.5 * 0.2239141\\
-&= 7.025943
+E[X|data] &= E[X|Supr] \cdot P(Supr) + E[X|Maxx] \cdot P(Maxx) + E[X|Ultra] \cdot P(Ultra)\\
+&= 9 \cdot 0.4335859 + 5.666667 \cdot 0.3258047 + 4 \cdot 0.2406094\\
+&= 6.710937
 \end{align*}
 \newpage
 \section*{Problem 6}
