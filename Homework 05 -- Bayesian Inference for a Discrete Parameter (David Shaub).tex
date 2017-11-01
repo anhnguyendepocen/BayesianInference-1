@@ -313,16 +313,17 @@ In last night's game, you don't know which of the two players actually played. B
 \noindent
 {\bf Part (a)}\ Using the observed number of shots, calculate the posterior probabilities that the unknown player was either Chicken Curry or Kobe Beef.\\\\
 
-Since we have no information about the prior, we will use 1/2 for each. The liklihood for each player is calculated using the Poisson density function.\\
+Since we have no information about the prior, we will use 1/2 for each. The liklihood for each player is calculated using the Poisson density function in R with $dpois(37, 32)$ and $dpois(37, 46$ for Chicken Curry and Kobe Beef, respectively.\\
 \begin{tabular}{lllll}
 &   Curry   &   Beef   \\
 \hline
 Prior      &   0.5   &   0.5   &\\
-Liklihood  &   0.04936141   &   0.02127227   &\\
-Joint      &   0.02468071   &   0.01063613   &   0.03531684\\
-Posterior  &   0.6988368   &   0.3011632   &\\
+Liklihood  &   0.04512206   &   0.02545404   &\\
+Joint      &   0.02256103   &   0.01272702   &   0.03528805\\
+Posterior  &   0.6393391   &   0.3606609   &\\
 \hline
 \end{tabular}
+
 
 \newpage
 \subsubsection*{Problem 6, continued}
@@ -339,8 +340,8 @@ E[X|beef] &= 0 \cdot .35 \cdot 37 + 1 \cdot 0.25 \cdot 37 + 2 \cdot 0.25 \cdot 3
 \end{align*}
 Then we multiply these expected values by the posteriors
 \begin{align*}
-E[X|data] &= 55.5 \cdot 0.6988368 + 44.4 \cdot 0.3011632\\
-&= 52.15709
+E[X|data] &= 55.5 \cdot 0.6393391 + 44.4 \cdot 0.3606609\\
+&= 51.49666
 \end{align*}
 
 
