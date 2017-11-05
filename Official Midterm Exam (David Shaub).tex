@@ -259,11 +259,23 @@ Taylor currently has a patient who has a grade III tumor and whose enzyme status
 
 
 \subsection*{Problem Solution}
+Some preliminary quantities we be useful to calculate
+\begin{align*}
+N_{yes} = 29\\
+N_{no} = 71
+\end{align*}
 
 
 \newpage
 \subsubsection*{Problem 6 Solution, continued}
-
+\begin{align*}
+P(yes|III \cap high) &= \frac{P(III|yes) \cdot P(high|yes) \cdot P(yes)}{P(III \cap high)}\\
+&= \frac{\frac{0 + 5}{29} \cdot \frac{0 + 6 + 5}{29} \cdot \frac{29}{100}}{P(III \cap high)}\\
+&= \frac{0.01896552}{0.01896552 + P(III|no) \cdot P(high|no) \cdot P(no)}\\
+&= \frac{0.01896552}{0.01896552 + \frac{9 + 16}{71} \cdot \frac{16 + 2 + 12}{71} \cdot \frac{71}{100}}\\
+&= \frac{0.01896552}{0.01896552+ 0.1056338}\\
+&= 0.1522121
+\end{align*}
 
 
 
