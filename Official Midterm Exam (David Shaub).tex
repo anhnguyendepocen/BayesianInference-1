@@ -31,6 +31,11 @@ Let $A$ and $B$ be two events.
 Write out the fundamental three-line derivation of Bayes' theorem for $\Pr(B\ |\ A)$, starting with the definition of conditional probability $\Pr(B\ |\ A)$ and showing both the joint probability form of the theorem as well as the conditional probability form of the theorem. (Hint: check out slide 41 from Lecture 4, or page 9 from the readings for Lecture 4).
 
 \subsection*{Problem Solution}
+\begin{align*}
+P(B|A) &= \frac{P(A \cap B)}{P(A)}\\
+&= \frac{P(A \cap B)}{P(A \cap B) + P(A \cap B^c)}\\
+&= \frac{P(A|B) \cdot P(B)}{P(A|B) \cdot P(B) + P(A|B^c) \cdot P(B^c)}
+\end{align*}
 
 
 
