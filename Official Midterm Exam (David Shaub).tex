@@ -341,11 +341,36 @@ Last year Bob had 3 claims. Estimate the predicted expected total claim amount f
 
 \subsection*{Problem Solution}
 
+First we will calculate the priors:
+\begin{align*}
+P(low) &= \frac{110}{200} = 0.55\\
+P(medium) &= \frac{60}{200} = 0.30\\
+P(high) &= \frac{30}{200} = 0.15\\
+\end{align*}
+We use the Poisson density function to calculate the liklihoods, and we can do this in R for the low risk group for example by
+\begin{verbatim*}
+dpois(3,1.8)=0.1606705
+\end{verbatim*}
+
 \newpage
 \subsubsection*{Problem 8, continued}
-
-
-
+\begin{tabular}{lllll}
+&   low   &   medium   &   high   \\
+\hline
+Prior      &   0.55   &   0.3   &   0.15   &\\
+Liklihood  &   0.1606705   &   0.1890115   &   0.2236768   &\\
+Joint      &   0.08836879   &   0.05670345   &   0.03355152   &   0.1786238\\
+Posterior  &   0.4947202   &   0.3174463   &   0.1878335   &\\
+\hline
+\end{tabular}
+\\\\
+The total expected claims given the data $E|Y|data]$ is calculated
+\begin{align*}
+E[Y|data| &= E[X|low] \cdot E[N|low] \cdot P(low|data) + E[X|med] \cdot E[N|med] \cdot P(med|data)\\
+&\ + E[X|high] \cdot E[N|high] \cdot P(high|data)\\
+&= 3000 \cdot 1.8 \cdot 0.4947202 + 5000 \cdot 2.1 \cdot 0.3174463 + 8000 \cdot 3.1 \cdot 0.1878335\\
+&= 10662.95
+\end{align*}
 
 
 
