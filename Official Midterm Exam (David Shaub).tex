@@ -1,0 +1,212 @@
+\documentclass[12pt]{article}
+
+\title{Midterm Exam}
+\author{MATH E-158: Introduction to Bayesian Inference}
+\author{David Shaub}
+\date{Due 5 Hours after you download the exam; final submission deadline is 5:00 PM on Monday, November 6, 2017}
+
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\renewcommand\qedsymbol{$\blacksquare$}
+	
+\begin{document}
+	
+	\maketitle
+
+
+\section*{Problem 1 (5 Points)}
+
+
+\subsection*{Problem Statement}
+
+Let $A$ and $B$ be two events.
+Write out the fundamental three-line derivation of Bayes' theorem for $\Pr(B\ |\ A)$, starting with the definition of conditional probability $\Pr(B\ |\ A)$ and showing both the joint probability form of the theorem as well as the conditional probability form of the theorem. (Hint: check out slide 41 from Lecture 4, or page 9 from the readings for Lecture 4).
+
+\subsection*{Problem Solution}
+
+
+
+
+\newpage
+\section*{Problem 2 (10 points)}
+
+\subsection*{Problem Statement}
+
+A hiker in Yosemite National Park has gone missing. Park authorities interview her associates, and discover that she was planning on hiking in region A with probability 10\%, region B with probability 55\%, and region C with probability 35\%. After the first day, rescue teams had searched 20\% of region A, 90\% of region B, and 80\% of region C, but they had not found the hiker.
+
+\bigskip
+\noindent
+{\bf Problem} Determine the MAP estimate of the region where the hiker is located, and report the posterior probability that she is in that region.
+
+\subsection*{Problem Solution}
+
+\newpage
+\subsubsection*{Problem 2 Solution, continued}
+
+\newpage
+\section*{Problem 3 (10 points)}
+
+\subsection*{Problem Statement}
+
+Tyrone has three ancient classical Greek urns. The first urn contains 10 numbered balls, starting at 1 and going up to 10 in increments of 1. The second urn contains 20 numbered balls, starting at 1 and going up to 20 in increments of 1. The third urn contains 30 numbered balls, starting at 1 and going up to 30 in increments of 1. Tyrone rolls a fair die, and selects urn 1 if the die is 1, urn 2 if the die is 2 or 3, and urn 3 if the die is 4, 5, or 6. He then randomly selects a ball from the urn and observes the number on the ball.
+
+\bigskip
+\noindent
+{\bf Problem} Suppose that the observed number is 16. Now Tyrone returns the ball to the urn, mixes up the balls, and randomly selects another ball from the same urn. Calculate the predicted expected value of the number of this second ball, given the observed data that the first ball was a 16.
+
+\subsection*{Problem Solution}
+
+\newpage
+\subsubsection*{Problem 3 Solution, continued}
+
+
+
+
+
+
+
+
+
+\newpage
+\section*{Problem 4 (15 points)}
+
+A new diagnostic test has been developed for screening for a disease, where a positive test result indicates the presence of the disease, and a negative test result indicates the absence of the disease. If 100 people who do not have the disease take the test, the expected number of subjects who test positive is 15. If 100 people who do have the disease take the test, the expected number of subjects who test negative is 5. In a random sample from the population in an epidemiological study it was determined that out of 1,000 subjects, 25 had the disease.
+
+\bigskip
+\noindent
+{\bf Problem} Calculate these four quantities:
+\begin{itemize}
+	\item The sensitivity of the test.
+	\item The specificity of the test.
+	\item The prevalence of the disease.
+	\item The positive predictive value of the test.
+\end{itemize}
+
+\subsection*{Problem Solution}
+
+
+	
+\newpage
+\subsubsection*{Problem 4 Solution, continued}
+
+
+\newpage
+\section*{Problem 5 (15 points)}
+
+\subsection*{Problem Statement}
+
+Obie has a sample of radioactive material, and wants to determine which isotope it is by measuring the time to emission of a particle. Unfortunately, he has no knowledge of the relative frequencies of the three isotopes. He decides to model the time to particle emission by a geometric distribution. Let $X$ denote the number of complete minutes before a particle is emitted.
+\begin{itemize}
+	\item For Isotope A, $\hbox{E}[X] = 4.7$.
+	\item For Isotope B, $\hbox{E}[X] = 6.3$.
+	\item For Isotope C, $\hbox{E}[X] = 9.1$.
+\end{itemize}
+Obie sets up his particle detection system and turns it on at 10:00:00 AM. At 10:05:30 AM, the system detects a particle.
+
+\bigskip
+\noindent
+{\bf Problem} Obie now wants to detect another particle. Calculate the predicted expected number of complete minutes before the next particle is detected, given the observed data.
+
+\subsection*{Problem Solution}
+
+
+\newpage
+\subsubsection*{Problem 5 Solution, continued}
+
+
+\newpage
+\section*{Problem 6 (15 points)}
+
+\subsection*{Problem Statement}
+
+Taylor wants to predict the risk of cancer relapse, given tumor grade (I, II, or III) and the status of a particular enzyme (High or Low). She has this training dataset available:
+$$
+\begin{tabular}{cccccrc}
+Tumor Grade & & Enzyme & & Relapse & & $n$\\
+\hline
+I & & High & & Yes & & 5\\
+I & & High & & No & & 12 \\
+I & & Low & & Yes & & 9\\
+I & & Low & & No & & 13\\
+\hline
+II & & High & & Yes & & 6\\
+II & & High & & No & & 2 \\
+II & & Low & & Yes & & 4\\
+II & & Low & & No & & 19\\
+\hline
+III & & High & & Yes & & 0\\
+III & & High & & No & & 16 \\
+III & & Low & & Yes & & 5\\
+III & & Low & & No & & 9\\
+\hline
+& & & & & & 100
+\end{tabular}
+$$
+Taylor currently has a patient who has a grade III tumor and whose enzyme status is High. However, there are no subjects in her dataset who relapsed and who also have both a grade III tumor and a High enzyme status, so if she simply uses the empirical estimate of this probability she will end up with an estimate of 0, which seems unreasonable. Using a naive Bayes approach, calculate the posterior probability that a patient will relapse, given that they have a grade III tumor and their enzyme status is High.
+
+
+
+\subsection*{Problem Solution}
+
+
+\newpage
+\subsubsection*{Problem 6 Solution, continued}
+
+
+
+
+
+
+
+
+\newpage
+\section*{Problem 7 (15 points)}
+
+\subsection*{Problem Statement}
+
+A new diagnostic test has been developed using a special assay for enzyme activity, which is reported as an integer-valued score. If the test score is greater than or equal to 35, patients are diagnosed as having the disease, otherwise patients are diagnosed as being without disease. For patients who have the disease, test scores are distributed as a Poisson random variable with a mean of 45. For patients who do not have the disease, test scores are distributed as a Poisson random variable with a mean of 27. 2.5\% of the population has the disease.
+
+\bigskip
+\noindent
+{\bf Problem} Calculate the positive and negative predictive values for this test.
+
+
+\newpage
+\subsubsection*{Problem 7, continued}
+
+
+\newpage
+\section*{Problem 8 (15 points)}
+
+Now that Elvis' car insurance business is going so well, he has decided to get into boat insurance, and has signed up 200 boat owners for his new insurance line. Of these 200 policyholders, 110 are low risk, 60 are medium risk, and 30 are high-risk. Elvis decides to model the number of claims that a policyholder submits as a Poisson random variable, denoted $N$. Let $\hbox{E}[X\ |\ \hbox{Risk Class} ]$ denote the expected amount of an individual claim, given the risk class a policyholder is in. After an examination of historical data, Elvis comes up with a table for each risk class:
+$$
+\begin{tabular}{ccccccc}
+& Risk Class & & $\hbox{E}[N]$ & & $\hbox{E}[X]$\\
+\hline
+& Low Risk & & 1.8 & & 3,000\\
+& Medium Risk & & 2.1 & & 5,000\\
+& High Risk & & 3.1 & & 8,000\\
+\hline
+\end{tabular}
+$$
+Last year Bob had 3 claims. Estimate the predicted expected total claim amount for Bob for next year, given the observed data.
+
+\subsection*{Problem Solution}
+
+\newpage
+\subsubsection*{Problem 8, continued}
+
+
+
+
+
+
+\end{document}
