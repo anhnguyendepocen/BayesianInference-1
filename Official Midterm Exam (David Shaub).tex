@@ -146,12 +146,25 @@ A new diagnostic test has been developed for screening for a disease, where a po
 \end{itemize}
 
 \subsection*{Problem Solution}
+\begin{align*}
+P(T^+|D^-) &= \frac{15}{100} = 0.15\\
+specificity = P(T^-|D^-) &= 1 - P(T^+|D^-) = 0.85\\
+P(T^-|D^+) &= \frac{5}{100} = 0.05\\
+sensitivity = P(T^+|D^+) &= 1 - P(T^-|D^+) = 0.95\\
+prevalance = P(D^+) &= \frac{25}{1000} = 0.025\\
+P(D^-) &= 1 - P(D^+) = 0.0975\\
+\end{align*}
 
 
 	
 \newpage
 \subsubsection*{Problem 4 Solution, continued}
 
+\begin{align*}
+PPV = P(D^+|T^+) &= \frac{P(T^+|D^+) \cdot P(D^+)}{P(T^+|D^+) \cdot P(D^+) + P(T^+|D^-) \cdot P(D^-)}\\
+&= \frac{0.95 \cdot 0.025}{0.95 \cdot 0.025 + 0.15 \cdot 0.975}\\
+&= 0.1397059
+\end{align*}
 
 \newpage
 \section*{Problem 5 (15 points)}
