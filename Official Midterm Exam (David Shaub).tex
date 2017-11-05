@@ -184,10 +184,46 @@ Obie sets up his particle detection system and turns it on at 10:00:00 AM. At 10
 {\bf Problem} Obie now wants to detect another particle. Calculate the predicted expected number of complete minutes before the next particle is detected, given the observed data.
 
 \subsection*{Problem Solution}
-
+First we'll need to calculate $p$ for each isotope:
+\begin{align*}
+p &= \frac{E[X]}{1 + E[X]}\\
+p_a &= \frac{4.7}{1 + 4.7} = 0.8245614\\
+p_b &= \frac{6.3}{1 + 6.3} = 0.8630137\\
+p_c &= \frac{9.1}{1 + 9.1} = 0.9009901\\
+\end{align*}
+The emission occurs after complete minutes. For the liklihoods will use probability mass function of the geometric distribution for each of the $p$ parameters we calculated above.
 
 \newpage
 \subsubsection*{Problem 5 Solution, continued}
+In R we can calculate this for particle A by
+\begin{verbatim*}
+dgeom(5,1-0.8245614)
+\end{verbatim*}
+And the liklihoods are then
+\begin{align*}
+P(data|A) &= 0.06687136\\
+P(data|B) &= 0.06557912\\
+P(data|C) &= 0.05878665
+\end{align*}
+We we calculate the posterior probabilities by assuming a uniform prior distribution:
+
+\begin{tabular}{lllll}
+&   A   &   B   &   C   \\
+\hline
+Prior      &   0.3333333   &   0.3333333   &   0.3333333   &\\
+Liklihood  &   0.06687136   &   0.06557912   &   0.05878665   &\\
+Joint      &   0.02229045   &   0.02185971   &   0.01959555   &   0.06374571\\
+Posterior  &   0.3496777   &   0.3429204   &   0.3074019   &\\
+\hline
+\end{tabular}
+\\\\
+Finally using these posteriors we can calculate the number of minutes until the next particle emission:
+
+\begin{align*}
+E[X|data| &= E[X|A] \cdot P(A|data) + E[X|B] \cdot P(B|data) + E[X|C] \cdot P(C|data)\\
+&= 4.7 * 0.3496777 + 6.3 * 0.3429204 + 9.1 * 0.3074019\\
+&= 6.601241
+\end{align*}
 
 
 \newpage
