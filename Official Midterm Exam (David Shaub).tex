@@ -49,10 +49,23 @@ A hiker in Yosemite National Park has gone missing. Park authorities interview h
 
 \bigskip
 \noindent
-{\bf Problem} Determine the MAP estimate of the region where the hiker is located, and report the posterior probability that she is in that region.
+{\bf Problem} Determine the MAP estimate of the region where the hiker is located, and report the posterior probability that she is in that region.\\
+
+The priors are given in the problem statement. The liklihoods can be calculated by taking 1 - the search effectivenesses also given.
 
 \subsection*{Problem Solution}
+\begin{tabular}{lllll}
+&   A   &   B   &   C   \\
+\hline
+Prior      &   0.1   &   0.55   &   0.35   &\\
+Liklihood  &   0.8   &   0.1   &   0.2   &\\
+Joint      &   0.08   &   0.055   &   0.07   &   0.205\\
+Posterior  &   0.3902439   &   0.2682927   &   0.3414634   &\\
+\hline
+\end{tabular}
+\\\\
 
+Region \textbf{A} has the largest posterior probability, so it is our MAP estimate for the best region to search. The posterior probability for A is given in the table above.
 \newpage
 \subsubsection*{Problem 2 Solution, continued}
 
