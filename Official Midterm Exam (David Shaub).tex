@@ -51,9 +51,10 @@ A hiker in Yosemite National Park has gone missing. Park authorities interview h
 \noindent
 {\bf Problem} Determine the MAP estimate of the region where the hiker is located, and report the posterior probability that she is in that region.\\
 
-The priors are given in the problem statement. The liklihoods can be calculated by taking 1 - the search effectivenesses also given.
 
 \subsection*{Problem Solution}
+The priors are given in the problem statement. The liklihoods can be calculated by $1 - search\ effectivenesses$.
+
 \begin{tabular}{lllll}
 &   A   &   B   &   C   \\
 \hline
@@ -65,7 +66,7 @@ Posterior  &   0.3902439   &   0.2682927   &   0.3414634   &\\
 \end{tabular}
 \\\\
 
-Region \textbf{A} has the largest posterior probability, so it is our MAP estimate for the best region to search. The posterior probability for A is given in the table above.
+Region \textbf{A} has the largest posterior probability, so it is our MAP estimate for the hiker's location. The posterior probability for region A is given in the table above.
 \newpage
 \subsubsection*{Problem 2 Solution, continued}
 
@@ -152,7 +153,7 @@ specificity = P(T^-|D^-) &= 1 - P(T^+|D^-) = 0.85\\
 P(T^-|D^+) &= \frac{5}{100} = 0.05\\
 sensitivity = P(T^+|D^+) &= 1 - P(T^-|D^+) = 0.95\\
 prevalance = P(D^+) &= \frac{25}{1000} = 0.025\\
-P(D^-) &= 1 - P(D^+) = 0.0975\\
+P(D^-) &= 1 - P(D^+) = 0.975\\
 \end{align*}
 
 
@@ -191,14 +192,18 @@ p_a &= \frac{4.7}{1 + 4.7} = 0.8245614\\
 p_b &= \frac{6.3}{1 + 6.3} = 0.8630137\\
 p_c &= \frac{9.1}{1 + 9.1} = 0.9009901\\
 \end{align*}
-The emission occurs after complete minutes. For the liklihoods will use probability mass function of the geometric distribution for each of the $p$ parameters we calculated above.
+The emission occurs after five continuing observations (minutes), and the terminating observation occurs on the sixth observation (minute). For the liklihoods we will use the probability mass function of the geometric distribution for each of the $p$ parameters we calculated above.
 
 \newpage
 \subsubsection*{Problem 5 Solution, continued}
 In R we can calculate this for particle A by
 \begin{verbatim*}
-dgeom(5,1-0.8245614)
+dgeom(5,1-0.8245614)=0.06687136
 \end{verbatim*}
+We could also calculate this manually with
+\begin{align*}
+P(X = k) = p^k \cdot (1 - p)
+\end{align*}
 And the liklihoods are then
 \begin{align*}
 P(data|A) &= 0.06687136\\
@@ -221,7 +226,7 @@ Finally using these posteriors we can calculate the number of minutes until the 
 
 \begin{align*}
 E[X|data| &= E[X|A] \cdot P(A|data) + E[X|B] \cdot P(B|data) + E[X|C] \cdot P(C|data)\\
-&= 4.7 * 0.3496777 + 6.3 * 0.3429204 + 9.1 * 0.3074019\\
+&= 4.7 \cdot 0.3496777 + 6.3 \cdot 0.3429204 + 9.1 \cdot 0.3074019\\
 &= 6.601241
 \end{align*}
 
@@ -268,6 +273,7 @@ N_{no} = 71
 
 \newpage
 \subsubsection*{Problem 6 Solution, continued}
+Now applying the assumption of conditional independence we have
 \begin{align*}
 P(yes|III \cap high) &= \frac{P(III|yes) \cdot P(high|yes) \cdot P(yes)}{P(III \cap high)}\\
 &= \frac{\frac{0 + 5}{29} \cdot \frac{0 + 6 + 5}{29} \cdot \frac{29}{100}}{P(III \cap high)}\\
@@ -364,9 +370,9 @@ Posterior  &   0.4947202   &   0.3174463   &   0.1878335   &\\
 \hline
 \end{tabular}
 \\\\
-The total expected claims given the data $E|Y|data]$ is calculated
+The total expected value of all claims given the data $E|Y|data]$ is calculated
 \begin{align*}
-E[Y|data| &= E[X|low] \cdot E[N|low] \cdot P(low|data) + E[X|med] \cdot E[N|med] \cdot P(med|data)\\
+E[Y|data] &= E[X|low] \cdot E[N|low] \cdot P(low|data) + E[X|med] \cdot E[N|med] \cdot P(med|data)\\
 &\ + E[X|high] \cdot E[N|high] \cdot P(high|data)\\
 &= 3000 \cdot 1.8 \cdot 0.4947202 + 5000 \cdot 2.1 \cdot 0.3174463 + 8000 \cdot 3.1 \cdot 0.1878335\\
 &= 10662.95
