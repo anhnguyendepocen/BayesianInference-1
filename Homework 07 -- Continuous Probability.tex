@@ -1,0 +1,227 @@
+\documentclass[12pt]{article}
+
+\title{Problem Set 7: Continuous Probability}
+\author{MATH E-158: Introduction to Bayesian Inference}
+\author{David Shaub}
+\date{Due November 13, 2017}
+
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\renewcommand\qedsymbol{$\blacksquare$}
+	
+\begin{document}
+	
+	\maketitle
+
+
+\section*{Problem 1}
+
+
+\subsection*{Problem Statement}
+
+Let $X$ be a continuous random variable defined on the region $(0,5)$. Suppose $X$ has the kernel:
+$$
+g(x) = x, \ \ 0 \leq x \leq 5
+$$
+
+\bigskip
+\noindent
+{\bf Part (a)} Without using calculus, determine the normalizing constant for the density function of $X$.
+
+\bigskip
+\noindent
+{\bf Part (b)} Without using calculus, compute the probability $\Pr(X \geq 3)$.
+
+\bigskip
+\noindent
+{\bf Part (c)} Without using calculus, compute the probability $\Pr(2 \leq X \leq 4)$.
+
+\bigskip
+\noindent
+{\bf Part (d)} The {\em median} of any probability distribution is the value $m$ such that $F(m) = 0.5$. Without using calculus, compute the median of $X$.
+
+\bigskip
+\noindent
+{\bf Hint} This is an exercise in elementary geometry.
+
+
+
+
+
+\subsection*{Problem Solution}
+
+
+
+\newpage
+\section*{Problem 2}
+
+\subsection*{Problem Statement}
+
+Let $Y$ be a random variable with kernel $g(y) = e^{-y/5}$, for $y \geq 0$.
+
+\bigskip
+\noindent
+{\bf Part (a)} Using the formulas from the lecture, determine the normalizing constant for the density function of $Y$.
+
+\bigskip
+\noindent
+{\bf Part (b)} Using the formulas from the lecture, compute $\Pr( Y \geq 6)$.
+
+\bigskip
+\noindent
+{\bf Part (c)} Using the formulas from the lecture, compute $\Pr( 3 \leq Y \leq 6)$.
+
+
+\bigskip
+\noindent
+{\bf Part (d)} The {\em median} of any probability distribution is the value $m$ such that $F(m) = 0.5$. Without using calculus, compute the median of $Y$.
+
+
+
+
+
+
+\subsection*{Problem Solution}
+
+
+
+\newpage
+\section*{Problem 3}
+
+\subsection*{Problem Statement}
+
+Let $W$ be a random variable defined on the region $(0,4)$, with kernel $g(w) = 3x^2 + 1, 0 \leq w \leq 4$.
+
+\bigskip
+\noindent
+{\bf Part (a)} Using calculus, determine the normalizing constant for this distribution.
+
+\bigskip
+\noindent
+{\bf Part (a)} Using calculus, compute the probability $\Pr(W \geq 3)$.
+
+\bigskip
+\noindent
+{\bf Part (a)} Using calculus, determine the probability $\Pr(1 \leq W \leq 3)$.
+
+\bigskip
+\noindent
+{\bf Part (a)} Using calculus, compute the expected value of $W$.
+
+
+
+
+\subsection*{Problem Solution}
+
+
+
+
+\newpage
+\section*{Problem 4}
+
+\subsection*{Problem Statement}
+
+Let $X$ be a random variable with an exponential distribution. Suppose $F(2) = 0.77687$.
+
+\bigskip
+\noindent
+{\bf Problem} Calculate the survival probability $S(0.5)$.
+
+
+\subsection*{Problem Solution}
+
+
+
+
+\newpage
+\section*{Problem 5}
+
+\subsection*{Problem Statement}
+
+Obie has a sample of radioactive Healthy Kale and Tofu, and he would like to determine which of three isotopes it is:
+\begin{itemize}
+	\item For HKT-23, the expected time for a particle emission is 6 minutes.
+	\item For HKT-25, the expected time for a particle emission is 4.3 minutes.
+	\item For HKT-27, the expected time for a particle emission is 2.7 minutes.
+\end{itemize}
+Obie believes that 25\% of samples will be HKT-23, 35\% of samples will be HKT-25, and 40\% of samples will be HKT-27.
+Obie sets up his particle detection apparatus, and at 1:00:00 PM he turns it on. He then eats a bowl of Sugar Bomzz cereal, and when he returns at 1:05:30 PM he observes that no particle has been detected.
+
+\bigskip
+\noindent
+{\bf Problem} Calculate the posterior probability that the sample is HKT-23.
+
+
+\subsection*{Problem Solution}
+
+
+
+
+\newpage
+\section*{Problem 6}
+
+\subsection*{Problem Statement}
+
+Elvis has just purchased a rival insurance company. He decides to model annual costs with a 2-Parameter Pareto distribution, and in all cases $\alpha = 2$. Low-risk drivers have an expected annual cost of 500, Medium-risk drivers have an expected annual cost of 800, and High-risk drivers have an expected annual cost of 1,250. Unfortunately, the records of the insurance company were not very good, and there are two problems for Elvis:
+\begin{itemize}
+	\item First, there's no way to determine what proportion of drivers were Low-, Medium-, or High-risk.
+	\item Second, cost amounts were not recorded precisely, but only within a range.
+\end{itemize}
+
+\bigskip
+\noindent
+{\bf Problem} Bob, who is a driver insured by the rival insurance company, had total annual costs last year that were between 1,000 and 1,500. What is the predicted expected cost for Bob for the next year?
+
+
+\subsection*{Problem Solution}
+
+
+
+
+\newpage
+\section*{Problem 7}
+
+\subsection*{Problem Statement}
+
+The kernel of the 2-parameter Pareto distribution is
+$$
+g(x) = \frac{1}{(x + \theta)^{\alpha + 1}}
+$$
+
+\bigskip
+\noindent
+{\bf Problem} Using calculus, derive the normalizing constant for the 2-parameter Pareto distribution.
+
+
+\subsection*{Problem Solution}
+
+
+
+
+\newpage
+\section*{Problem 8}
+
+\subsection*{Problem Statement}
+
+Let $X$ be a 2-parameter Pareto distribution, with $\alpha > 1$.
+
+\bigskip
+\noindent
+{\bf Problem} Using calculus, derive $\hbox{E}[X]$, the expected value of $X$.
+
+
+\subsection*{Problem Solution}
+
+
+
+
+
+\end{document}
