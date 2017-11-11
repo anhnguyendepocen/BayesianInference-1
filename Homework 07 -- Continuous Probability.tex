@@ -118,7 +118,43 @@ Let $Y$ be a random variable with kernel $g(y) = e^{-y/5}$, for $y \geq 0$.
 
 
 \subsection*{Problem Solution}
+\bigskip
+\noindent
+{\bf Part (a)} Using the formulas from the lecture, determine the normalizing constant for the density function of $Y$.
+\begin{align*}
+\int_0^\infty e^{-y/5}\cdot dy &= -5e^{-y/5}\biggr\rvert_0^{\infty} = 0 + 5 = 5\\
+c &= \frac{1}{5}
+\end{align*}
 
+
+\bigskip
+\noindent
+{\bf Part (b)} Using the formulas from the lecture, compute $\Pr( Y \geq 6)$.
+\begin{align*}
+P(Y \geq 6) &= \frac{1}{5}\int_6^\infty e^{-y/5}\cdot dy = -e^{-y/5}\biggr\rvert_6^{\infty}\\
+&= 0 + e^{-6/5} \approxeq 0.3011942
+\end{align*}
+
+
+\bigskip
+\noindent
+{\bf Part (c)} Using the formulas from the lecture, compute $\Pr( 3 \leq Y \leq 6)$.
+\begin{align*}
+P(y \leq 6) &= 1 - S(6) \approxeq 1 - 0.3011942 \approxeq 0.6988058\\
+P(y \leq 3) &= \frac{1}{5}\int_0^3 e^{-y/5}\cdot dy = -e^{-y/5}\biggr\rvert_0^{3}\\
+&= -e^{-3/5} + 1 \approxeq 0.4511884\\
+P(3 \leq y \leq 6) &= P(y \leq 6) - P(y \leq 3) \approxeq 0.6988058 - 0.4511884 \approxeq 0.247617
+\end{align*}
+
+\bigskip
+\noindent
+{\bf Part (d)} The {\em median} of any probability distribution is the value $m$ such that $F(m) = 0.5$. Without using calculus, compute the median of $Y$.
+\begin{align*}
+F(m) = -e^{-m/5} + e^{-0/5} &= 0.5\\
+e^{-m/5} &= 0.5\\
+\frac{-m}{5} &= \ln{0.5}\\
+m &= -5 \cdot \ln{0.5} \approxeq 3.465736
+\end{align*}
 
 
 \newpage
