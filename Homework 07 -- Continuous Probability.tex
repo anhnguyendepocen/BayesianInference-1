@@ -298,8 +298,47 @@ Elvis has just purchased a rival insurance company. He decides to model annual c
 
 
 \subsection*{Problem Solution}
-
-
+\begin{align*}
+E[X|b\cap low] &= \frac{\theta}{2 - 1} = 500\\
+\theta &= 500\\
+E[X|b\cap med] &= \frac{\theta}{2 - 1} = 800\\
+\theta &= 800\\
+E[X|b\cap high] &= \frac{\theta}{2 - 1} = 1250\\
+\theta &= 1250\\
+\end{align*}
+For low risk:
+\begin{align*}
+F(x=1500|b\cap low) &= 1 - \biggr(\frac{500}{1500 + 500}\biggr)^2 = 0.9375\\
+F(x=1000|b\cap low) &= 1 - \biggr(\frac{500}{1000 + 500}\biggr)^2 = 0.8888889\\
+P(1000 \leq x \leq 1500) &= 0.04861111\\
+\end{align*}
+For medium risk:
+\begin{align*}
+F(x=1500|b\cap low) &= 1 - \biggr(\frac{800}{1500 + 800}\biggr)^2 = 0.879017\\
+F(x=1000|b\cap low) &= 1 - \biggr(\frac{800}{1000 + 800}\biggr)^2 = 0.8024691\\
+P(1000 \leq x \leq 1500) &= 0.07654788\\
+\end{align*}
+For high risk:
+\begin{align*}
+F(x=1500|b\cap low) &= 1 - \biggr(\frac{1250}{1500 + 1250}\biggr)^2 = 0.7933884\\
+F(x=1000|b\cap low) &= 1 - \biggr(\frac{1250}{1000 + 1250}\biggr)^2 = 0.691358\\
+P(1000 \leq x \leq 1500) &= 0.1020304\\
+\end{align*}
+\begin{tabular}{lllll}
+&   low   &   medium   &   high   \\
+\hline
+Prior      &   0.3333333   &   0.3333333   &   0.3333333   &\\
+Liklihood  &   0.04861111   &   0.07654788   &   0.1020304   &\\
+Joint      &   0.0162037   &   0.02551596   &   0.03401013   &   0.0757298\\
+Posterior  &   0.2139673   &   0.3369342   &   0.4490984   &\\
+\hline
+\end{tabular}\\\\
+Using the law of total probability:
+\begin{align*}
+E[X|data] &= E[X|low] \cdot P(low) + E[X|med] \cdot P(med) + E[X|high] \cdot P(high)\\
+&= 500 \cdot 0.2139673 + 800 \cdot 0.3369342 + 1250 \cdot 0.4490984\\
+&= 937.904
+\end{align*}
 
 
 \newpage
