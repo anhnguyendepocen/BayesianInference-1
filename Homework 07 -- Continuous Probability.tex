@@ -170,22 +170,49 @@ Let $W$ be a random variable defined on the region $(0,4)$, with kernel $g(w) = 
 
 \bigskip
 \noindent
-{\bf Part (a)} Using calculus, compute the probability $\Pr(W \geq 3)$.
+{\bf Part (b)} Using calculus, compute the probability $\Pr(W \geq 3)$.
 
 \bigskip
 \noindent
-{\bf Part (a)} Using calculus, determine the probability $\Pr(1 \leq W \leq 3)$.
+{\bf Part (c)} Using calculus, determine the probability $\Pr(1 \leq W \leq 3)$.
 
 \bigskip
 \noindent
-{\bf Part (a)} Using calculus, compute the expected value of $W$.
+{\bf Part (d)} Using calculus, compute the expected value of $W$.
 
 
 
 
 \subsection*{Problem Solution}
+\bigskip
+\noindent
+{\bf Part (a)} Using calculus, determine the normalizing constant for this distribution.
+\begin{align*}
+\int_0^4 3x^2 + 1 \cdot dx &= x^3 + x \biggr\rvert_0^{4} = 68\\
+c &= \frac{1}{68}
+\end{align*}
 
+\bigskip
+\noindent
+{\bf Part (b)} Using calculus, compute the probability $\Pr(W \geq 3)$.
+\begin{align*}
+P(W \geq 3) &= \frac{1}{68} \int_3^4 3x^2 + 1 \cdot dx = \frac{x^3 + x}{68} \biggr\rvert_3^4 = \frac{68 - 30}{68} \approxeq 0.5588235
+\end{align*}
 
+\bigskip
+\noindent
+{\bf Part (c)} Using calculus, determine the probability $\Pr(1 \leq W \leq 3)$.
+\begin{align*}
+P(W \geq 3) &= \frac{1}{68} \int_1^3 3x^2 + 1 \cdot dx = \frac{x^3 + x}{68} \biggr\rvert_1^3 = \frac{30 - 2}{68} \approxeq 0.4117647
+\end{align*}
+\bigskip
+\noindent
+{\bf Part (d)} Using calculus, compute the expected value of $W$.
+\begin{align*}
+E[W] &= \frac{1}{68} \int_0^4 x \cdot g(x)\\
+&= \frac{1}{68} \int_0^4 3x^3 + x \cdot dx = \frac{\frac{3x^4}{4} + \frac{x^2}{2}}{68} \biggr\rvert_0^4\\
+&\approxeq 2.941176 + 0 \approxeq 2.941176
+\end{align*}
 
 
 \newpage
