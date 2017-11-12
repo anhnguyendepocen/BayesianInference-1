@@ -258,7 +258,26 @@ Obie sets up his particle detection apparatus, and at 1:00:00 PM he turns it on.
 
 
 \subsection*{Problem Solution}
-
+\begin{align*}
+E[X|\lambda] &= \frac{1}{\lambda} = 6\\
+\lambda &= 0.1666667\\
+E[X|\lambda] &= \frac{1}{\lambda} = 4.3\\
+\lambda &= 0.2325581\\
+E[X|\lambda] &= \frac{1}{\lambda} = 2.7\\
+\lambda &= 0.3703704\\
+S(x=5.5|\lambda=0.1666667) &= e^{-\lambda x} = e^{-0.1666667 \cdot 5.5}= 0.3998496\\
+S(x=5.5|\lambda=0.2325581) &= e^{-\lambda x} = e^{-0.2325581 \cdot 5.5}= 0.2782961\\
+S(x=5.5|\lambda=0.3703704) &= e^{-\lambda x} = e^{-0.3703704 \cdot 5.5}= 0.1304145\\
+\end{align*}
+\begin{tabular}{lllll}
+&   HTK-23   &   HTK-25   &   HTK-27   \\
+\hline
+Prior      &   0.25   &   0.35   &   0.4   &\\
+Liklihood  &   0.3998496   &   0.2782961   &   0.1304145   &\\
+Joint      &   0.0999624   &   0.09740363   &   0.0521658   &   0.2495318\\
+Posterior  &   0.4005998   &   0.3903455   &   0.2090547   &\\
+\hline
+\end{tabular}
 
 
 
