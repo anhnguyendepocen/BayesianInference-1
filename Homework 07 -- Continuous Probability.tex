@@ -379,9 +379,20 @@ Let $X$ be a 2-parameter Pareto distribution, with $\alpha > 1$.
 
 
 \subsection*{Problem Solution}
-
-
-
-
+\begin{align*}
+E[X] &= \int_0^\infty \frac{\alpha \theta^\alpha \cdot x}{(x + \theta)^{\alpha + 1}}dx\\
+&= -\alpha \theta^\alpha \int_0^\infty \frac{-x}{(x + \theta)^{\alpha + 1}}dx
+\end{align*}
+\begin{align*}
+u &= x	&	du &= dx\\
+dv &= \frac{-1}{(x + \theta)^{\alpha + 1}}dx	&	v &= \frac{1}{\alpha(x + \theta)^\alpha}\\
+\end{align*}
+\begin{align*}
+E[X] &= -\alpha \theta^\alpha \biggr(\frac{x}{\alpha(x + \theta)^\alpha} - \int_0^\infty \frac{1}{\alpha(x + \theta)^\alpha}dx\biggr)\\
+&= -\alpha \theta^\alpha \biggr(\frac{x}{\alpha(x + \theta)^\alpha} - \frac{1}{\alpha\theta^\alpha}\biggr)\\
+&= \frac{-x \theta^\alpha}{(x + \theta)^\alpha} + 1 \\
+???\\
+&= \frac{\theta}{\alpha - 1}
+\end{align*}
 
 \end{document}
