@@ -1,0 +1,422 @@
+\documentclass[12pt]{article}
+
+\title{Problem Set 8: The Beta -- Binomial Model}
+\author{MATH E-158: Introduction to Bayesian Inference}
+\date{Due November 20, 2017}
+
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\renewcommand\qedsymbol{$\blacksquare$}
+	
+\begin{document}
+	
+	\maketitle
+
+
+\section*{Problem 1}
+
+
+\subsection*{Problem Statement}
+
+\bigskip
+For each of these functions, determine if it is the kernel of a beta distribution, and if so, what the values of the parameters $a$ and $b$ are:
+\begin{itemize}
+	\item {\bf Part (a)} $g(p\ |\ a,b) = p \cdot (1 - p)$.
+	\item {\bf Part (b)} $g(p\ |\ a,b) = p$
+	\item {\bf Part (c)} $g(p\ |\ a,b) = \displaystyle \frac{ p^3}{\sqrt{1 - p} }$
+	\item {\bf Part (d)} $g(p\ |\ a,b) = p^4 + (1 - p)^3$
+	\item {\bf Part (e)} $g(p\ |\ a,b) = \sqrt[3]{p} - 2 \sqrt[3]{p} \cdot p + \sqrt[3]{p} \cdot p^2 $
+\end{itemize}
+
+
+
+\subsection*{Problem Solution}
+
+
+
+\newpage
+\section*{Problem 2}
+
+\subsection*{Problem Statement}
+
+Tyrone has wants to analyze free throws in basketball. He decides to model an individual's probability of success with a beta distribution, and he wants this beta distribution to have mean $\mu = 0.6$ and standard deviation $\sigma = 0.10$. 
+
+\bigskip
+\noindent
+{\bf Part (a)} What are the hyperparameters $a$ and $b$ for Tyrone's prior beta distribution?
+
+\bigskip
+\noindent
+{\bf Part (b)} Ashley attempts 20 free throws, and she makes 18 of them. What are the hyperparameters for Tyrone's posterior distribution for Ashley?
+
+\bigskip
+\noindent
+{\bf Part (c)} What is Tyrone's estimate of Ashley's true free-throw probability of success, given the observed data?
+
+
+
+\subsection*{Problem Solution}
+
+\bigskip
+\noindent
+{\bf Part (a)} What are the hyperparameters $a$ and $b$ for Tyrone's prior beta distribution?
+
+\bigskip
+\noindent
+{\bf Solution} 
+
+
+
+
+\newpage
+\subsubsection*{Problem 2, continued}
+
+\vspace{2in}
+\noindent
+{\bf Part (b)} Ashley attempts 20 free throws, and she makes 18 of them. What are the hyperparameters for Tyrone's posterior distribution for Ashley?
+
+\bigskip
+\noindent
+{\bf Solution} 
+
+
+
+\vspace{2in}
+\noindent
+{\bf Part (c)} What is Tyrone's estimate of Ashley's true free-throw probability of success, given the observed data?
+
+\bigskip
+\noindent
+{\bf Solution} 
+
+
+
+
+
+
+
+
+\newpage
+\section*{Problem 3}
+
+\subsection*{Problem Statement}
+
+Obie has decided to take up baseball, and Elvis and Taylor would like to estimate his true batting average. They both agree to use for their prior a beta distribution with hyperparameters $a = 13$ and $b = 37$. Taylor watches Obie during practice, and in the morning he gets 11 hits out of 25 at-bats, while in the afternoon he gets 7 hits out of 15 at-bats.
+
+\bigskip
+\noindent
+{\bf Part (a)} Taylor updates the intitial prior distribution after the morning practice, using the data observed up to that time. What are the hyperparameters for her posterior distribution after the morning practice?
+
+\bigskip
+\noindent
+{\bf Part (b)} At the end of the day, Taylor uses the data from afternoon practice to update the posterior from the morning. What are the hyperparameters for her posterior distribution after the afternoon practice?
+
+
+\bigskip
+\noindent
+{\bf Part (c)} Elvis doesn't attend batting practice, and that evening he learns the total number of Obie's hits and at-bats for the entire day, without the morning and afternoon subtotals. Elvis then uses the data for the entire day to update his initial prior distribution in one step. What are the hyperparameters for his posterior distribution at the end of the day?
+
+
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)} Taylor updates the intitial prior distribution after the morning practice, using the data observed up to that time. What are the hyperparameters for her posterior distribution after the morning practice?
+
+\bigskip
+\noindent
+{\bf Solution} 
+
+\newpage
+\subsubsection*{Problem 3, continued}
+
+\noindent
+{\bf Part (b)} At the end of the day, Taylor uses the data from afternoon practice to update the posterior from the morning. What are the hyperparameters for her posterior distribution after the afternoon practice?
+
+\bigskip
+\noindent
+{\bf Solution} 
+
+
+\vspace{3in}
+\noindent
+{\bf Part (c)} Elvis doesn't attend batting practice, and that evening he learns the total number of Obie's hits and at-bats for the entire day, without the morning and afternoon subtotals. Elvis then uses the data for the entire day to update his initial prior distribution in one step. What are the hyperparameters for his posterior distribution at the end of the day?
+
+\bigskip
+\noindent
+{\bf Solution} 
+
+
+
+
+
+
+\newpage
+\section*{Problem 4}
+
+\subsection*{Problem Statement}
+
+Obie has now made it to the big leagues! Joe and Grant decide to analyze Obie's batting average, with both using a beta distribution as the prior for $p$, Obie's true batting average. Joe has a prior with hyperparameters $a = 20$ and $b = 60$, while Grant has hyperparameters $a = 75$ and $b = 225$.
+
+\bigskip
+\noindent
+{\bf Part (a)} What are the expected values for both Joe and Grant's prior distributions?
+
+\bigskip
+\noindent
+{\bf Part (b)} What are the standard deviations for both Joe and Grant's prior distributions?
+
+\bigskip
+\noindent
+{\bf Part (c)} Obie gets 80 hits in his first 200 at-bats. What is Joe's posterior estimate of Obie's true batting average?
+
+\bigskip
+\noindent
+{\bf Part (d)} Grant observes the same 80 hits in 200 at-bats that Joe did. What is Grant's posterior estimate of Obie's true batting average?
+
+\bigskip
+\noindent
+{\bf Part (e)} Both Joe and Grant had the same expected value for their prior distributions, and they both observed the same data? Why were their posterior estimates different?
+
+
+\newpage
+\subsection*{Problem Solution}
+\bigskip
+\noindent
+{\bf Part (a)} What are the expected values for both Joe and Grant's prior distributions?
+
+\bigskip
+\noindent
+{\bf Solution} 
+
+
+
+\vspace{2in}
+\noindent
+{\bf Part (b)} What are the standard deviations for both Joe and Grant's prior distributions?
+
+\bigskip
+\noindent
+{\bf Solution} 
+
+
+
+\newpage
+\subsubsection*{Problem 4, continued}
+
+\noindent
+{\bf Part (c)} Obie gets 80 hits in his first 200 at-bats. What is Joe's posterior estimate of Obie's true batting average?
+
+\bigskip
+\noindent
+{\bf Solution} 
+
+
+
+\vspace{1.5in}
+\noindent
+{\bf Part (d)} Again, Obie gets 80 hits in his first 200 at-bats. What is Grant's posterior estimate of Obie's true batting average?
+
+\bigskip
+\noindent
+{\bf Solution} 
+
+
+
+\vspace{1.5in}
+\noindent
+{\bf Part (e)} Both Joe and Grant had the same expected value for their prior distributions, and they both observed the same data? Why were their posterior estimates different?
+
+\bigskip
+\noindent
+{\bf Solution} 
+
+
+
+
+
+
+
+\newpage
+\section*{Problem 5}
+
+\subsection*{Problem Statement}
+
+Obie is consistently batting .400 i.e.\ 40\% of all his at-bats result in hits. Tyrone started the season with a prior for Obie's batting average that was a beta distribution with parameters $a = 27$ and $b = 73$.
+
+\bigskip
+\noindent
+{\bf Problem} If Obie continues to consistently get hits for 40\% of his at-bats, what is the number of at-bats that he will need before Tyrone's estimate of Obie's true batting average is at least .350? That is, if $x$ is the number of at-bats, how large does $x$ have to be so that when Obie gets $0.4x$ hits, Tyrone's estimate of Obie's true probability of success is at least 35\%?
+
+
+\subsection*{Problem Solution}
+
+
+
+
+\newpage
+\section*{Problem 6}
+
+\subsection*{Problem Statement}
+
+Suppose the outcome random variable $X$ has a Poisson distribution with parameter $\mu$:
+$$
+\Pr(X = k\ |\ \mu) = \frac{ e^{-\mu} \cdot \mu^k}{k!}
+$$
+Also, suppose that $\mu$ has an exponential distribution with parameter $\lambda$:
+$$
+f(\mu) = \lambda \cdot e^{-\lambda \mu}
+$$
+Using the Law of Total Probability, show that the unconditional distribution of $X$ is:
+$$
+\Pr( X = k ) = \frac{ \lambda }{(\lambda + 1)^{k+1}}
+$$
+{\bf Hint} This problem is very similar to the example in Section 1, Case 2, in the reading, starting at page on page 4. If you're unsure about how to procede, reviewing this section would be a great way to get started.
+
+
+\subsection*{Problem Solution}
+
+
+\newpage
+\subsubsection*{Problem 6, continued}
+
+
+
+\newpage
+\section*{Problem 7}
+
+\subsection*{Problem Statement}
+
+Suppose the outcome random variable $X$ has an exponential distribution with parameter $\lambda$:
+$$
+f(x\ |\ \lambda) = \lambda  e^{-\lambda x}
+$$
+Next, suppose $\lambda$ also follows an exponential distribution, but with parameter $\theta$:
+$$
+g(\lambda\ |\ \theta) = \theta e^{-\theta \lambda}
+$$
+Using the Law of Total Probability, show that the unconditional density of $X$ is:
+$$
+f(x) = \frac{ \theta }{(x + \theta)^2}
+$$
+{\bf Hint} This problem is very similar to the example in Section 1, Case 3, in the reading, starting at page on page 6. If you're unsure about how to procede, reviewing this section would be a great way to get started.
+
+\subsection*{Problem Solution}
+
+
+\newpage
+\subsubsection*{Problem 7, continued}
+
+
+
+\newpage
+\section*{Problem 8}
+
+\subsection*{Problem Statement}
+
+Suppose the outcome random variable $X$ has a Poisson distribution with parameter $\mu$. This parameter has a prior distribution which is exponential, and this exponential distribution has parameter $\lambda$.
+
+\bigskip
+\noindent
+{\bf Part (a)} Write down the explicit algebraic form of the density function for the prior distribution for the parameter $\mu$.
+
+\bigskip
+\noindent
+{\bf Part (b)} Suppose we observe a value of $k$ for the outcome random variable $X$. Write down the explicit algebraic form of the likelihood.
+
+\bigskip
+\noindent
+{\bf Part (c)} Show that the joint distribution is
+$$
+\hbox{Joint} \propto \mu^k \cdot e^{-(\lambda + 1) \mu}
+$$
+
+\bigskip
+\noindent
+{\bf Part (d)} Show that
+$$
+\int_0^\infty \mu^{k} \cdot e^{-(\lambda+1) \mu} \cdot d\mu = \frac{ \Gamma( k + 1 ) }{(\lambda + 1)^{k+1} }
+$$
+\noindent
+{\bf Hint} We've seen this sort of integral a few times before. Try to make a substitution to turn this into a gamma function.
+
+\bigskip
+\noindent
+{\bf Part (e)} What is the density function for the posterior distribution of $\mu$, given that the outcome variable $X$ had the observed value $k$?
+
+
+\newpage
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)} Write down the explicit algebraic form of the density function for the prior distribution for the parameter $\mu$.
+
+\bigskip
+\noindent
+{\bf Solution}
+
+
+\vspace{1.5in}
+\noindent
+{\bf Part (b)} Suppose we observe a value of $k$ for the outcome random variable $X$. Write down the explicit algebraic form of the likelihood.
+
+\bigskip
+\noindent
+{\bf Solution}
+
+
+\vspace{1.5in}
+\noindent
+{\bf Part (c)} Show that the joint distribution is
+$$
+\hbox{Joint} \propto \mu^k \cdot e^{-(\lambda + 1) \mu}
+$$
+
+
+\bigskip
+\noindent
+{\bf Solution}
+
+
+\newpage
+
+\subsubsection*{Problem 8, continued}
+
+\noindent
+{\bf Part (d)} Show that
+$$
+\int_0^\infty \mu^{k} \cdot e^{-(\lambda+1) \mu} \cdot d\mu = \frac{ \Gamma( k + 1 ) }{(\lambda + 1)^{k+1} }
+$$
+\noindent
+{\bf Hint} We've seen this sort of integral a few times before. Try to make a substitution to turn this into a gamma function.
+
+\bigskip
+\noindent
+{\bf Solution}
+
+
+
+
+\newpage
+\subsubsection*{Problem 8, continued}
+
+\noindent
+{\bf Part (e)} What is the density function for the posterior distribution of $\mu$, given that the outcome variable $X$ had the observed value $k$?
+
+\bigskip
+\noindent
+{\bf Solution}
+
+
+
+
+
+
+\end{document}
