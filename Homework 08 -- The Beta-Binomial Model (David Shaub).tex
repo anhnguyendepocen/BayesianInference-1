@@ -48,7 +48,7 @@ For each of these functions, determine if it is the kernel of a beta distributio
 	\item {\bf Part (c)} $g(p\ |\ a,b) = \displaystyle \frac{ p^3}{\sqrt{1 - p} }$\\
 	Yes, $a=4$ and $b=0.5$
 	\item {\bf Part (d)} $g(p\ |\ a,b) = p^4 + (1 - p)^3$\\
-	Yes, $a=5$ and $b=4$
+	No
 	\item {\bf Part (e)} $g(p\ |\ a,b) = \sqrt[3]{p} - 2 \sqrt[3]{p} \cdot p + \sqrt[3]{p} \cdot p^2 $\\
 	No
 \end{itemize}
@@ -77,38 +77,45 @@ Tyrone has wants to analyze free throws in basketball. He decides to model an in
 
 \subsection*{Problem Solution}
 
-\bigskip
 \noindent
 {\bf Part (a)} What are the hyperparameters $a$ and $b$ for Tyrone's prior beta distribution?
 
-\bigskip
 \noindent
 {\bf Solution} 
-
+\begin{align*}
+\sigma^2 &= 0.01\\
+a &= \frac{0.6^2 - 0.6^3 - 0.01 \cdot 0.6}{0.01}\\
+&= 13.8\\
+b &= \frac{13.8 \cdot (1 - 0.6)}{0.6}\\
+&= 9.2
+\end{align*}
 
 
 
 \newpage
 \subsubsection*{Problem 2, continued}
-
-\vspace{2in}
 \noindent
 {\bf Part (b)} Ashley attempts 20 free throws, and she makes 18 of them. What are the hyperparameters for Tyrone's posterior distribution for Ashley?
 
-\bigskip
 \noindent
 {\bf Solution} 
+\begin{align*}
+a' &= a + k = 13.8 + 18 = 31.8\\
+b' &= b + N - k - 1 = 9.2 + 20 - 18 - 1 = 10.2
+\end{align*}
 
 
-
-\vspace{2in}
 \noindent
 {\bf Part (c)} What is Tyrone's estimate of Ashley's true free-throw probability of success, given the observed data?
 
 \bigskip
 \noindent
 {\bf Solution} 
-
+\begin{align*}
+E[p|data] &= \frac{a'}{a' + b'}\\
+&= \frac{31.8}{31.8 + 10.2}\\
+&= 0.7571429\\
+\end{align*}
 
 
 
