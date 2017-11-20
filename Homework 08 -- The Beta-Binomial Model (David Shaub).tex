@@ -453,18 +453,21 @@ $$
 \bigskip
 \noindent
 {\bf Solution}
+\begin{align*}
+f(\mu) &= \lambda e^{-\lambda\mu}
+\end{align*}
 
 
-\vspace{1.5in}
 \noindent
 {\bf Part (b)} Suppose we observe a value of $k$ for the outcome random variable $X$. Write down the explicit algebraic form of the likelihood.
 
 \bigskip
 \noindent
 {\bf Solution}
+\begin{align*}
+g(X=k|\mu) &= \frac{e^{-\mu}\mu^k}{k!}
+\end{align*}
 
-
-\vspace{1.5in}
 \noindent
 {\bf Part (c)} Show that the joint distribution is
 $$
@@ -475,7 +478,11 @@ $$
 \bigskip
 \noindent
 {\bf Solution}
-
+\begin{align*}
+g(X=k|\mu)\cdot f(u) &= \frac{e^{-\mu}\mu^k}{k!} \lambda e^{-\lambda\mu}\\
+&= \mu^k \cdot e^{-(\lambda + 1)\mu}\cdot\frac{\lambda}{k!}\\
+&\propto \mu^k \cdot e^{-(\lambda + 1)\mu}
+\end{align*}
 
 \newpage
 
@@ -492,7 +499,14 @@ $$
 \bigskip
 \noindent
 {\bf Solution}
-
+\begin{align*}
+s &= (\lambda + 1)\mu\\
+\mu &= \frac{s}{\lambda + 1}\\
+d\mu &= \frac{ds}{\lambda + 1}\\
+\int_0^\infty \mu^{k} \cdot e^{-(\lambda+1) \mu} \cdot d\mu &= \int_0^\infty \biggr(\frac{s}{\lambda + 1}\biggr)^{k} \cdot e^{-s} \cdot \frac{ds}{\lambda + 1}\\
+&= \frac{1}{(\lambda + 1)^{k + 1}} \int_0^\infty s^k e^{-s}ds\\
+&= \frac{\Gamma(k + 1)}{(\lambda + 1)^{k + 1}}
+\end{align*}
 
 
 
@@ -505,7 +519,13 @@ $$
 \bigskip
 \noindent
 {\bf Solution}
-
+\begin{align*}
+h(X=k \text{ and }\lambda) &= \int_0^\infty \frac{\Gamma(k + 1)}{(\lambda + 1)^{k + 1}} d\lambda\\
+&= \Gamma(k + 1) \int_0^\infty \frac{1}{(\lambda + 1)^{k + 1}}d\lambda\\
+&= \frac{\Gamma(k + 1)}{k(\lambda + 1)^k}\\
+\pi(\mu|X=k) &= \frac{\frac{\Gamma(k + 1)}{(\lambda + 1)^{k + 1}}}{h(X=k \text{ and }\lambda)}\\
+&= \frac{k}{\lambda + 1}
+\end{align*}
 
 
 
