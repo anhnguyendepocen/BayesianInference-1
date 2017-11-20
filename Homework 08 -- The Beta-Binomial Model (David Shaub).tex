@@ -350,11 +350,23 @@ $$
 
 
 \subsection*{Problem Solution}
+\begin{align*}
+P(X=k) &= \int_0^\infty \frac{e^{-\mu} \cdot \mu^k}{k!} \lambda e^{-\lambda \mu} d\mu\\
+&= \frac{\lambda}{k!} \int_0^\infty \mu^k \cdot e^{-\lambda \mu - \mu}d\mu\\
+s &= (\lambda + 1) \mu\\
+\mu &= \frac{s}{\lambda + 1}\\
+d\mu &= \frac{ds}{\lambda + 1}
+\end{align*}
 
 
 \newpage
 \subsubsection*{Problem 6, continued}
-
+\begin{align*}
+P(X=k) &= \frac{\lambda}{k!} \int_0^\infty \biggr(\frac{s}{\lambda + 1}\biggr)^k \cdot e^{-s}\frac{ds}{\lambda + 1}\\
+&= \frac{\lambda}{(\lambda + 1)^{k + 1} k!} \int_0^\infty s^k e^{-s}ds\\
+&= \frac{\lambda}{(\lambda + 1)^{k + 1} k!} \Gamma(k + 1)\\
+&= \frac{\lambda}{(\lambda + 1)^{k + 1}}
+\end{align*}
 
 
 \newpage
