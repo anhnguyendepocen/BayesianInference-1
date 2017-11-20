@@ -389,11 +389,23 @@ $$
 {\bf Hint} This problem is very similar to the example in Section 1, Case 3, in the reading, starting at page on page 6. If you're unsure about how to procede, reviewing this section would be a great way to get started.
 
 \subsection*{Problem Solution}
-
+\begin{align*}
+f(x) &= \int_0^\infty \lambda e^{-\lambda x} \theta e^{-\theta\lambda}d\lambda\\
+&= \theta \int_0^\infty \lambda e^{-\lambda x} e^{-\theta\lambda}d\lambda\\
+&= \theta \int_0^\infty \lambda e^{-(x + \theta)\lambda}d\lambda\\
+s &= (x + \theta)\lambda\\
+\lambda &= \frac{s}{x + \theta}\\
+d\lambda &= \frac{ds}{x + \theta}\\
+\end{align*}
 
 \newpage
 \subsubsection*{Problem 7, continued}
-
+\begin{align*}
+f(x) &= \theta \int_0^\infty \frac{s}{x + \theta} e^{-s} \frac{ds}{x + \theta}\\
+&= \frac{\theta}{(x + \theta)^2} \int_0^\infty se^{-s}ds\\
+&= \frac{\theta}{(x + \theta)^2} \Gamma(2)\\
+&= \frac{\theta}{(x + \theta)^2}
+\end{align*}
 
 
 \newpage
