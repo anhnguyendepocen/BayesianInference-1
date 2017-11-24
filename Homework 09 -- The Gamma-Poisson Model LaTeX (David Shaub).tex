@@ -1,0 +1,380 @@
+\documentclass[12pt]{article}
+
+\title{Problem Set 9: The Poisson -- Gamma Model}
+\author{MATH E-158: Introduction to Bayesian Inference}
+\author{David Shaub}
+\date{Due November 27, 2017}
+
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\renewcommand\qedsymbol{$\blacksquare$}
+	
+\begin{document}
+	
+	\maketitle
+
+
+\section*{Problem 1}
+
+
+\subsection*{Problem Statement}
+
+Consider the discrete categorical probability distribution for the random variable $X$:
+$$
+\begin{tabular}{ccccc}
+& $k$ & & $\Pr(X = k)$\\
+\hline
+& 1,000 & & 0.30\\
+& 2,000 & & 0.25\\
+& 6,000 & & 0.20\\
+& 8,000 & & 0.15\\
+& 10,000 & & 0.10\\
+\hline
+\end{tabular}
+$$
+
+\bigskip
+\noindent
+{\bf Part (a)} Calculate the expected value of the squared-erorr loss function $L_1(x\ ;\ 5,000) = (x - 5,000)^2$ over this probability distribution.
+
+\bigskip
+\noindent
+{\bf Part (b)} Calculate the expected value of the absolute error loss function $L_2(x\ ;\ 4,000) = |x - 4,000|$ over this probability distribution.
+
+
+\bigskip
+\noindent
+{\bf Part (c)} Consider the general squared-error loss function $L(x\ ;\ \theta) = (x - \theta)^2$. Calculate the Bayes estimate over the probability distribution for this loss function.
+
+\newpage
+\subsection*{Problem Solution}
+
+\bigskip
+\noindent
+{\bf Part (a)} Calculate the expected value of the squared-erorr loss function $L_1(x\ ;\ 5,000) = (x - 5,000)^2$ over this probability distribution.
+
+\vspace{3.5in}
+\noindent
+{\bf Part (b)} Calculate the expected value of the absolute error loss function $L_2(x\ ;\ 4,000) = |x - 4,000|$ over this probability distribution.
+
+
+\newpage
+\subsubsection*{Problem 1, continued}
+
+\noindent
+{\bf Part (c)} Consider the general squared-error loss function $L(x\ ;\ \theta) = (x - \theta)^2$. Calculate the Bayes estimate over the probability distribution for this loss function.
+
+
+\newpage
+\section*{Problem 2}
+
+\subsection*{Problem Statement}
+
+In the lecture, we saw that one way to parameterize the gamma distribution was with a kernel of the form
+$$
+g(\mu) = \mu^\tau \cdot e^{-\beta \mu}
+$$
+
+\bigskip
+\noindent
+{\bf Part (a)} Calculate the normalizing constant for this kernel, and use it to write the full expression for the probability density function for $\mu$.
+
+\bigskip
+\noindent
+{\bf Part (b)} Using the probability density function that you calculated in Part (a), calculate the expected value of the gamma distribution in terms of the parameters $\tau$ and $\beta$.
+
+\bigskip
+\noindent
+{\bf Part (c)} Using the formula that you derived in Part (a), determine the expected value of the probability density function
+$$
+f(\mu) = \frac{16}{6} \cdot \mu^3 \cdot e^{-2\mu}
+$$
+
+
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)} Calculate the normalizing constant for this kernel, and use it to write the full expression for the probability density function for $\mu$.
+
+\newpage
+\subsubsection*{Problem 2, continued}
+
+\noindent
+{\bf Part (b)} Using the probability density function that you calculated in Part (a), calculate the expected value of the gamma distribution in terms of the parameters $\tau$ and $\beta$.
+
+\vspace{4in}
+\noindent
+{\bf Part (c)} Using the formula that you derived in Part (a), determine the expected value of the probability density function
+$$
+f(\mu) = \frac{16}{6} \cdot \mu^3 \cdot e^{-2\mu}
+$$
+
+
+
+\newpage
+\section*{Problem 3}
+
+\subsection*{Problem Statement}
+
+In the lecture, we saw that an alternative way to parameterize the gamma distribution was with a kernel of the form
+$$
+g(\mu) = \mu^{\alpha - 1} \cdot e^{-\mu/\theta}
+$$
+
+\bigskip
+\noindent
+{\bf Part (a)} Calculate the normalizing constant for this kernel, and use it to write the full expression for the probability density function for $\mu$.
+
+\bigskip
+\noindent
+{\bf Part (b)} Using the probability density function that you calculated in Part (a), calculate the expected value of the gamma distribution in terms of the parameters $\alpha$ and $\theta$.
+
+\bigskip
+\noindent
+{\bf Part (c)} Using the formula that you derived in Part (a), determine the expected value of the probability density function
+$$
+f(\mu) = \frac{16}{6} \cdot \mu^3 \cdot e^{-2\mu}
+$$
+
+
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)} Calculate the normalizing constant for this kernel, and use it to write the full expression for the probability density function for $X$.
+
+\newpage
+\subsubsection*{Problem 3, continued}
+
+\noindent
+{\bf Part (b)} Using the probability density function that you calculated in Part (a), calculate the expected value of the gamma distribution in terms of the parameters $\alpha$ and $\theta$.
+
+\vspace{4in}
+\noindent
+{\bf Part (c)} Using the formula that you derived in Part (a), determine the expected value of the probability density function
+$$
+f(\mu) = \frac{16}{6} \cdot \mu^3 \cdot e^{-2\mu}
+$$
+
+
+\newpage
+\section*{Problem 4}
+
+\subsection*{Problem Statement}
+
+In this course, we have agreed that a gamma distribution should have the parametric form:
+$$
+f(x) = \frac{ \beta^{\tau + 1} \cdot x^\tau \cdot e^{-\beta x} }{\Gamma( \tau + 1)}
+$$
+Using this parameterization, the second moment is
+$$
+\hbox{E}[X^2] = \frac{(\tau + 2) \cdot (\tau + 1)}{\beta^2}
+$$
+You don't have to prove this; I'm just giving it to you because -- I'm nice.
+
+\bigskip
+\noindent
+{\bf Part (a)} Show that the variance of $X$ is:
+$$
+\hbox{Var}[X] = \frac{\tau + 1}{\beta^2}
+$$
+
+\bigskip
+\noindent
+{\bf Part (b)} Find an expression for the parameter $\beta$ in terms of the expectation $\hbox{E}[X]$ and the variance $\hbox{Var}[X]$. ({\bf Hint:} try to find a nice ratio that cancels out terms.)
+
+\bigskip
+\noindent
+{\bf Part (c)} Find an expression for the parameter $\tau$ in terms of the expectation $\hbox{E}[X]$ and the variance $\hbox{Var}[X]$.
+
+
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)} Show that the variance of $X$ is:
+$$
+\hbox{Var}[X] = \frac{\tau + 1}{\beta^2}
+$$
+
+\newpage
+\subsubsection*{Problem 4, continued}
+
+\vspace{2in}
+\noindent
+{\bf Part (b)} Find an expression for the parameter $\beta$ in terms of the expectation $\hbox{E}[X]$ and the variance $\hbox{Var}[X]$. ({\bf Hint:} try to find a nice ratio that cancels out terms.)
+
+\vspace{2in}
+\noindent
+{\bf Part (c)} Find an expression for the parameter $\tau$ in terms of the expectation $\hbox{E}[X]$ and the variance $\hbox{Var}[X]$.
+
+
+
+
+
+\newpage
+\section*{Problem 5}
+
+\subsection*{Problem Statement}
+
+Obie has a portion of radioactive Sugar Bomzzz, and he wants to estimate the average number of particle emissions per hour. He decides to use a Poisson distribution with parameter $\mu$ to model the particle count, and he places a gamma prior on $\mu$ with hyperparameters $\tau = 11$ and $\beta = 4$.
+
+\bigskip
+\noindent
+{\bf Part (a)} What is the expected value of the prior distribution for $\mu$?
+
+\bigskip
+\noindent
+{\bf Part (b)} In the first hour of his experiment, Obie observes 9 particles. What are the hyperparameters for the posterior distribution of $\mu$?
+
+\bigskip
+\noindent
+{\bf Part (c)} Obie decides that he wants to use a squared-error loss function to estimate the true value of $\mu$. Calculate the Bayes estimate, given the observed data.
+
+
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)} What is the expected value of the prior distribution for $\mu$?
+
+\newpage
+\subsubsection*{Problem 5, continued}
+
+\noindent
+{\bf Part (b)} In the first hour of his experiment, Obie observes 9 particles. What are the hyperparameters for the posterior distribution of $\mu$?
+
+\vspace{3.5in}
+\noindent
+{\bf Part (c)} Obie decides that he wants to use a squared-error loss function to estimate the true value of $\mu$. Calculate the Bayes estimate, given the observed data.
+
+
+
+
+
+\newpage
+\section*{Problem 6}
+
+\subsection*{Problem Statement}
+
+Elvis has agreed to insure a large corporate car fleet. He decides to model the number of claims using a Poisson distribution with parameter $\mu$, and he feels that $\mu$ should follow a gamma distribution with parameters $\tau$ and $\beta$ such that the expected value of this prior distribution is $\hbox{E}[\mu] = 8$ and the standard deviation of this prior distribution is $\hbox{StdDev}[\mu] = 2$.
+
+\bigskip
+\noindent
+{\bf Part (a)} Using your results from Problem 4, determine the values of the parameters $\beta$ and $\tau$.
+
+\bigskip
+\noindent
+{\bf Part (b)} Suppose that the corporation submits 14 claims in one year. What is Elvis' posterior estimate of their true expected number of annual claims?
+
+
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)} Using your results from Problem 4, determine the values of the parameters $\beta$ and $\tau$.
+
+\newpage
+\subsubsection*{Problem 6, continued}
+
+\vspace{2.5in}
+\noindent
+{\bf Part (b)} Suppose that the corporation submits 14 claims in one year. What is Elvis' posterior estimate of their true expected number of annual claims?
+
+
+\newpage
+\section*{Problem 7}
+
+\subsection*{Problem Statement}
+
+Ashley is excited! It's the start of football season, and she is ready to follow her favorite athlete, the glamorous Tom Gravy. Ashley thinks that the number of touchdown passes that Tom Gravy throws in a game is a Poisson distribution with parameter $\mu$, but she's not sure what the value of $\mu$ is, so she uses a gamma distribution with parameters $\tau = 0$ and $\beta = 1/2$.
+
+\bigskip
+\noindent
+{\bf Part (a)} Write out the explicit algebraic form the probability density function for Ashley's prior. What sort of distribution is this?
+
+\bigskip
+\noindent
+{\bf Part (b)} Here are Tom Gravy's statistics for the first four games of the season:
+$$
+\begin{tabular}{ccccccc}
+& Game & & Opponent & & Touchdown Passes\\
+\hline
+& 1 & & Buffalo Wings & & 4\\
+& 2 & & Denver Burritos & & 1\\
+& 3 & & Texas Chili & & 3\\
+& 4 & & Philly Cheesesteak & & 3\\
+\hline
+\end{tabular}
+$$
+After every game, Ashley updates the hyperparameters of the distribution for $\mu$. After the game against the Philly Cheesesteak, what are the hyperparameters of the posterior distribution?
+
+\bigskip
+\noindent
+{\bf Part (c)} After the game against the Philly Cheesesteak, what is Ashley's Bayes estimate of Tom Gravy's true expected number of touchdown passes per game? Assume Ashley uses a squared-error loss function.
+
+\newpage
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)} Write out the explicit algebraic form the probability density function for Ashley's prior. What sort of distribution is this?
+
+\vspace{2in}
+\noindent
+{\bf Part (b)} Here are Tom Gravy's statistics for the first four games of the season:
+$$
+\begin{tabular}{ccccccc}
+& Game & & Opponent & & Touchdown Passes\\
+\hline
+& 1 & & Buffalo Wings & & 4\\
+& 2 & & Denver Burritos & & 1\\
+& 3 & & Texas Chili & & 3\\
+& 4 & & Philly Cheesesteak & & 3\\
+\hline
+\end{tabular}
+$$
+After every game, Ashley updates the hyperparameters of the distribution for $\mu$. After the game against the Philly Cheesesteak, what are the hyperparameters of the posterior distribution?
+ 
+\newpage
+\subsubsection*{Problem 7, continued}
+
+\vspace{4.5in}
+\noindent
+{\bf Part (c)} After the game against the Philly Cheesesteak, what is Ashley's Bayes estimate of Tom Gravy's true expected number of touchdown passes per game? Assume Ashley uses a squared-error loss function.
+
+
+
+
+\newpage
+\section*{Problem 8}
+
+\subsection*{Problem Statement}
+
+Obie has set up his particle detector, and as usual he models the number of particles observed in one hour using a Poisson distribution with parameter $\mu$, and he places a gamma prior on $\mu$ with the usual parameterization with $\tau$ and $\beta$.
+\begin{itemize}
+	\item The expected value of the prior distribution on $\mu$ is $\hbox{E}[\mu] = 4/3$.
+	\item If Obie observes 12 particles in one hour, then the Bayes estimate of $\mu$, using the least-squares loss function, will be $\hat{\mu} = 4$.
+\end{itemize}
+
+\bigskip
+\noindent
+{\bf Problem} What will the least-squares Bayes estimate be if Obie observes 20 particles in one hour?
+
+
+
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Problem} What will the least-squares Bayes estimate be if Obie observes 20 particles in one hour?
+
+\newpage
+\subsubsection*{Problem 8, continued}
+
+
+
+
+\end{document}
