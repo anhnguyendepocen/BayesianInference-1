@@ -115,13 +115,27 @@ $$
 
 \noindent
 {\bf Part (a)} Calculate the normalizing constant for this kernel, and use it to write the full expression for the probability density function for $\mu$.
-
+\begin{align*}
+s &= \beta\mu\\
+d\mu &= \frac{ds}{\beta}\\
+\mu &= \frac{s}{\beta}\\
+\int_0^\infty \mu^\tau e^{-\beta\mu}d\mu &= \int_0^\infty \biggr(\frac{s}{\beta}\biggr)^\tau e^{-s}\frac{ds}{\beta}\\
+&= \frac{1}{\beta^{\tau + 1}} \int_0^\infty s^\tau e^{-s}ds\\
+&= \frac{\Gamma(\tau + 1)}{\beta^{\tau + 1}}\\
+c &= \frac{\beta^{\tau + 1}}{\Gamma(\tau + 1)}\\
+f(u|\tau, \beta) &= \frac{\beta^{\tau + 1}}{\Gamma(\tau + 1)} \mu^\tau e^{-\beta\mu}
+\end{align*}
 \newpage
 \subsubsection*{Problem 2, continued}
 
 \noindent
 {\bf Part (b)} Using the probability density function that you calculated in Part (a), calculate the expected value of the gamma distribution in terms of the parameters $\tau$ and $\beta$.
-
+\begin{align*}
+E[\mu] &= \int_0^\infty \frac{\beta^{\tau + 1}}{\Gamma(\tau + 1)} \mu^\tau e^{-\beta\mu} \mu du\\
+&= \frac{\beta^{\tau + 1}}{\Gamma(\tau + 1)} \int_0^\infty \mu^{\tau + 1} e^{-\beta\mu} du\\
+&= \frac{\beta^{\tau + 1}}{\Gamma(\tau + 1)} \Gamma(\tau + 2)\beta^{-\tau - 2}\\
+&= \frac{\tau + 1}{\beta}
+\end{align*}
 \vspace{4in}
 \noindent
 {\bf Part (c)} Using the formula that you derived in Part (a), determine the expected value of the probability density function
