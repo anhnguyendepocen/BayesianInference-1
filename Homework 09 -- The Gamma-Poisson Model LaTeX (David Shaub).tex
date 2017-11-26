@@ -300,17 +300,26 @@ Obie has a portion of radioactive Sugar Bomzzz, and he wants to estimate the ave
 
 \noindent
 {\bf Part (a)} What is the expected value of the prior distribution for $\mu$?
-
+\begin{align*}
+E[\mu] &= \frac{\tau + 1}{\beta}\\
+&= \frac{11 + 1}{4} = 3
+\end{align*}
 \newpage
 \subsubsection*{Problem 5, continued}
 
 \noindent
 {\bf Part (b)} In the first hour of his experiment, Obie observes 9 particles. What are the hyperparameters for the posterior distribution of $\mu$?
+\begin{align*}
+\tau_* &= \tau + k = 11 + 9 = 20\\
+\beta_* &= \beta + 1 = 4 + 1 = 5\\
+\end{align*}
 
-\vspace{3.5in}
 \noindent
 {\bf Part (c)} Obie decides that he wants to use a squared-error loss function to estimate the true value of $\mu$. Calculate the Bayes estimate, given the observed data.
-
+\begin{align*}
+E[\mu] &= \frac{\tau_* + 1}{\beta_*}\\
+&= \frac{20 + 1}{5} = 4.2
+\end{align*}
 
 
 
