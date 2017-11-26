@@ -123,7 +123,7 @@ d\mu &= \frac{ds}{\beta}\\
 &= \frac{1}{\beta^{\tau + 1}} \int_0^\infty s^\tau e^{-s}ds\\
 &= \frac{\Gamma(\tau + 1)}{\beta^{\tau + 1}}\\
 c &= \frac{\beta^{\tau + 1}}{\Gamma(\tau + 1)}\\
-f(u|\tau, \beta) &= \frac{\beta^{\tau + 1}}{\Gamma(\tau + 1)} \mu^\tau e^{-\beta\mu}
+f(\mu|\tau, \beta) &= \frac{\beta^{\tau + 1}}{\Gamma(\tau + 1)} \mu^\tau e^{-\beta\mu}
 \end{align*}
 \newpage
 \subsubsection*{Problem 2, continued}
@@ -141,10 +141,6 @@ E[\mu] &= \int_0^\infty \frac{\beta^{\tau + 1}}{\Gamma(\tau + 1)} \mu^\tau e^{-\
 $$
 f(\mu) = \frac{16}{6} \cdot \mu^3 \cdot e^{-2\mu}
 $$
-\begin{align*}
-\tau &= 3\\
-\beta &= 2\\
-\end{align*}
 
 
 \newpage
@@ -177,14 +173,29 @@ $$
 
 \noindent
 {\bf Part (a)} Calculate the normalizing constant for this kernel, and use it to write the full expression for the probability density function for $X$.
+\begin{align*}
+s &= \frac{\mu}{\theta}\\
+\mu &= s\theta\\
+d\mu &= \theta ds\\
+\int_0^\infty \mu^{\alpha - 1} e^{-\mu/\theta}d\mu &= \int_0^\infty (s\theta)^{\alpha - 1} e^{-s}\theta ds\\
+&= \theta^\alpha \int_0^\infty s^{\alpha - 1} e^{-s}\theta ds\\
+&= \theta^\alpha\Gamma(\alpha)\\
+c &= \frac{1}{\theta^\alpha\Gamma(\alpha)}\\
+f(\mu|\theta, \alpha) &= \frac{\mu^{\alpha - 1} e^{-\mu/\theta}}{\theta^\alpha\Gamma(\alpha)} 
+\end{align*}
 
 \newpage
 \subsubsection*{Problem 3, continued}
 
 \noindent
 {\bf Part (b)} Using the probability density function that you calculated in Part (a), calculate the expected value of the gamma distribution in terms of the parameters $\alpha$ and $\theta$.
+\begin{align*}
+E[\mu] &= \int_0^\infty \frac{\mu^{\alpha - 1} e^{-\mu/\theta}}{\theta^\alpha\Gamma(\alpha)}  \mu d\mu\\
+&= \frac{1}{\theta^\alpha\Gamma(\alpha)} \int_0^\infty \mu^\alpha e^{-\mu/\theta} d\mu\\
+&= \frac{\theta^{\alpha + 1}\Gamma(\alpha + 1)}{\theta^\alpha\Gamma(\alpha)}\\
+&= \alpha\theta
+\end{align*}
 
-\vspace{4in}
 \noindent
 {\bf Part (c)} Using the formula that you derived in Part (a), determine the expected value of the probability density function
 $$
