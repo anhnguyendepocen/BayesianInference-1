@@ -344,14 +344,22 @@ Elvis has agreed to insure a large corporate car fleet. He decides to model the 
 
 \noindent
 {\bf Part (a)} Using your results from Problem 4, determine the values of the parameters $\beta$ and $\tau$.
-
+\begin{align*}
+Var[\mu] &= 4\\
+\beta &= \frac{E[\mu]}{Var[\mu]} = \frac{8}{4} = 2\\
+\tau &= Var[\mu]\beta^2 - 1 = 4 \cdot 4 - 1 = 15\\
+\end{align*}
 \newpage
 \subsubsection*{Problem 6, continued}
 
-\vspace{2.5in}
 \noindent
 {\bf Part (b)} Suppose that the corporation submits 14 claims in one year. What is Elvis' posterior estimate of their true expected number of annual claims?
-
+\begin{align*}
+\tau_* &= 15 + 14 = 29\\
+\beta_* &= 2 + 1 = 3\\
+E[\mu] &= \frac{\tau_* + 1}{\beta_*}\\
+&= \frac{29 + 1}{3} = 10
+\end{align*}
 
 \newpage
 \section*{Problem 7}
