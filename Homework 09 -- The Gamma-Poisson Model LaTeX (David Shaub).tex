@@ -397,8 +397,14 @@ After every game, Ashley updates the hyperparameters of the distribution for $\m
 
 \noindent
 {\bf Part (a)} Write out the explicit algebraic form the probability density function for Ashley's prior. What sort of distribution is this?
+\begin{align*}
+f(\mu|\tau, \beta) &= \frac{\beta^{\tau + 1}\mu^\tau e^{\beta\mu}}{\Gamma(\tau + 1)}\\
+&= \frac{0.5 \cdot 1 \cdot e^{0.5\mu}}{\Gamma(1)}\\
+&= 0.5 e^{0.5\mu}
+\end{align*}
 
-\vspace{2in}
+This is an exponential distribution.\\
+
 \noindent
 {\bf Part (b)} Here are Tom Gravy's statistics for the first four games of the season:
 $$
@@ -417,10 +423,32 @@ After every game, Ashley updates the hyperparameters of the distribution for $\m
 \newpage
 \subsubsection*{Problem 7, continued}
 
-\vspace{4.5in}
+After Buffalo we update:
+\begin{align*}
+\tau_* = \tau + k = 0 + 4 = 4\\
+\beta_* = \beta + 1 = 0.5 + 1 = 1.5\\
+\end{align*}
+After Denver we update:
+\begin{align*}
+\tau_* = \tau + k = 4 + 1 = 5\\
+\beta_* = \beta + 1 = 1.5 + 1 = 2.5\\
+\end{align*}
+After Texas we update:
+\begin{align*}
+\tau_* = \tau + k = 5 + 3 = 8\\
+\beta_* = \beta + 1 = 2.5 + 1 = 3.5\\
+\end{align*}
+After Philly we update:
+\begin{align*}
+\tau_* = \tau + k = 8 + 3 = 11\\
+\beta_* = \beta + 1 = 3.5 + 1 = 4.5\\
+\end{align*}
 \noindent
 {\bf Part (c)} After the game against the Philly Cheesesteak, what is Ashley's Bayes estimate of Tom Gravy's true expected number of touchdown passes per game? Assume Ashley uses a squared-error loss function.
-
+\begin{align*}
+E[\hat{\mu}] &= \frac{\tau_* + 1}{\beta_*}\\
+&= \frac{11 + 1}{4.5} \approxeq 2.67
+\end{align*}
 
 
 
@@ -445,6 +473,19 @@ Obie has set up his particle detector, and as usual he models the number of part
 
 \noindent
 {\bf Problem} What will the least-squares Bayes estimate be if Obie observes 20 particles in one hour?
+\begin{align*}
+E[\mu] &= \frac{\tau + 1}{\beta} = \frac{4}{3}\\
+\tau_* &= \tau + k = \tau + 12\\
+\beta_* &= \beta + 1 \\
+E[\hat{\mu}] &= \frac{\tau_* + 1}{\beta_*} = 4\\
+\end{align*}
+These equations are satisfied when $\tau = 3$ and $\beta = 3$. So now solving for the observed count of 20 we have
+\begin{align*}
+\tau_* &= \tau + k = 3 + 20 = 23\\
+\beta_* &= \beta + 1 = 3 + 1 = 4\\
+E[\hat{\mu}] &= \frac{\tau_* + 1}{\beta_*}\\
+&= \frac{23 + 1}{4} = 6
+\end{align*}
 
 \newpage
 \subsubsection*{Problem 8, continued}
