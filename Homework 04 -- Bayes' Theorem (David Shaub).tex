@@ -170,16 +170,18 @@ What is the posterior probability that Taylor's computer was using a SuperDisk d
 
 
 \subsection*{Problem Solution}
-\begin{align*}
-P(maxx) &= 0.45 &p(ultra) &= 0.45 &P(super) &= 0.1\\
-p_{maxx} &= 0.9074074 &p_{ultra} &= 0.9115044 &p_{super} &= 0.8305085\\
-S(maxx) &= 0.07623965 &S(ultra) &= 0.07352571 &S(super) &= 0.1169058\\
-\end{align*}
-\begin{align*}
-P(super|data) &= \frac{0.1169058 \cdot 0.1}{0.1169058 \cdot 0.1 + 0.07623965 \cdot 0.45 + 0.07352571 *\cdot 0.45}\\
-&= 0.147823
-\end{align*}
 
+\begin{align*}
+P(maxx) &= 0.45 &P(ultra) &= 0.45 &P(super) &= 0.1\\
+p_{maxx} &= 0.9074074 &p_{ultra} &= 0.9115044 &p_{super} &= 0.8305085\\
+P(X=2|maxx) &= 0.07623965 &P(X=2|ultra) &= 0.07352571 &P(X=2|super) &= 0.1169058\\
+\end{align*}
+{\tiny
+\begin{align*}
+P(super|data) &= \frac{P(data|super) \cdot P(super)}{P(data|super) \cdot P(super) + P(data|maxx) \cdot P(maxx) + P(data|ultra) \cdot P(ultra)}\\
+&= \frac{0.1169058 \cdot 0.1}{0.1169058 \cdot 0.1 + 0.07623965 \cdot 0.45 + 0.07352571 \cdot 0.45}\\
+&= 0.147823
+\end{align*}}%
 \newpage
 \subsection*{Problem 4, continued}
 
@@ -210,7 +212,7 @@ P(D^+) &= .004 &P(T^+|D^+) &= 0.8 &P(T^+|D^-) &= 0.1\\
 P(D^-)&= 0.996 &P(T^-|D^+) &= 0.2 &P(T^-|D^-) &= 0.9\\
 \end{align*}
 \begin{align*}
-NPV = P(D^-|T^-) &= \frac{P(T^-|D^-)\cdot P(D^-)}{P(T^-|D^+)\cdot P(D^-)}\\
+NPV = P(D^-|T^-) &= \frac{P(T^-|D^-)\cdot P(D^-)}{P(T^-|D^-)\cdot P(D^-) + P(T^-|D^+)\cdot P(D^+)}\\
 &= \frac{0.9 \cdot 0.996}{0.9 \cdot 0.996 + 0.2 \cdot 0.004}\\
 &= 0.9991083
 \end{align*}
