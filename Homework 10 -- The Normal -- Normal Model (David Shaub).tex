@@ -44,11 +44,19 @@ A new diagnostic test has been developed that models a particular enzyme level a
 \noindent
 {\bf Solution} 
 \begin{align*}
-PPV = P(D^+|T^+) = P(D^+|x \geq 34)
+P(D^+) &= \frac{50}{2000} = 0.025\\
+P(D^-) &= 1 - P(D^+) = 0.975\\
+P(T^+|D^+) &= P(X \geq 34 | \mu = 41, \sigma^2 = 16) = 0.9599408\\
+P(T^-|D^+) &= 1 - P(T^+|D^+) = 0.04005916\\
+P(T^-|D^-) &= P(X \geq 34 | \mu = 27, \sigma^2 = 25) = 0.08075666\\
+P(T^+|D^-) &= 1 - P(T^-|D^-) = 0.9192433
 \end{align*}
 \newpage
 \subsubsection*{Problem 1, continued}
-
+\begin{align*}
+PPV &= P(D^+|T^+)\\
+&= \frac{P(T^+|D^+)\cdot P(D^+)}{P(T^+|D^+)\cdot P(D^+) + P(T^-|D^+)\cdot P(D^+)}\\
+\end{align*}
 
 
 
