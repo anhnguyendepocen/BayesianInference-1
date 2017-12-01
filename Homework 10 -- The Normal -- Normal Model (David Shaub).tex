@@ -1,0 +1,416 @@
+\documentclass[12pt]{article}
+
+\title{Problem Set 10: The Normal -- Normal Model}
+\author{MATH E-158: Introduction to Bayesian Inference}
+\date{Due December 4, 2017}
+
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\renewcommand\qedsymbol{$\blacksquare$}
+	
+\begin{document}
+	
+	\maketitle
+
+
+\section*{Problem 1}
+
+
+\subsection*{Problem Statement}
+
+A new diagnostic test has been developed that models a particular enzyme level as a continuous measure. For patients who have disease, the enzyme level is normally distributed with mean $\mu = 41$ and variance $\sigma^2 = 16$, while for patients who do not have the disease, the enzyme level is normally distributed with mean $\mu = 27$ and variance $\sigma^2 = 25$. Patients who present with an observed enzyme level of 34 or greater are diagnosed as having disease. In general, out of 2,000 patients, 50 of them actually have the disease.
+
+\bigskip
+\noindent
+{\bf Problem} Calculate the positive predictive value of the test.
+
+
+
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Problem} Calculate the positive predictive value of the test.
+
+\bigskip
+\noindent
+{\bf Solution} 
+
+\newpage
+\subsubsection*{Problem 1, continued}
+
+
+
+
+
+\newpage
+\section*{Problem 2}
+
+\subsection*{Problem Statement}
+
+For each distribution, determine whether or not it is a one-parameter exponential family. If you think it is, you must show the explicit factorization. If you think it is not, then you should have a short explanation why not. 
+
+\bigskip
+\noindent
+{\bf Part (a)} The {\em Inverse Exponential} distribution, with parameters $\theta$:
+$$
+f(x\ |\ \theta) = \frac{ \theta \cdot e^{-\theta/x} }{x^2 }
+$$
+
+\bigskip
+\noindent
+{\bf Part (b)} The {\em 2-Parameter Pareto}, with parameters $\alpha$ and $\theta$, where the parameter $\alpha$ is known:
+$$
+f(x\ |\ \theta) = \frac{ \alpha \theta^\alpha }{ (x + \theta)^{\alpha + 1}}
+$$
+
+\bigskip
+\noindent
+{\bf Part (c)} The {\em Inverse Gamma} distribution, with parameters $\alpha$ and $\beta$, where $\beta$ is known:
+$$
+f(x\ |\ \alpha) = \frac{ \beta^\alpha \cdot e^{-\beta/x} }{\Gamma(\alpha) \cdot x^{\alpha + 1} }
+$$
+
+
+\subsection*{Problem Solution}
+\noindent
+{\bf Part (a)} The {\em Inverse Exponential} distribution, with parameters $\theta$:
+$$
+f(x\ |\ \theta) = \frac{ \theta \cdot e^{-\theta/x} }{x^2 }
+$$
+
+\bigskip
+\noindent
+{\bf Solution}
+
+\newpage
+\subsubsection*{Problem 2, continued}
+
+\noindent
+{\bf Part (b)} The {\em 2-Parameter Pareto}, with parameters $\alpha$ and $\theta$, where the parameter $\alpha$ is known:
+$$
+f(x\ |\ \theta) = \frac{ \alpha \theta^\alpha }{ (x + \theta)^{\alpha + 1}}
+$$
+
+\bigskip
+\noindent
+{\bf Solution}
+
+
+\vspace{3in}
+\noindent
+{\bf Part (c)} The {\em Inverse Gamma} distribution, with parameters $\alpha$ and $\beta$, where $\beta$ is known:
+$$
+f(x\ |\ \alpha) = \frac{ \beta^\alpha \cdot e^{-\beta/x} }{\Gamma(\alpha) \cdot x^{\alpha + 1} }
+$$
+
+\bigskip
+\noindent
+{\bf Solution}
+
+
+\newpage
+\section*{Problem 3}
+
+Now it's your turn to derive a conjugate distribution!
+
+\subsection*{Problem Statement}
+
+We've seen in lecture that the exponential distribution was a member of the exponential family:
+$$
+f(x\ |\ \lambda) = \lambda \cdot e^{-\lambda x}
+$$
+We know that if a distribution is a member of an exponential family, then a conjugate distribution must exist.
+
+\bigskip
+\noindent
+{\bf Part (a)} Write out the exponential family factorization for the exponential distribution.
+
+\bigskip
+\noindent
+{\bf Part (b)} Using the factorization from Part (a), construct the kernel of the conjugate distribution.
+
+\bigskip
+\noindent
+{\bf Part (c)} Write out the full density function for the conjugate distribution.
+
+
+\bigskip
+\noindent
+{\bf Part (d)} Determine the updating rules for a single observation: if we have a conjugate distribution with certain hyperparameters, and we observe a value of $x$, what are the posterior hyperparameters? 
+
+
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)} Write out the exponential family factorization for the exponential distribution.
+
+\bigskip
+\noindent
+{\bf Solution}
+
+
+
+\newpage
+\subsubsection*{Problem 3, continued}
+
+\noindent
+{\bf Part (b)} Using the factorization from Part (a), construct the kernel of the conjugate distribution.
+
+\bigskip
+\noindent
+{\bf Solution}
+
+
+
+
+\vspace{3in}
+\noindent
+{\bf Part (c)} Write out the full density function for the conjugate distribution.
+
+\bigskip
+\noindent
+{\bf Solution}
+
+
+
+
+
+\newpage
+\subsubsection*{Problem 3, continued}
+
+\noindent
+{\bf Part (d)} Determine the updating rules for a single observation: if we have a conjugate distribution with certain hyperparameters, and we observe a value of $x$, what are the posterior hyperparameters? 
+
+\bigskip
+\noindent
+{\bf Solution}
+
+
+
+
+
+
+
+\newpage
+\section*{Problem 4}
+
+This is a very simple problem, and it's intended to help you get comfortable with the basic rules for updating the hyperparameters in the Normal-Normal model.
+
+
+\subsection*{Problem Statement}
+
+Tyrone is sampling from a population with a known variance of $v^2 = 1.5^2$ and unknown mean $m$. He uses a prior distribution for $m$ with mean $\mu = 12$ and variance $\sigma^2 = 2^2$.
+
+\bigskip
+\noindent
+{\bf Part (a)} Tyrone makes one observation $x_1 = 10.5$. What are the posterior hyperparameters $\mu_*$ and $\sigma_*^2$?
+
+\bigskip
+\noindent
+{\bf Part (b)} Tyrone makes a second observation $x_2 = 13$. Using the posterior distribution from Part (a) as the prior for this new data, calculate the squared-error Bayes estimate of $m$, given the observed data.
+
+\bigskip
+\noindent
+{\bf Part (c)} Now let's combine the two observations into one dataset $\{x_1, x_2\} = \{10.5, 13\}$. Go back to the original prior with mean $\mu = 12$ and variance $\sigma^2 = 2^2$. Calculate the squared-error Bayes estimate of $m$, given the observed data, in one step using the two observations together.
+
+\bigskip
+\noindent
+{\bf Part (d)} Using the two observations together, calculate a 95\% credible interval for the mean $m$.
+
+\bigskip
+\noindent
+Note: The problem solution starts on the next page.
+
+\newpage
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)} Tyrone makes one observation $x_1 = 10.5$. What is his squared-error Bayes estimate of $m$, given this data?
+
+\bigskip
+\noindent
+{\bf Solution} 
+
+
+
+\newpage
+\subsubsection*{Problem 4, continued}
+
+\noindent
+{\bf Part (b)} Tyrone makes a second observation $x_2 = 13$. Using the posterior distribution from Part (a) as the prior for this new data, calculate the squared-error Bayes estimate of $m$, given the observed data.
+
+\bigskip
+\noindent
+{\bf Solution} 
+
+
+
+
+\newpage
+\subsubsection*{Problem 4, continued}
+
+\noindent
+{\bf Part (c)} Now let's combine the two observations into one dataset $\{x_1, x_2\} = \{10.5, 13\}$. Go back to the original prior with mean $\mu = 12$ and variance $\sigma^2 = 2^2$. Calculate the squared-error Bayes estimate of $m$, given the observed data, in one step using the two observations together.
+
+\bigskip
+\noindent
+{\bf Solution} 
+
+
+\newpage
+\subsubsection*{Problem 4, continued}
+
+\noindent
+{\bf Part (d)} Using the two observations together, calculate a 95\% credible interval for the mean $m$.
+
+\bigskip
+\noindent
+{\bf Solution} 
+
+
+
+\newpage
+\section*{Problem 5}
+
+\subsection*{Problem Statement}
+
+Ashley wants to model the time that customers at her restaurant have to wait for their food. She thinks that the wait time has the continuous probability distribution
+$$
+f(x\ |\ m) \propto \left \{ - \frac{1}{2} \cdot \frac{ (x - m)^2}{25} \right \}
+$$
+For the parameter $m$, Ashley uses the prior distribution
+$$
+f(x\ |\ m) \propto \left \{ - \frac{1}{2} \cdot \frac{ (m - 8)^2}{4} \right \}
+$$
+Ashley observes the wait times for 80 customers, and finds that the observed sample mean is $\overline{x} = 6.2$.
+
+\bigskip
+\noindent
+{\bf Problem} Calculate Ashley's squared-error Bayes estimate of the mean wait time, given the observed data.
+
+
+\subsection*{Problem Solution}
+
+
+
+
+\newpage
+\section*{Problem 6}
+
+\subsection*{Problem Statement}
+
+Taylor and Elvis are trying to estimate the average cost of a policyholder. They both agree that the annual costs for 95\% of all policyholders fall within a range of 1,500, but they aren't sure about the expected value $m$. Elvis wants to model this parameter with a prior distribution that is normal with expected value $\mu$ = 3,000, and standard deviation $\sigma = 400$. Taylor thinks this expected value is too high and too concentrated, so she chooses a prior distribution with a expected value that is 80\% that of Elvis', and one half the precision. Then Taylor and Elvis observe the same 200 subjects, and the observed sample mean is $\overline{x} = 2,600$.
+
+\bigskip
+\noindent
+{\bf Part (a)} What is Elvis' absolute error Bayes estimate?
+
+\bigskip
+\noindent
+{\bf Part (b)} What is Taylor's absolute error Bayes estimate?
+
+\bigskip
+\noindent
+{\bf Hint} Remember that the normal distribution is symmetric.
+
+\subsection*{Problem Solution}
+
+\bigskip
+\noindent
+{\bf Part (a)} What is Elvis' absolute error Bayes estimate?
+
+\bigskip
+\noindent
+{\bf Solution}
+
+
+\newpage
+\subsubsection*{Problem 6, continued}
+
+\vspace{3.5in}
+\noindent
+{\bf Part (b)} What is Taylor's absolute error Bayes estimate?
+
+\bigskip
+\noindent
+{\bf Solution}
+
+\newpage
+\subsubsection*{Problem 6, continued}
+
+
+
+
+\newpage
+\section*{Problem 7}
+
+\subsection*{Problem Statement}
+
+Obie has obtained a sample of radioactive Krispy Yumm cereal, and he wants to determine $\mu$, the mean number of particles emitted in one hour. He decides to model this as a Poisson distribution with parameter $\mu$, but he has no knowledge of $\mu$, so he places an improper prior on this parameter. In the first five hours, he observes this data:
+$$
+\begin{tabular}{ccccc}
+& Hour & & Particles\\
+\hline
+& 1 & & 6\\
+& 2 & & 4\\
+& 3 & & 5\\
+& 4 & & 9\\
+& 5 & & 8\\
+\hline
+\end{tabular}
+$$
+
+\bigskip
+\noindent
+{\bf Problem} At the end of the fifth hour, what is Obie's squared-error Bayes estimate of the true mean number of particles emitted in an hour, given the observed data?
+
+
+\subsection*{Problem Solution}
+
+
+\newpage
+\subsubsection*{Problem 7, continued}
+
+
+
+
+\newpage
+\section*{Problem 8}
+
+\subsection*{Problem Statement}
+
+Tyrone is attempting to estimate the mean length of time for his morning commute. He believes that the times for his trips are normally distributed, and that the times for 90\% of his trips fall within a range of 15 minutes, but he's not sure about the expected value $m$ of these trips. So he decides to place an improper on this expected value. He then observes 8 trip lengths:
+$$
+42, 54, 38, 47, 45, 51, 37, 50
+$$
+
+\noindent
+{\bf Problem} What is the 95\% credible interval for the true expected value, given the observed data?
+
+
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Problem} What is the 95\% credible interval for the true expected value, given the observed data?
+
+\bigskip
+\noindent
+{\bf Solution} 
+
+
+\newpage
+\subsubsection*{Problem 8, continued}
+
+
+
+
+
+\end{document}
