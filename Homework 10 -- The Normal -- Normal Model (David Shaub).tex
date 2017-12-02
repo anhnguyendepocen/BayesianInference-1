@@ -183,7 +183,12 @@ We know that if a distribution is a member of an exponential family, then a conj
 \bigskip
 \noindent
 {\bf Solution}
-
+\begin{align*}
+h(x) &= 1\\
+g(\theta) &= \lambda\\
+r(x) &= x\\
+\psi(\theta) &= -\lambda
+\end{align*}
 
 
 \newpage
@@ -195,18 +200,23 @@ We know that if a distribution is a member of an exponential family, then a conj
 \bigskip
 \noindent
 {\bf Solution}
+\begin{align*}
+\pi(\theta|\phi, \tau) &\propto g(\theta)^\phi e^{\tau \psi(\theta)}\\
+&= \lambda^\phi e^{-\tau\lambda}
+\end{align*}
 
 
 
-
-\vspace{3in}
+\vspace{0.5in}
 \noindent
 {\bf Part (c)} Write out the full density function for the conjugate distribution.
 
 \bigskip
 \noindent
 {\bf Solution}
-
+\begin{align*}
+f(x|\lambda) &= \lambda e^{-\lambda}
+\end{align*}
 
 
 
