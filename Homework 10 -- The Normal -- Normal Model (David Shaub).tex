@@ -395,10 +395,20 @@ Taylor and Elvis are trying to estimate the average cost of a policyholder. They
 \noindent
 {\bf Part (a)} What is Elvis' absolute error Bayes estimate?
 
+
 \bigskip
 \noindent
 {\bf Solution}
-
+\begin{align*}
+v &=  \frac{1500}{2\cdot 1.96} = 1470\\
+\sigma &= 400\\
+\mu &= 3000\\
+n &= 200\\
+\bar{x} &= 2600\\
+\mu_{*} &= \frac{\mu v^2 + \sum_{i=1}^n x_i \sigma^2}{v^2 + n\sigma^2} = \frac{\mu v^2 + n \bar{x}\sigma^2}{v^2 + n\sigma^2}\\
+&= \frac{3000 \cdot 1470^2 + 200 \cdot 2600 \cdot 400^2}{1470^2 + 200 \cdot 400^2}\\
+&= 2625.303
+\end{align*}
 
 \newpage
 \subsubsection*{Problem 6, continued}
@@ -410,7 +420,16 @@ Taylor and Elvis are trying to estimate the average cost of a policyholder. They
 \bigskip
 \noindent
 {\bf Solution}
-
+\begin{align*}
+v &=  \frac{1500}{2\cdot 1.96} = 1470\\
+\sigma &= 400 \cdot 2 = 800\\
+\mu &= 3000 \cdot 0.8 = 2400\\
+n &= 200\\
+\bar{x} &= 2600\\
+\mu_{*} &= \frac{\mu v^2 + \sum_{i=1}^n x_i \sigma^2}{v^2 + n\sigma^2} = \frac{\mu v^2 + n \bar{x}\sigma^2}{v^2 + n\sigma^2}\\
+&= \frac{2400 \cdot 1470^2 + 200 \cdot 2600 \cdot 800^2}{1470^2 + 200 \cdot 800^2}\\
+&= 2596.68
+\end{align*}
 \newpage
 \subsubsection*{Problem 6, continued}
 
