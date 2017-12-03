@@ -276,7 +276,14 @@ Note: The problem solution starts on the next page.
 \bigskip
 \noindent
 {\bf Solution} 
-
+\begin{align*}
+\mu_* &= \frac{\mu v^2 + x\sigma^2}{v^2 + \sigma^2}\\
+&= \frac{12 \cdot 1.5^2 + 10.5 \cdot 2^2}{1.5^2 + 2^2}\\
+&= 11.04\\
+\sigma^2_* &= \frac{\sigma^2 v^2}{v^2 + \sigma^2}\\
+&= \frac{2^2 \cdot 1.5^2}{1.5^2 + 2^2}\\
+&= 1.44
+\end{align*}
 
 
 \newpage
@@ -288,7 +295,14 @@ Note: The problem solution starts on the next page.
 \bigskip
 \noindent
 {\bf Solution} 
-
+\begin{align*}
+\mu_{**} &= \frac{\mu_* v^2 + x\sigma^2_*}{v^2 + \sigma^2_*}\\
+&= \frac{11.04 \cdot 1.5^2 + 13 \cdot 1.44}{1.5^2 + 1.44}\\
+&= 11.80488\\
+\sigma^2_{**} &= \frac{\sigma^2_* v^2}{v^2 + \sigma^2_*}\\
+&= \frac{1.44 \cdot 1.5^2}{1.5^2 + 1.44}\\
+&= 0.8780488
+\end{align*}
 
 
 
@@ -301,7 +315,11 @@ Note: The problem solution starts on the next page.
 \bigskip
 \noindent
 {\bf Solution} 
-
+\begin{align*}
+\mu_{**} &= \frac{\mu v^2 + \sum_{i=1}^n x_i \sigma^2}{v^2 + n\sigma^2}\\
+&= \frac{12 \cdot 1.5^2 + 94}{1.5^2 + 2 \cdot 2^2}\\
+&= 11.80488
+\end{align*}
 
 \newpage
 \subsubsection*{Problem 4, continued}
@@ -312,7 +330,10 @@ Note: The problem solution starts on the next page.
 \bigskip
 \noindent
 {\bf Solution} 
-
+\begin{align*}
+\mu_{**} \pm 1.96\sigma_{**} &= 11.80488 - 1.96 * 0.8780488\\
+&= \{10.0839, 13.52586\}
+\end{align*}
 
 
 \newpage
