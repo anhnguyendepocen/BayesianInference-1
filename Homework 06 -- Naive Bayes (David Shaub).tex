@@ -353,19 +353,30 @@ Notice that in this training dataset, there are no Windows users who use Safari,
 \noindent
 {\bf Problem} Obie encounters someone who is running Safari on a Windows platform, and decides to use a Naive Bayes predictive model to select which ad to run for this person. Assuming that the browser type and platform are conditionally independent, given the drink preference, determine which drink Obie should advertise.\\
 
-We will predict the probability that the user drinks Bayes Brew (BB):
-
+First we'll apply the assumption of conditional independence:
 \begin{align*}
-P(BB|Safari \cap Windows) &= \frac{P(BB \cap Safari \cap Windows)}{P(Safari \cap Windows)}\\
-&= \frac{P(Safari|BB) \cdot P(Windows|BB) \cdot P(BB)}{P(Safari \cap Windows)}\\
-&= \frac{\frac{7}{309}\frac{177}{309}\frac{198}{309}}{P(Safari \cap Windows)}\\
-&= \frac{0.008314977}{0.008314977 + P(Safari|KT) \cdot P(Windows|KT) \cdot P(KT)}\\
-&= \frac{0.008314977}{0.008314977 + \frac{23}{111} \frac{42}{111} \frac{111}{309}}\\
-&= \frac{0.008314977}{0.008314977 + 0.02816409}\\
-&= 0.2279383
+P(Safari \cap Windows \cap Brew) &= P(Safari|Brew)\cdot P(Windows|Brew)\cdot P(Brew)\\
+&= \frac{23}{256} \cdot \frac{203}{256} \cdot \frac{256}{507}\\
+&= 0.03597294\\
+P(Safari \cap Windows \cap Kale) &= P(Safari|Kale)\cdot P(Windows|Kale)\cdot P(Kale)\\
+&= \frac{50}{251} \cdot \frac{143}{251} \cdot \frac{251}{507}\\
+&= 0.05618551\\
 \end{align*}
 
-Using $P \geq 0.5$ as the decision threshold for recommending Bayes Brew, Obie should recommend Kale \& Tofu instead.
+Now we use these to calculate the posterior probabilities
+\begin{align*}
+P(Safari \cap Windows) &= P(Safari \cap Windows \cap Kale)\\
+&\quad+ P(Safari \cap Windows \cap Brew)\\
+&= 0.05618551 + 0.03597294 = 0.09215846\\
+P(Kale|Safari \cap Windows) &= \frac{P(Safari \cap Windows \cap Kale)}{P(Safari \cap Windows)}\\
+&= \frac{0.05618551}{0.09215846}\\
+&= 0.6096621\\
+P(Brew|Safari \cap Windows) &= \frac{P(Safari \cap Windows \cap Brew)}{P(Safari \cap Windows)}\\
+&= \frac{0.03597294}{0.09215846}\\
+&= 0.3903379\\
+\end{align*}
+
+Using the MAP estimate, Obie should recommend Kale \& Tofu.
 
 \newpage
 \subsubsection*{Problem 5, continued}
