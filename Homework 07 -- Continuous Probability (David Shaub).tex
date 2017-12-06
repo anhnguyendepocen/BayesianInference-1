@@ -60,31 +60,36 @@ $$
 \bigskip
 \noindent
 {\bf Part (a)} Without using calculus, determine the normalizing constant for the density function of $X$.\\
-
-The continuous uniform distribution has a normalizing constant of $^1/_b$, so the normalizing constant is is $^1/_5$.
+\begin{align*}
+5c &= \frac{2}{5}\\
+c &= \frac{2}{25} = 0.08\\
+\end{align*}
 
 \bigskip
 \noindent
 {\bf Part (b)} Without using calculus, compute the probability $\Pr(X \geq 3)$.
 \begin{align*}
-S(x=3|b=5) &= 1 - \frac{x}{b}\\
-&= 1 - \frac{3}{5} = \frac{2}{5}
+P(x \geq 3) &= 1 - P(X < 3)\\
+&= 1 - 0.5 \cdot 3 \cdot 0.08 \cdot 3\\
+&= 0.64
 \end{align*}
 
 \bigskip
 \noindent
 {\bf Part (c)} Without using calculus, compute the probability $\Pr(2 \leq X \leq 4)$.
 \begin{align*}
-F(x=4|b=5) - F(x=2|b=5) &= \frac{4}{5} - \frac{2}{5}\\
-&= \frac{2}{5}
+P(2 \leq X \leq 4) &= P(X \leq 4) - P(X \leq 2)\\
+&= 0.5 \cdot 4\cdot 0.08 \cdot 4 - 0.5 \cdot 2 \cdot 0.08 \cdot 2\\
+&= 0.48
 \end{align*}
 
 \bigskip
 \noindent
 {\bf Part (d)} The {\em median} of any probability distribution is the value $m$ such that $F(m) = 0.5$. Without using calculus, compute the median of $X$.
 \begin{align*}
-F(x=X|b=5) &= \frac{X}{5} = 0.5\\
-X = 2.5
+F(X \leq m) &= 0.5 = 0.5 \cdot m \cdot 0.08 \cdot m\\
+m^2 &= 12.5\\
+m &\approxeq 3.535534
 \end{align*}
 
 
