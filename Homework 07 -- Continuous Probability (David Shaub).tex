@@ -386,17 +386,20 @@ Let $X$ be a 2-parameter Pareto distribution, with $\alpha > 1$.
 \subsection*{Problem Solution}
 \begin{align*}
 E[X] &= \int_0^\infty \frac{\alpha \theta^\alpha \cdot x}{(x + \theta)^{\alpha + 1}}dx\\
-&= -\alpha \theta^\alpha \int_0^\infty \frac{-x}{(x + \theta)^{\alpha + 1}}dx
+&= \alpha \theta^\alpha \int_0^\infty \frac{x}{(x + \theta)^{\alpha + 1}}dx
 \end{align*}
 \begin{align*}
-u &= x	&	du &= dx\\
-dv &= \frac{-1}{(x + \theta)^{\alpha + 1}}dx	&	v &= \frac{1}{\alpha(x + \theta)^\alpha}\\
+s &= x + \theta\\
+x &= s - \theta\\
+dx &= ds
 \end{align*}
 \begin{align*}
-E[X] &= -\alpha \theta^\alpha \biggr(\frac{x}{\alpha(x + \theta)^\alpha} - \int_0^\infty \frac{1}{\alpha(x + \theta)^\alpha}dx\biggr)\\
-&= -\alpha \theta^\alpha \biggr(\frac{x}{\alpha(x + \theta)^\alpha} - \frac{1}{\alpha\theta^\alpha}\biggr)\\
-&= \frac{-x \theta^\alpha}{(x + \theta)^\alpha} + 1 \\
-???\\
+E[X] &= \alpha \theta^\alpha \int_\theta^\infty \frac{s - \theta}{s^{\alpha + 1}}ds\\
+&= \alpha \theta^\alpha \int_\theta^\infty \frac{1}{s^\alpha} - \frac{\theta}{s^{\alpha + 1}}ds\\
+&= \alpha \theta^\alpha \biggr(\frac{-1}{\alpha - 1}s^{-(\alpha - 1)} + \frac{\theta}{\alpha}s^{-\alpha} \biggr)\biggr|_\theta^\infty\\
+&= \alpha \theta^\alpha \biggr(\frac{1}{\alpha - 1}\theta^{-(\alpha - 1)} - \frac{\theta}{\alpha}\theta^{-\alpha} \biggr)\\
+&= \alpha \theta^\alpha \biggr(\frac{\theta^{-\alpha + 1} }{\alpha - 1}- \frac{\theta^{-\alpha + 1}}{\alpha} \biggr)\\
+&= \alpha \theta^\alpha \frac{\theta^{-\alpha + 1}}{\alpha(\alpha - 1)}\\
 &= \frac{\theta}{\alpha - 1}
 \end{align*}
 
