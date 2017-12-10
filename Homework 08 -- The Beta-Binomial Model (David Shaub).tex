@@ -520,13 +520,10 @@ d\mu &= \frac{ds}{\lambda + 1}\\
 \noindent
 {\bf Solution}
 \begin{align*}
-h(X=k \text{ and }\lambda) &= \int_0^\infty \frac{\Gamma(k + 1)}{(\lambda + 1)^{k + 1}} d\lambda\\
-&= \Gamma(k + 1) \int_0^\infty \frac{1}{(\lambda + 1)^{k + 1}}d\lambda\\
-&= \frac{\Gamma(k + 1)}{k(\lambda + 1)^k}\\
-\pi(\mu|X=k) &= \frac{\frac{\Gamma(k + 1)}{(\lambda + 1)^{k + 1}}}{h(X=k \text{ and }\lambda)}\\
-&= \frac{k}{\lambda + 1}
+c &= \frac{(\lambda + 1)^{k + 1}}{\Gamma(k+1)}\\
+\pi(\mu|X=k) &= c \cdot \mu^k e^{-(\lambda + 1)\mu}\\
+&= \frac{(\lambda + 1)^{k + 1}}{\Gamma(k+1)} \cdot \mu^k e^{-(\lambda + 1)\mu}\\
 \end{align*}
-
 
 
 
