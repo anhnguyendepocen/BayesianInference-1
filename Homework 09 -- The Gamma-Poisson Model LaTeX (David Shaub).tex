@@ -408,9 +408,9 @@ After every game, Ashley updates the hyperparameters of the distribution for $\m
 \noindent
 {\bf Part (a)} Write out the explicit algebraic form the probability density function for Ashley's prior. What sort of distribution is this?
 \begin{align*}
-f(\mu|\tau, \beta) &= \frac{\beta^{\tau + 1}\mu^\tau e^{\beta\mu}}{\Gamma(\tau + 1)}\\
-&= \frac{0.5 \cdot 1 \cdot e^{0.5\mu}}{\Gamma(1)}\\
-&= 0.5 e^{0.5\mu}
+f(\mu|\tau, \beta) &= \frac{\beta^{\tau + 1}\mu^\tau e^{-\beta\mu}}{\Gamma(\tau + 1)}\\
+&= \frac{0.5 \cdot 1 \cdot e^{-0.5\mu}}{\Gamma(1)}\\
+&= 0.5 e^{-0.5\mu}
 \end{align*}
 
 This is an exponential distribution.\\
