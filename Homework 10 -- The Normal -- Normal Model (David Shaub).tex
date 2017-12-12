@@ -208,7 +208,7 @@ r(x) &= x\\
 \noindent
 {\bf Solution}
 \begin{align*}
-\pi(\theta|\phi, \tau) &\propto g(\theta)^\phi e^{\tau \psi(\theta)}\\
+\pi(\lambda|\phi, \tau) &\propto g(\lambda)^\phi e^{\tau \psi(\lambda)}\\
 &= \lambda^\phi e^{-\tau\lambda}
 \end{align*}
 
@@ -222,7 +222,15 @@ r(x) &= x\\
 \noindent
 {\bf Solution}
 \begin{align*}
-f(x|\lambda) &= \lambda e^{-\lambda}
+s &= \tau\lambda\\
+\lambda &= \frac{s}{\tau}\\
+d\lambda &= \frac{ds}{\tau}\\
+\int_0^\infty \lambda^\phi e^{\tau\lambda} d\lambda &= \int_0^\infty \frac{s^\phi}{\tau} e^{-s}\frac{ds}{\tau}\\
+&= \frac{1}{\tau^{\phi + 1}} \int_0^\infty s^\phi e^{-s}ds\\
+&= \frac{\Gamma(\phi + 1)}{\tau^{\phi + 1}}\\\\
+c &= \frac{\tau^{\phi + 1}}{\Gamma(\phi + 1)}\\\\
+g(\lambda|\phi,\tau) &= c\lambda^\phi e^{-\tau \lambda}\\
+&= \frac{\tau^{\phi + 1}\lambda^\phi e^{-\tau\lambda}}{\Gamma(\phi + 1)}
 \end{align*}
 
 
@@ -237,7 +245,13 @@ f(x|\lambda) &= \lambda e^{-\lambda}
 \bigskip
 \noindent
 {\bf Solution}
-
+\begin{align*}
+\text{Posterior} &\propto \text{Prior}\cdot\text{Liklihood}\\
+&= \lambda^\phi e^{-\tau\lambda}\lambda e^{-\lambda x}\\
+&= \lambda^{\phi + 1} e^{-(\tau + x)\lambda}\\
+\phi_* &= \phi + 1\\
+\tau_* &= \tau + x
+\end{align*}
 
 
 
