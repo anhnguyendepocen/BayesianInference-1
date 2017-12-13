@@ -142,7 +142,7 @@ $$
 f(x\ |\ \theta) = \frac{ 6 x^2 }{\theta^3 \cdot [1 + (x/\theta)^3]^3},\ \theta > 0
 $$
 
-No, the additive component in the denominator prevents this.
+No, the additive component in the denominator prevents this. The distribution does have a very impressive name, however.
 \bigskip
 
 \newpage
@@ -200,8 +200,25 @@ Tyrone has deveoped a new diagnostic test for a disease, in which a patient is d
 
 \bigskip
 \noindent
-{\bf Solution} 
+{\bf Solution}
 
+We use R to calculate $\sigma$ corresponding to 90\% confidence interval and for calculating .
+\begin{verbatim}
+qnorm(0.95) = 1.644854
+pnorm(q=39, mean=44, sd=2.431827, lower.tail=FALSE) = 0.980112
+\end{verbatim} 
+\begin{align*}
+P(D^-) &= 0.97\\
+P(D^+) &= 1 - P(D^-) = 0.03\\
+2\cdot 1.644854\sigma_+ &= 48 - 40\\
+\sigma_+ &= 2.431827\\
+2\cdot 1.644854\sigma_- &= 38 - 31\\
+\sigma_+ &= 2.127849\\
+PPV &= P(D^+|T^+)\\
+P(T^+|D^+) &= 0.980112\\
+P(T^+|D^-) &= 1 - P(T^+|D^+) = 0.019888\\
+&= \frac{P(T^+|D^+) \cdot P(D^+)}{P(T^+|D^+) \cdot P(D^+) + P(T^+|D^-) \cdot P(D^-)}
+\end{align*}
 \newpage
 \subsubsection*{Problem 3, continued}
 
