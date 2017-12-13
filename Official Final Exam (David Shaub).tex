@@ -1,0 +1,332 @@
+\documentclass[12pt]{article}
+
+\title{Official Final Exam}
+\author{MATH E-158: Introduction to Bayesian Inference}
+\author{David Shaub}
+\date{2017-12-12}
+
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\renewcommand\qedsymbol{$\blacksquare$}
+	
+\begin{document}
+	
+	\maketitle
+
+
+\section*{Problem 1 (10 Points)}
+
+
+\subsection*{Problem Statement}
+
+For each kernel, calculate the normalizing constant $c$ and then write out the full density function. You must explicitly set up an integral and evaluate it, although you are welcome to use any other class materials to check your work.
+
+\bigskip
+\noindent
+{\bf Part (a)} The kernel $g_1(x)$:
+$$
+g_1(x) = \frac{1}{(x + 500)^4},\ \ x \geq 0
+$$
+
+\bigskip
+\noindent
+{\bf Part (b)} The kernel $g_2(t\ |\ \alpha, \theta)$:
+$$
+g_2(t\ |\ \alpha, \theta) = t^{-\alpha-1} e^{-\beta/t},\ \ t > 0
+$$
+
+
+
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)} The kernel $g_1(x)$:
+$$
+g_1(x) = \frac{1}{(x + 500)^4},\ \ x \geq 0
+$$
+
+\bigskip
+\noindent
+{\bf Solution} 
+
+
+
+
+
+
+
+\newpage
+\subsubsection*{Problem 1, continued}
+
+\vspace{2in}
+\noindent
+{\bf Part (b)} The kernel $g_2(t\ |\ \alpha, \theta)$:
+$$
+g_2(t\ |\ \alpha, \theta) = t^{-\alpha-1} e^{-\beta/t},\ \ t > 0
+$$
+
+\bigskip
+\noindent
+{\bf Solution} 
+
+
+
+
+
+
+\newpage
+\section*{Problem 2 (15 points)}
+
+\subsection*{Problem Statement}
+
+For each distribution, determine whether or not it is an exponential family. If you think it is, then you must provide the explicit factorization. If you think it is not, then you should give a sort explanation why not.
+
+\bigskip
+\noindent
+{\bf Part (a)} The {\em Burr Type XII, Singh-Maddala} distribution with parameter $\theta$:
+$$
+f(x\ |\ \theta) = \frac{ 6 x^2 }{\theta^3 \cdot [1 + (x/\theta)^3]^3},\ \theta > 0
+$$
+
+\bigskip
+\noindent
+{\bf Part (b)} The {\em Weibull} distribution, where the parameter $\tau$ is known:
+$$
+f(x\ |\ \theta) = \frac{ \tau \cdot x^{\tau - 1} \cdot e^{-(x/\theta)^\tau}}{\theta^\tau},\ \ x \geq 0,\ \tau > 0,\ \theta > 0
+$$
+
+
+
+\bigskip
+\noindent
+{\bf Part (c)} The {\em Inverse Chi-Squared} distribution, with parameter $\nu$:
+$$
+f(x\ |\ \nu) = \frac{ 2^{-\nu/2} }{\Gamma( \nu / 2)} \cdot x^{-\nu/2 - 1} e^{-1/2x},\ \ x \geq 0,\ \nu > 0
+$$
+
+
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)} The {\em Burr Type XII, Singh-Maddala} distribution with parameter $\theta$:
+$$
+f(x\ |\ \theta) = \frac{ 6 x^2 }{\theta^3 \cdot [1 + (x/\theta)^3]^3},\ \theta > 0
+$$
+
+\bigskip
+
+\newpage
+\subsubsection*{Problem 2 Solution, continued}
+
+\noindent
+{\bf Part (b)} The {\em Weibull} distribution, where the parameter $\tau$ is known:
+$$
+f(x\ |\ \theta) = \frac{ \tau \cdot x^{\tau - 1} \cdot e^{-(x/\theta)^\tau}}{\theta^\tau},\ \ x \geq 0,\ \tau > 0,\ \theta > 0
+$$
+
+
+
+\vspace{3in}
+\noindent
+{\bf Part (c)} The {\em Inverse Chi-Squared} distribution, with parameter $\nu$:
+$$
+f(x\ |\ \nu) = \frac{ 2^{-\nu/2} }{\Gamma( \nu / 2)} \cdot x^{-\nu/2 - 1} e^{-1/2x},\ \ x \geq 0,\ \nu > 0
+$$
+
+\newpage
+\section*{Problem 3 (15 points)}
+
+\subsection*{Problem Statement}
+
+Tyrone has deveoped a new diagnostic test for a disease, in which a patient is diagnosed as having the disease if a certain enzyme level is strictly greater than 39. Enzyme levels for patients with disease are normally distributed, and 90\% of these patients have an enzyme level between 40 and 48. For patients who do not have disease, enzyme levels are also normally distributed, but in this case 90\% of these patients have an enzyme level between 31 and 38. A recent epidemiological survey has found that 97\% of subjects did not have the disease.
+
+\bigskip
+\noindent
+{\bf Part (a)} What is the positive predictive value of the test?
+
+\bigskip
+\noindent
+{\bf Part (b)} What is the negative predictive value of the test?
+
+
+
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Part (a)} What is the positive predictive value of the test?
+
+\bigskip
+\noindent
+{\bf Solution} 
+
+\newpage
+\subsubsection*{Problem 3, continued}
+
+\vspace{2in}
+\noindent
+{\bf Part (b)} What is the negative predictive value of the test?
+
+
+
+
+
+
+
+
+
+\newpage
+\section*{Problem 4 (15 points)}
+
+The data science elves at the Institute for Advanced Bayesian Predictive Models (North Pole) have developed a new scoring system for child and teen ethical conduct, called the Self-Actualized Naughty/Nice Transactional Analysis (SANTA). A higher SANTA score indicates more nice behavior and a lower SANTA score indicates more naughty behavior. All SANTA scores are distributed as a 2-parameter Pareto distribution, with parameter $\alpha = 3$. Children are categorized into three groups:
+\begin{itemize}
+	\item Naughty children have an expected SANTA score of 4.
+	\item Nice children have an expected SANTA score of 7.
+	\item Very Nice children have an expected SANTA score of 10.
+\end{itemize}
+Researchers also believe that 10\% of children are naughty, 70\% are nice, and 20\& are Very Nice.
+
+\bigskip
+\noindent
+{\bf Problem} If a child has a SANTA score of 13.1, what is the posterior probability that she is Very Nice?
+
+
+
+
+\subsection*{Problem Solution}
+
+\noindent
+{\bf Problem} If a child has a SANTA score of 13.1, what is the posterior probability that she is Very Nice?
+	
+\newpage
+\subsubsection*{Problem 4 Solution, continued}
+
+
+\newpage
+\section*{Problem 5 (15 points)}
+
+\subsection*{Problem Statement}
+
+Ashley is trying out a new recipe at her restaurant. She would like to know $p$, the probability that a diner will like the new recipe, so she decides to use a Beta-Binomial model to estimate this probability. Her prior belief is that $p$ has an expected value of $\hbox{E}[p] = 0.65$, and a standard deviation of $\hbox{StdDev}[p] = 0.05$. On three successive nights, she offers the new item to some of her diners, and records whether or not they like or don't like it. She obtains this data:
+$$
+\begin{tabular}{ccccccc}
+& Night & & Diner Likes & & Diner Doesn't Like\\
+\hline
+& Thursday & & 9 & & 1\\
+& Friday & & 6 & & 0\\
+& Saturday & & 7 & & 2\\
+\hline
+\end{tabular}
+$$
+
+\bigskip
+\noindent
+{\bf Problem} What are the expected value and standard deviation of Ashley's posterior belief about $p$ after Saturday night, given her initial prior belief about $p$ and the observed data?
+
+
+
+
+\subsection*{Problem Solution}
+
+
+\newpage
+\subsubsection*{Problem 5 Solution, continued}
+
+
+\newpage
+\section*{Problem 6 (15 points)}
+
+\subsection*{Problem Statement}
+
+Obie and Elvis are studying the annual number of tornadoes each year. They decide that the annual number of hurricanes follows a Poisson distribution with parameter $\mu$, but they don't know what $\mu$ is. Elvis decides to place a prior on $\mu$ of the form:
+$$
+f(\mu) \propto \mu^{20} \cdot e^{-3 \mu}
+$$
+Obie doesn't want to be this specific, so he decides to use a noninformative uniform prior on $\mu$. Over a period of three years, Obie and Elvis observe 4, 3, and 5 tornadoes.
+
+\bigskip
+\noindent
+{\bf Part (a)} Calculate the expected value, variance, and least-squares Bayes estimator for Elvis' posterior distribution, given the observed data.
+
+\bigskip
+\noindent
+{\bf Part (b)} Calculate the expected value, variance, and least-squares Bayes estimator for Obie's posterior distribution, given the observed data.
+
+
+
+
+
+\subsection*{Problem Solution}
+
+
+\newpage
+\subsubsection*{Problem 6 Solution, continued}
+
+
+
+
+
+
+
+
+\newpage
+\section*{Problem 7 (15 points)}
+
+\subsection*{Problem Statement}
+
+Taylor and Tyrone are studying reindeer flight speeds. They both agree reindeer flight speeds should be modeled as a normal distribution, and that 90\% of all reindeer have a flight speed that is contained within a range of 50 m/sec. However, they disagree about the value of the average reindeer flight speed, denoted $m$, and so they decide to use a normal prior for this value. Taylor's prior for $m$ has an expected value of 100 m/sec with a precision of 0.0025, while Tyrone's prior for $m$ has an expected value that is $50\%$ higher, and a standard deviation that is twice as large as Taylor's. For a sample of $n = 12$ reindeer, Taylor and Tyrone observe that the sample mean is $\overline{x} = 125$.
+
+\bigskip
+\noindent
+{\bf Part (a)} Calculate the expected value, standard deviation, and 95\% credible interval for Taylor's posterior distribution.
+
+\bigskip
+\noindent
+{\bf Part (b)} Calculate the expected value, standard deviation, and 95\% credible interval for Tyrone's posterior distribution.
+
+
+\subsection*{Problem Solution}
+
+\bigskip
+\noindent
+{\bf Part (a)} Calculate the expected value, standard deviation, and 95\% credible interval for Taylor's posterior distribution.
+
+\bigskip
+\noindent
+{\bf Solution}
+
+
+
+\newpage
+\subsubsection*{Problem 7, continued}
+
+
+\newpage
+\subsubsection*{Problem 7, continued}
+
+\noindent
+{\bf Part (b)} Calculate the expected value, standard deviation, and 95\% credible interval for Tyrone's posterior distribution.
+
+
+
+\newpage
+\section*{Problem 8 (2 points)}
+
+Estimate the total number of fans of Elvis as of the November 13, 1959 release of {\em Elvis' Gold Records, Volume 2}
+
+\subsection*{Problem Solution}
+
+
+
+
+
+
+
+\end{document}
