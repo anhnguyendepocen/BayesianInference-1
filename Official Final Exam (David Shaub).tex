@@ -337,11 +337,48 @@ $$
 
 \subsection*{Problem Solution}
 
-
-\newpage
+To perform updating on the hyperparameters given the data, we must first use the information from the prior for the expected value and variance of $p$ to calculate $a$ and $b$.
+\begin{align*}
+a &= \frac{\mu^2 - \mu^3 - \sigma^2 \mu}{\sigma^2}\\
+&= \frac{0.65^2 - 0.65^3 -  0.05^2 \cdot 0.65}{0.05^2}\\
+&= 58.5\\
+b &= \frac{a(1 - \mu)}{\mu}\\
+&= \frac{58.5(1-0.65)}{0.65}\\
+&= 31.5
+\end{align*}\newpage
 \subsubsection*{Problem 5 Solution, continued}
 
-
+After Thursday the updated hyperparameters are
+\begin{align*}
+a_* &= a + k\\
+&= 58.5 + 9\\
+&= 67.5\\
+b_* &= b + N - k\\
+&= 31.5 + 10 - 9\\
+&= 32.5
+\end{align*}
+After Friday the updated hyperparameters are
+\begin{align*}
+a_* &= 67.5 + 6\\
+&= 73.5\\
+b_* &= 32.5 + 6 - 6\\
+&= 32.5
+\end{align*}
+After Saturday the updated hyperparameters are
+\begin{align*}
+a_* &= 73.5 + 7\\
+&= 80.5\\
+b_* &= 32.5 + 9 - 7\\
+&= 34.5
+\end{align*}
+The posterior expected value and standard deviation for $p$ are
+\begin{align*}
+E[p|data] &= \frac{a_*}{a_* + b_*}\\
+&= \frac{80.5}{80.5 + 34.5}\\
+&= 0.7\\
+std[p|data] &= \sqrt{\frac{a_* b_*}{(a_* + b_* + 1)(a_* + b_*)^2}}\\
+&= 0.04254815
+\end{align*}
 \newpage
 \section*{Problem 6 (15 points)}
 
