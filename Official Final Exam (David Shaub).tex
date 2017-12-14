@@ -270,10 +270,46 @@ Researchers also believe that 10\% of children are naughty, 70\% are nice, and 2
 
 \noindent
 {\bf Problem} If a child has a SANTA score of 13.1, what is the posterior probability that she is Very Nice?
-	
+
+We use the given expected values of the Pareto distribution for naughty, nice, and very nice to calculate the paramter $\theta$ for each.
+\begin{align*}
+E[x|b] &= \frac{\theta}{\alpha - 1}\\
+4 &= \frac{\theta_{naughty}}{3 - 1}\\
+\theta_{naughty} &= 8\\
+7 &= \frac{\theta_{nice}}{3 - 1}\\
+\theta_{nice} &= 14\\
+10 &= \frac{\theta_{very nice}}{3 - 1}\\
+\theta_{very nice} &= 20
+\end{align*}
+
 \newpage
 \subsubsection*{Problem 4 Solution, continued}
 
+Then we use the density function to calculate the liklihood for naughty, nice, and very nice.
+\begin{align*}
+f(x|\beta) &= \frac{\alpha\theta^\alpha}{(x + \theta)^{\alpha + 1}}\\
+f_{naughty}(13.1|\beta) &= \frac{3 \cdot 8^3}{(13.1 + 8)^{3 + 1}}\\
+&= 0.007749281\\
+f_{nice}(13.1|\beta) &= \frac{3 \cdot 14^3}{(13.1 + 14)^{3 + 1}}\\
+&= 0.01526259\\
+f_{verynice}(13.1|\beta) &= \frac{3 \cdot 20^3}{(13.1 + 20)^{3 + 1}}\\
+&= 0.01999398\\
+\end{align*}
+
+Finally we combine the given prior probabilities with these liklihoods to calculate the posterior probabilities.\\
+
+\begin{tabular}{lllll}
+&   Naughty   &   Nice   &   Very Nice   \\
+\hline
+Prior      &   0.1   &   0.7   &   0.2   &\\
+Liklihood  &   0.007749281   &   0.01526259   &   0.01999398   &\\
+Joint      &   0.0007749281   &   0.01068381   &   0.003998796   &   0.01545754\\
+Posterior  &   0.0501327   &   0.6911718   &   0.2586955   &\\
+\hline
+\end{tabular}
+\\
+\\
+The posterior probability for Very Nice 0.2586955.
 
 \newpage
 \section*{Problem 5 (15 points)}
