@@ -3,7 +3,7 @@
 \title{Official Final Exam}
 \author{MATH E-158: Introduction to Bayesian Inference}
 \author{David Shaub}
-\date{2017-12-12}
+\date{2017-12-16}
 
 
 \usepackage{amsmath}
@@ -399,16 +399,45 @@ Obie doesn't want to be this specific, so he decides to use a noninformative uni
 {\bf Part (b)} Calculate the expected value, variance, and least-squares Bayes estimator for Obie's posterior distribution, given the observed data.
 
 
-
-
-
 \subsection*{Problem Solution}
+\bigskip
+\noindent
+{\bf Part (a)} Calculate the expected value, variance, and least-squares Bayes estimator for Elvis' posterior distribution, given the observed data.
+
+The kernel of Elvis's prior is a Gamma distribution with $\beta = 3$ and $\tau = 20$.
+The hyperparameters update with $\tau_* = \tau + k$ and $\beta_* = \beta + 1$ and we calculate the posterior for the expected value (which is equal to the Bayes least-square estimator) and the variance.
+
 
 
 \newpage
 \subsubsection*{Problem 6 Solution, continued}
+\begin{align*}
+\tau_* &= 20 + 4 + 3 + 5\\
+&= 32\\
+\beta_* &= 3 + 1 + 1 + 1\\
+&= 6\\
+E[\mu|data] &= \frac{\tau_* + 1}{\beta_*}\\
+&= \frac{32 + 1}{6} = 5.5\\
+Var[\mu|data] &= \frac{\tau_* + 1}{\beta_*^2}\\
+&= \frac{32 + 1}{6^2} = 0.9166667
+\end{align*}
+
+\bigskip
+\noindent
+{\bf Part (b)} Calculate the expected value, variance, and least-squares Bayes estimator for Obie's posterior distribution, given the observed data.
 
 
+With a uniform prior, the first update to the hyperparameters produces $\beta_* = 1$ and $\tau_* = k = 4$. After this we update for observations 3 and 5 as usual.
+We calculate the posterior for the expected value (which is equal to the Bayes least-square estimator) and the variance.
+
+\begin{align*}
+\beta_* &= 1 + 1 + 1 = 3\\
+\tau_* &= 4 + 3 + 5 = 12\\
+E[\mu|data] &= \frac{\tau_* + 1}{\beta_*}\\
+&= \frac{12 + 1}{3} = 4.333333\\
+Var[\mu|data] &= \frac{\tau_* + 1}{\beta_*^2}\\
+&= \frac{12 + 1}{3^2} = 1.444444
+\end{align*}
 
 
 
@@ -462,6 +491,8 @@ Estimate the total number of fans of Elvis as of the November 13, 1959 release o
 
 \subsection*{Problem Solution}
 
+
+Since we don't know much about 1950s music, we will use a uniform prior with a normal model with fixed variance and calculate the expected value of the posterior distribution. We observe data that Elvis's album was alternatively titled \textit{50,000,000 Elvis Fans Can't Be Wrong}. The hyperparameter update rules for our normal model with a uniform prior is very simple: we update $\bar{x} = 50$ million. So our posterior estimate says Elvis had 50 million fans.
 
 
 
