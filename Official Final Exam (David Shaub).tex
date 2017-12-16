@@ -503,23 +503,24 @@ Now we can calculate the 95\% credible interval
 \noindent
 {\bf Part (b)} Calculate the expected value, standard deviation, and 95\% credible interval for Tyrone's posterior distribution.
 \begin{align*}
-\sigma^2 &= 2\sigma_{Taylor}^2\\
-&= 2\cdot 400 = 800\\
+\sigma &= 2\sigma_{Taylor}\\
+&= 2\cdot 20 = 40\\
+\sigma^2 &= 40^2 = 1600\\
 \mu &= 1.5 \mu_{Taylor}\\
 &= 1.5 \cdot 100 = 150\\
 \mu_* &= \frac{v^2}{v^2 + n\sigma^2}\mu + \frac{n\sigma^2}{v^2 + n\sigma^2}\bar{x}\\
-&= \frac{230.9661}{230.9661 + 12\cdot 800}150 + \frac{12\cdot800}{230.9661 + 12\cdot800}125\\
-&= 125.5873\\
+&= \frac{230.9661}{230.9661 + 12\cdot 1600}150 + \frac{12\cdot 1600}{230.9661 + 12\cdot 1600}125\\
+&= 125.2972\\
 \sigma_*^2 &= \frac{\sigma^2 v^2}{v^2 + n\sigma^2}\\
-&= \frac{800 \cdot 230.9661}{230.9661 + 12 \cdot 800}\\
-&= 0.08333333\\
-\sigma_* &= \sqrt{0.08333333}\\
-&= 0.2886751
+&= \frac{1600 \cdot 230.9661}{230.9661 + 12 \cdot 1600}\\
+&= 19.01839\\
+\sigma_* &= \sqrt{19.01839}\\
+&= 4.361008
 \end{align*}
 The 95\% credibility interval is then
 \begin{align*}
-\mu_* \pm 1.96\sigma_* &= 125.5873\pm 1.96\cdot 0.2886751\\
-&= (125.0215, 126.1531)
+\mu_* \pm 1.96\sigma_* &= 125.2972\pm 1.96\cdot 4.361008\\
+&= (116.7496, 133.8448)
 \end{align*}
 
 \newpage
@@ -530,7 +531,7 @@ Estimate the total number of fans of Elvis as of the November 13, 1959 release o
 \subsection*{Problem Solution}
 
 
-Since we don't know much about 1950s music, we will use a uniform prior with a normal model with fixed variance and calculate the expected value of the posterior distribution. We observe data that Elvis's album was alternatively titled \textit{50,000,000 Elvis Fans Can't Be Wrong}. The hyperparameter update rule for our normal model with a uniform prior is very simple: we update $\bar{x} = 50$ million. So our posterior estimate says Elvis had 50 million fans.
+Since we don't know much about 1950s music, we will use a uniform prior with a normal model with fixed variance and calculate the expected value of the posterior distribution. We observe data that Elvis's album was alternatively titled \textit{50,000,000 Elvis Fans Can't Be Wrong}. The hyperparameter update rule for our normal model with a uniform prior is very simple: we update $\mu_* = \bar{x} = 50$ million. So our posterior estimate says Elvis had 50 million fans.
 
 
 
